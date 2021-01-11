@@ -26,3 +26,27 @@
 01/02/21 10:58:26 [3456][1][FATAL] Error: File [modules/Activities/metadata/detailviewdefs.php] is missing.  Unable to create because no corresponding HTML file was found.
 01/02/21 11:01:18 [3456][1][FATAL] Error: File [modules/Activities/metadata/detailviewdefs.php] is missing.  Unable to create because no corresponding HTML file was found.
 01/03/21 12:50:45 [18924][1][FATAL] Error: File [modules/Activities/metadata/detailviewdefs.php] is missing.  Unable to create because no corresponding HTML file was found.
+01/04/21 13:35:42 [18924][1][FATAL] MySQL error 1146: Table 'sugarcrm.calls_users' doesn't exist
+01/04/21 13:35:45 [18924][1][FATAL] MySQL error 1146: Table 'sugarcrm.calls_users' doesn't exist
+01/09/21 10:54:27 [15720][-none-][FATAL] MySQL error 1146: Table 'sugarcrm.users' doesn't exist
+01/09/21 10:54:34 [15720][-none-][FATAL] MySQL error 1146: Table 'sugarcrm.users' doesn't exist
+01/10/21 13:12:28 [15720][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where   meetings.date_end  <''  ORDER BY meetings.id DESC' at line 1
+01/11/21 07:40:17 [3020][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM' at line 1
+01/11/21 08:33:47 [3020][1][FATAL] MySQL error 1052: Column 'description' in field list is ambiguous
+01/11/21 08:34:03 [3020][1][FATAL] MySQL error 1052: Column 'description' in field list is ambiguous
+01/11/21 08:34:19 [3020][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'desc FROM meetings   INNER JOIN  users ON meetings.assigned_user_id = users.id  ' at line 1
+01/11/21 08:34:39 [3020][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'desc FROM meetings   INNER JOIN  users ON meetings.assigned_user_id = users.id  ' at line 1
+01/11/21 08:38:03 [3020][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'desc FROM meetings   ORDER BY meetings.id DESC' at line 1
+01/11/21 08:38:10 [3020][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'desc FROM meetings   ORDER BY meetings.id DESC' at line 1
+01/11/21 08:39:15 [3020][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'desc FROM meetings   INNER JOIN  users ON meetings.assigned_user_id = users.id  ' at line 1
+01/11/21 11:27:28 [3020][1][FATAL] MySQL error 1054: Unknown column 'notes.status' in 'field list'
+01/11/21 11:28:16 [3020][1][FATAL] MySQL error 1054: Unknown column 'notes.status' in 'field list'
+01/11/21 11:28:28 [3020][1][FATAL] MySQL error 1054: Unknown column 'notes.status' in 'field list'
+01/11/21 11:30:23 [3020][1][FATAL] MySQL error 1054: Unknown column 'notes.assigned_user_id' in 'on clause'
+01/11/21 11:35:07 [3020][1][FATAL] MySQL error 1054: Unknown column 'tasks.assigned_user_id' in 'on clause'
+01/11/21 11:36:39 [3020][1][FATAL] MySQL error 1054: Unknown column 'meetings.assigned_user_id' in 'on clause'
+01/11/21 11:36:57 [3020][1][FATAL] MySQL error 1054: Unknown column 'meetings.assigned_user_id' in 'on clause'
+01/11/21 11:37:14 [3020][1][FATAL] MySQL error 1054: Unknown column 'meetings.assigned_user_id' in 'on clause'
+01/11/21 11:37:23 [3020][1][FATAL] MySQL error 1054: Unknown column 'meetings.assigned_user_id' in 'on clause'
+01/11/21 11:37:41 [3020][1][FATAL] MySQL error 1054: Unknown column 'meetings.assigned_user_id' in 'on clause'
+01/11/21 11:38:34 [3020][1][FATAL] MySQL error 1054: Unknown column 'meetings.assigned_user_id' in 'on clause'

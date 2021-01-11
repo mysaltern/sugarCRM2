@@ -55,37 +55,17 @@ class ViewHelloActionView extends ViewDetail {
 	 * locale then it'll use file include/SugarFields/Fields/Address/en_us.DetailView.tpl.
 	 */
 	function display() {
-		//var_dump($_POST);
-		//die;
 		global $mod_strings, $app_list_strings, $app_strings, $current_user;
 		if (!is_admin($current_user)) {
 			sugar_die('Admin Only');
 		}
 
-
-
+	 
+ 
 		$this->ss->assign("STATUS_OPTIONS", get_select_options_with_id($app_list_strings['task_status_dom'], $app_list_strings['task_status_default']));
 
-		$typeRecord = ['calls' => 'calls', 'meetings' => 'meetings', 'tasks' => 'tasks', 'notes' => 'notes'];
-
-
-		$db = DBManagerFactory::getInstance();
-
-
-		$query = "SELECT id,first_name,last_name,user_name FROM users";
-
-
-
-		$result = $db->query($query, true);
-		$users = array();
-		while (($row = $db->fetchByAssoc($result)) != null) {
-			if (!isset($rows[$row['id']])) {
-				$users[] = $row;
-			}
-		}
-
-
-		$this->ss->assign("USERS", $users);
+		$typeRecord = ['calls'=>'calls','meetings'=>'meetings'];
+		
 		$this->ss->assign("TYPERECORD", $typeRecord);
 		$this->ss->assign("MOD", $mod_strings);
 		$this->ss->assign("APP", $app_strings);

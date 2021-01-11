@@ -49,11 +49,101 @@ class ActivitiesController extends SugarController {
 	}
 
 	function action_proccess() {
-echo "ok";
+		//require_once('include/MVC/View/SugarView.php');
+		require_once('include/MVC/View/SugarView.php');
+		$view = new SugarView();
+		$view->init();
+		$view->displayHeader();
 
-		var_dump($_REQUEST);
+		$db = DBManagerFactory::getInstance();
+
+		$post = $_POST;
+
+		$fromArr = $post['typeRecord'];
+		$from = mysql_real_escape_string(implode(",", $fromArr));
+		$subjoin = '';
+		$select = '';
+		$orderQuery = '';
+		$where = '';
+
+		$x = 0;
+		foreach ($fromArr as $record) {
+			$x++;
+			$feild = $record . '_status';
+			$creator = $record . '_creator';
+			$description = $record . '_description ';
+
+			if ($record != 'notes') {
+				$select .= "$record.status as  $feild ,";
+			}
+			$select .= "  $record.created_by as  $creator , $record.description as $description";
+			if (count($fromArr) != $x) {
+				$select .= ",";
+			}
+			//	if ($record == 'notes' or $record == 'tasks')
+			{
+				continue;
+			}
+			$subjoin = " INNER JOIN  users ON $record.assigned_user_id = users.id ";
+		}
+
+		if (isset($post['sort'])) {
+			$sort = $post['sort'];
+			if ($sort == 1) {
+				$orderQuery = " ORDER BY $record.id DESC";
+			} else {
+				$orderQuery = " ORDER BY $record.id ASC";
+			}
+		}
+		if (isset($post['creator'])) {
+
+			$creator = $post['creator'];
+
+
+			if ("$creator" != "false") {
+
+				$where = " where $record.created_by = '$creator' ";
+			}
+		}
+
+
+		if (strlen($where) > 1) {
+			$and = "and";
+		} else {
+			$and = 'where';
+		}
+
+		if (strlen($post['startTime']) > 0) {
+			$startTime = $post['startTime'];
+
+			$where .= "$and   $record.date_start  >'$startTime' ";
+		}
+		if (strlen($post['endTime']) > 0) {
+			$endTime = $post['endTime'];
+
+			$where .= "$and   $record.date_end  <'$endTime' ";
+		}
+
+		$query = "SELECT * ,$select FROM $from  " . $subjoin . $where . $orderQuery;
+		var_dump($query);
 		die;
-		$this->view = 'helloActionView';
+
+		$result = $db->query($query, true);
+		$data = array();
+		while (($row = $db->fetchByAssoc($result)) != null) {
+			if (!isset($rows[$row['id']])) {
+				$data[] = $row;
+			}
+		}
+
+
+		$sugar_smarty = new Sugar_Smarty();
+		$sugar_smarty->assign('data', $data);
+		$sugar_smarty->display('modules/Activities/tpls/report.tpl');
+//		$view->displayFooter();
+		//	$this->ss->assign("data", $row);
+//			$this->view = 'helloActionView';
+		//	$this->view = 'reportActionView';
 	}
 
 	/**

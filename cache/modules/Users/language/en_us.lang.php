@@ -1,5 +1,5 @@
 <?php
-// created: 2021-01-04 08:02:15
+// created: 2021-01-11 07:56:15
 $mod_strings = array (
   'ERR_DELETE_RECORD' => 'A record number must be specified to delete the account.',
   'ERR_EMAIL_INCORRECT' => 'Provide a valid email address in order to create and send the password.',

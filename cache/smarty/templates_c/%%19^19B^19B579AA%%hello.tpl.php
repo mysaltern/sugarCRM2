@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2021-01-04 08:18:54
+<?php /* Smarty version 2.6.11, created on 2021-01-10 09:49:30
          compiled from modules/Activities/tpls/hello.tpl */ ?>
 
 
@@ -25,6 +25,46 @@
 	<?php endforeach; endif; unset($_from); ?>
 
 
+	<label for="creator">User Creator :</label>
+
+	<select name="creator" id="creator">
+		<option selected value="false">SELECT</option> 
+
+		<?php $_from = $this->_tpl_vars['USERS']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['user']):
+?>
+
+			<option value="<?php echo $this->_tpl_vars['user']['id']; ?>
+"><?php echo $this->_tpl_vars['user']['first_name']; ?>
+ <?php echo $this->_tpl_vars['user']['last_name']; ?>
+ (<?php echo $this->_tpl_vars['user']['user_name']; ?>
+)</option> 
+
+		<?php endforeach; endif; unset($_from); ?>
+
+
+	</select> 
+
+	<label for="startTime">start time :</label>
+	<input type="date" id="startTime" name="startTime">
+	<label for="endTime">end time :</label>
+	<input type="date" id="endTime" name="endTime">
+
+
+	<label for="sort">Sort :</label>
+
+	<select name="sort" id="sort">
+		<option value="1">Increase</option>
+		<option value="2">Decrease</option> 
+	</select> 
+
+	<label for="status">Status :</label>
+
+	<select name="status" id="status">
+		<option value="1">Open</option>
+		<option value="2">Close</option> 
+		<option value="2">Cancelled</option> 
+	</select> 
 	<input title="<?php echo $this->_tpl_vars['APP']['LBL_SAVE_BUTTON_TITLE']; ?>
 " accessKey="<?php echo $this->_tpl_vars['APP']['LBL_SAVE_BUTTON_KEY']; ?>
 " class="button" onclick="this.form.action.value = 'Save';return check_form('EditView');" type="submit" name="button" value="  <?php echo $this->_tpl_vars['APP']['LBL_SAVE_BUTTON_LABEL']; ?>

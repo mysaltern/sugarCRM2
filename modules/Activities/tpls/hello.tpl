@@ -56,6 +56,40 @@
 	{/foreach}
 
 
+	<label for="creator">User Creator :</label>
+
+	<select name="creator" id="creator">
+		<option selected value="false">SELECT</option> 
+
+		{foreach from=$USERS item=user}
+
+			<option value="{$user.id}">{$user.first_name} {$user.last_name} ({$user.user_name})</option> 
+
+		{/foreach}
+
+
+	</select> 
+
+	<label for="startTime">start time :</label>
+	<input type="date" id="startTime" name="startTime">
+	<label for="endTime">end time :</label>
+	<input type="date" id="endTime" name="endTime">
+
+
+	<label for="sort">Sort :</label>
+
+	<select name="sort" id="sort">
+		<option value="1">Increase</option>
+		<option value="2">Decrease</option> 
+	</select> 
+
+	<label for="status">Status :</label>
+
+	<select name="status" id="status">
+		<option value="1">Open</option>
+		<option value="2">Close</option> 
+		<option value="2">Cancelled</option> 
+	</select> 
 	<input title="{$APP.LBL_SAVE_BUTTON_TITLE}" accessKey="{$APP.LBL_SAVE_BUTTON_KEY}" class="button" onclick="this.form.action.value = 'Save';return check_form('EditView');" type="submit" name="button" value="  {$APP.LBL_SAVE_BUTTON_LABEL}  " > &nbsp;
 	<input title="{$APP.LBL_CANCEL_BUTTON_TITLE}"   class='button' accessKey="{$APP.LBL_CANCEL_BUTTON_KEY}" type='submit' name='save' value="  {$APP.LBL_CANCEL_BUTTON_LABEL} " class='button' onclick='document.EditView.action.value = "{$RETURN.action}";document.EditView.module.value = "{$RETURN.module}";document.EditView.record.value = "{$RETURN.record}";
 			document.EditView.submit();'>
