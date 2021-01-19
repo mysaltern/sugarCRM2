@@ -83,6 +83,15 @@
 		<option value="2">Decrease</option> 
 	</select> 
 
+
+	<label for="sortSecond">Sort (Second) :</label>
+	<select name="sortSecond" id="sortSecond">
+		<option value="status">Status</option>
+		<option value="date_entered">time</option> 
+		<option value="user">user</option> 
+		<option value="name">name</option> 
+	</select> 
+
 	<label for="status">Status :</label>
 
 	<select name="status" id="status">
@@ -90,10 +99,56 @@
 		<option value="2">Close</option> 
 		<option value="2">Cancelled</option> 
 	</select> 
+
+	<label for="mySelect">Type Relation :</label>
+
+
+	<select id="mySelect">
+		<option value="Accounts">Account</option>
+		<option value="Opportunities">Opportunities</option>
+		<option value="Projects">Project</option> 
+	</select>
+
+	<input type="text" value="" name="relationRecord" id="relationRecord"> 
+
+
+
+	<button type="button" onclick="myFunction()">Try it</button>
+
+
 	<input title="{$APP.LBL_SAVE_BUTTON_TITLE}" accessKey="{$APP.LBL_SAVE_BUTTON_KEY}" class="button" onclick="this.form.action.value = 'Save';return check_form('EditView');" type="submit" name="button" value="  {$APP.LBL_SAVE_BUTTON_LABEL}  " > &nbsp;
 	<input title="{$APP.LBL_CANCEL_BUTTON_TITLE}"   class='button' accessKey="{$APP.LBL_CANCEL_BUTTON_KEY}" type='submit' name='save' value="  {$APP.LBL_CANCEL_BUTTON_LABEL} " class='button' onclick='document.EditView.action.value = "{$RETURN.action}";document.EditView.module.value = "{$RETURN.module}";document.EditView.record.value = "{$RETURN.record}";
 			document.EditView.submit();'>
 </form>
 <script type="text/javascript">
-	addToValidate('EditView', 'name', 'varchar', true, '{$MOD.LBL_NAME}');
+	{literal}
+
+		function onBlur() {
+			document.body.className = 'blurred';
+
+		}
+		;
+		function onFocus() {
+			document.body.className = 'focused';
+
+		}
+		;
+
+		if (/*@cc_on!@*/false) { // check for Internet Explorer
+			document.onfocusin = onFocus;
+			document.onfocusout = onBlur;
+		} else {
+			window.onfocus = onFocus;
+			window.onblur = onBlur;
+		}
+		function myFunction() {
+
+			let record = document.getElementById("mySelect").value;
+			let url = "http://localhost/sugar7/index.php?module=" + record + "&action=Popup&hide_clear_button=true&mode=undefined&create=undefined&metadata=undefined";
+
+			var win = window.open(url, '_blank');
+			win.focus();
+		}
+	{/literal}
+		addToValidate('EditView', 'name', 'varchar', true, '{$MOD.LBL_NAME}');
 </script>

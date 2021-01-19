@@ -50,3 +50,26 @@
 01/11/21 11:37:23 [3020][1][FATAL] MySQL error 1054: Unknown column 'meetings.assigned_user_id' in 'on clause'
 01/11/21 11:37:41 [3020][1][FATAL] MySQL error 1054: Unknown column 'meetings.assigned_user_id' in 'on clause'
 01/11/21 11:38:34 [3020][1][FATAL] MySQL error 1054: Unknown column 'meetings.assigned_user_id' in 'on clause'
+01/11/21 13:07:02 [3020][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.  ORDER BY meetings.id DESC' at line 1
+01/12/21 11:56:18 [15796][1][FATAL] MySQL error 1054: Unknown column 'time' in 'order clause'
+01/12/21 11:57:08 [15796][1][FATAL] MySQL error 1054: Unknown column 'time' in 'order clause'
+01/12/21 11:57:14 [15796][1][FATAL] MySQL error 1052: Column 'date_entered' in order clause is ambiguous
+01/12/21 11:58:07 [15796][1][FATAL] MySQL error 1054: Unknown column 'calls.user' in 'order clause'
+01/18/21 07:37:12 [12508][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM   where   .date_end  <'2021-01-17'  ORDER BY .id DESC ,.status' at line 1
+01/18/21 07:37:55 [12508][1][FATAL] MySQL error 1054: Unknown column 'notes.status' in 'order clause'
+01/18/21 07:38:03 [12508][1][FATAL] MySQL error 1054: Unknown column 'notes.status' in 'order clause'
+01/18/21 07:38:29 [12508][1][FATAL] MySQL error 1054: Unknown column 'notes.status' in 'order clause'
+01/18/21 07:38:31 [12508][1][FATAL] MySQL error 1054: Unknown column 'notes.status' in 'order clause'
+01/18/21 07:38:44 [12508][1][FATAL] MySQL error 1054: Unknown column 'notes.status' in 'order clause'
+01/18/21 07:39:47 [12508][1][FATAL] MySQL error 1054: Unknown column 'notes.status' in 'order clause'
+01/18/21 07:40:53 [12508][1][FATAL] MySQL error 1054: Unknown column 'notes.status' in 'order clause'
+01/18/21 07:41:24 [12508][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM    ORDER BY .id DESC ,.date_entered' at line 1
+01/18/21 07:43:39 [12508][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM' at line 1
+01/18/21 07:44:10 [12508][1][FATAL] Error: Module asol_Project does not exist.
+01/18/21 09:40:15 [12508][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM   where   .date_start  >'2021-01-10' where   .date_end  <'2021-01-30'  ORDE' at line 1
+01/18/21 09:40:24 [12508][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where   meetings.date_end  <'2021-01-30'  ORDER BY meetings.id DESC' at line 1
+01/18/21 09:40:35 [12508][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM   where   .date_start  >'2021-01-11' where   .date_end  <'2021-01-30'  ORDE' at line 1
+01/18/21 09:40:44 [12508][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where   calls.date_end  <'2021-01-30'  ORDER BY calls.id DESC' at line 1
+01/18/21 09:49:57 [12508][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where   calls.date_end  <'2021-01-30'  ORDER BY calls.id DESC' at line 1
+01/18/21 12:48:12 [12508][1][FATAL] Error: Module Account does not exist.
+01/18/21 12:48:45 [12508][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM    ORDER BY .id DESC' at line 1

@@ -49,10 +49,11 @@ class ActivitiesController extends SugarController {
 	}
 
 	function action_proccess() {
-		//require_once('include/MVC/View/SugarView.php');
-		require_once('include/MVC/View/SugarView.php');
+
+
+		//	require_once('include/MVC/View/SugarView.php');
 		$view = new SugarView();
-		$view->init();
+
 		$view->displayHeader();
 
 		$db = DBManagerFactory::getInstance();
@@ -69,22 +70,19 @@ class ActivitiesController extends SugarController {
 		$x = 0;
 		foreach ($fromArr as $record) {
 			$x++;
-			$feild = $record . '_status';
-			$creator = $record . '_creator';
-			$description = $record . '_description ';
+			$feild = 'status';
+			$creator = 'creator';
+			$description = 'description ';
 
-			if ($record != 'notes') {
+			if ($record !== 'notes') {
 				$select .= "$record.status as  $feild ,";
 			}
 			$select .= "  $record.created_by as  $creator , $record.description as $description";
 			if (count($fromArr) != $x) {
 				$select .= ",";
 			}
-			//	if ($record == 'notes' or $record == 'tasks')
-			{
-				continue;
-			}
-			$subjoin = " INNER JOIN  users ON $record.assigned_user_id = users.id ";
+
+			$subjoin = " INNER JOIN  users ON $record.created_by = users.id ";
 		}
 
 		if (isset($post['sort'])) {
@@ -93,6 +91,16 @@ class ActivitiesController extends SugarController {
 				$orderQuery = " ORDER BY $record.id DESC";
 			} else {
 				$orderQuery = " ORDER BY $record.id ASC";
+			}
+		}
+		if (isset($post['sortSecond'])) {
+			$sortSecond = $post['sortSecond'];
+			if ($sortSecond == 'user') {
+				$orderQuery .= " ,users.id";
+			} else {
+				if ($record != 'notes' and $sortSecond != 'status') {
+					$orderQuery .= " ,$record.$sortSecond";
+				}
 			}
 		}
 		if (isset($post['creator'])) {
@@ -118,6 +126,11 @@ class ActivitiesController extends SugarController {
 
 			$where .= "$and   $record.date_start  >'$startTime' ";
 		}
+		if (strlen($where) > 1) {
+			$and = "and";
+		} else {
+			$and = 'where';
+		}
 		if (strlen($post['endTime']) > 0) {
 			$endTime = $post['endTime'];
 
@@ -125,8 +138,7 @@ class ActivitiesController extends SugarController {
 		}
 
 		$query = "SELECT * ,$select FROM $from  " . $subjoin . $where . $orderQuery;
-		var_dump($query);
-		die;
+
 
 		$result = $db->query($query, true);
 		$data = array();
@@ -140,10 +152,6 @@ class ActivitiesController extends SugarController {
 		$sugar_smarty = new Sugar_Smarty();
 		$sugar_smarty->assign('data', $data);
 		$sugar_smarty->display('modules/Activities/tpls/report.tpl');
-//		$view->displayFooter();
-		//	$this->ss->assign("data", $row);
-//			$this->view = 'helloActionView';
-		//	$this->view = 'reportActionView';
 	}
 
 	/**
@@ -220,9 +228,11 @@ class ActivitiesController extends SugarController {
 			$_REQUEST['pdf_cidinfo'] = "";
 		}
 		if (empty($_REQUEST['pdf_patch'])) {
-			$_REQUEST['pdf_patch'] = "return array();";
+			$_REQUEST['pdf_patch'] = "return array();
+";
 		} else {
-			$_REQUEST['pdf_patch'] = "return {$_REQUEST['pdf_patch']};";
+			$_REQUEST['pdf_patch'] = "return {$_REQUEST['pdf_patch']};
+";
 		}
 		$this->view = 'addFontResult';
 	}

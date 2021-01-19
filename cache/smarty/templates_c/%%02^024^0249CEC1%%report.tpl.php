@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2021-01-11 11:34:47
+<?php /* Smarty version 2.6.11, created on 2021-01-18 07:41:33
          compiled from modules/Activities/tpls/report.tpl */ ?>
 
 <div class="table-wrapper">
@@ -28,34 +28,14 @@
  <?php echo $this->_tpl_vars['related']['last_name']; ?>
   </td>
 
-				<?php if ($this->_tpl_vars['related']['meetings_status']): ?>
-
-					<td><?php echo $this->_tpl_vars['related']['meetings_creator']; ?>
+								<td><?php echo $this->_tpl_vars['related']['creator']; ?>
 </td>
-					<td><?php echo $this->_tpl_vars['related']['meetings_status']; ?>
+				<td><?php echo $this->_tpl_vars['related']['status']; ?>
+</td>	
+				<td><?php echo $this->_tpl_vars['related']['description']; ?>
 </td>
-					<td><?php echo $this->_tpl_vars['related']['meetings_description']; ?>
-</td>
-				<?php elseif ($this->_tpl_vars['related']['tasks_status']): ?>
-					<td><?php echo $this->_tpl_vars['related']['tasks_creator']; ?>
-</td>
-					<td><?php echo $this->_tpl_vars['related']['tasks_status']; ?>
-</td>
-					<td> </td>
-				<?php elseif ($this->_tpl_vars['related']['notes_description']): ?>
-					<td><?php echo $this->_tpl_vars['related']['notes_creator']; ?>
-</td>
-					<td><?php echo $this->_tpl_vars['related']['notes_description']; ?>
-</td>
-					<td> </td>
-				<?php else: ?>
-					<td><?php echo $this->_tpl_vars['related']['calls_creator']; ?>
-</td>
-					<td><?php echo $this->_tpl_vars['related']['calls_status']; ?>
-</td>
-					<td> </td>
-				<?php endif; ?>
-
+			 
+				
 
 			</tr>
 

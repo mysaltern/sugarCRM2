@@ -85,24 +85,25 @@ color: white;
 				<td>{$related.name}</td>
 				<td>{$related.first_name} {$related.last_name}  </td>
 
-				{if $related.meetings_status}
-
-					<td>{$related.meetings_creator}</td>
-					<td>{$related.meetings_status}</td>
-					<td>{$related.meetings_description}</td>
+				{*		{if $related.meetings_status}
+		
+				<td>{$related.meetings_creator}</td>
+				<td>{$related.meetings_status}</td>
+				<td>{$related.meetings_description}</td>
 				{elseif  $related.tasks_status}
-					<td>{$related.tasks_creator}</td>
-					<td>{$related.tasks_status}</td>
-					<td> </td>
+				<td>{$related.tasks_creator}</td>
+				<td>{$related.tasks_status}</td>
+				<td> </td>
 				{elseif  $related.notes_description}
-					<td>{$related.notes_creator}</td>
-					<td>{$related.notes_description}</td>
-					<td> </td>
-				{else}
-					<td>{$related.calls_creator}</td>
-					<td>{$related.calls_status}</td>
-					<td> </td>
-				{/if}
+				<td>{$related.notes_creator}</td>
+				<td>{$related.notes_description}</td>
+				<td> </td>
+				{else}*}
+				<td>{$related.creator}</td>
+				<td>{$related.status}</td>	
+				<td>{$related.description}</td>
+			 
+				{*	{/if}*}
 
 
 			</tr>
