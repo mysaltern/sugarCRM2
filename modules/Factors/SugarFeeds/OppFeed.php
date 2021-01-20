@@ -38,7 +38,7 @@ require_once('modules/SugarFeed/feedLogicBase.php');
 
 
 class OppFeed extends FeedLogicBase {
-    var $module = "Opportunities";
+    var $module = "Factors";
     function pushFeed($bean, $event, $arguments){
         $text = '';
         if(empty($bean->fetched_row)){

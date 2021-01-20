@@ -38,7 +38,7 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 /*********************************************************************************
 
  * Description: This file is used to override the sidequickcreate Meta-data DetailView behavior
- * to provide customization specific to the Opportunities module.
+ * to provide customization specific to the Factors module.
  * Portions created by SugarCRM are Copyright (C) SugarCRM, Inc.
  * All Rights Reserved.
  * Contributor(s): ______________________________________..
@@ -51,9 +51,9 @@ else
     require_once("include/MVC/View/views/view.sidequickcreate.php");
 
 
-class OpportunitiesViewSidequickcreate extends ViewSidequickCreate {
+class FactorsViewSidequickcreate extends ViewSidequickCreate {
 
- 	function OpportunitiesViewSideQuickcreate(){
+ 	function FactorsViewSideQuickcreate(){
  		parent::ViewSidequickcreate();
  	}
  	

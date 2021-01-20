@@ -44,14 +44,14 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 
 global $mod_strings, $app_strings, $sugar_config;
 $module_menu = Array();
-if(ACLController::checkAccess('Opportunities','edit',true)){
-	$module_menu[]=	Array("index.php?module=Opportunities&action=EditView&return_module=Opportunities&return_action=DetailView", $mod_strings['LNK_NEW_OPPORTUNITY'],"CreateOpportunities");
+if(ACLController::checkAccess('Factors','edit',true)){
+	$module_menu[]=	Array("index.php?module=Factors&action=EditView&return_module=Factors&return_action=DetailView", $mod_strings['LNK_NEW_OPPORTUNITY'],"CreateFactors");
 }
-if(ACLController::checkAccess('Opportunities','list',true)){
-	$module_menu[]=	Array("index.php?module=Opportunities&action=index&return_module=Opportunities&return_action=DetailView", $mod_strings['LNK_OPPORTUNITY_LIST'],"Opportunities");
+if(ACLController::checkAccess('Factors','list',true)){
+	$module_menu[]=	Array("index.php?module=Factors&action=index&return_module=Factors&return_action=DetailView", $mod_strings['LNK_OPPORTUNITY_LIST'],"Factors");
 }
-if(ACLController::checkAccess('Opportunities','import',true)){
-	$module_menu[]=	Array("index.php?module=Import&action=Step1&import_module=Opportunities&return_module=Opportunities&return_action=index", $app_strings['LBL_IMPORT'],"Import");
+if(ACLController::checkAccess('Factors','import',true)){
+	$module_menu[]=	Array("index.php?module=Import&action=Step1&import_module=Factors&return_module=Factors&return_action=index", $app_strings['LBL_IMPORT'],"Import");
 }
 
 ?>

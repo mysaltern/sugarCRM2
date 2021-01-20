@@ -35,7 +35,7 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
  * "Powered by SugarCRM".
  ********************************************************************************/
 // created: 2005-10-19 11:16:08
-$acldefs['Opportunities'] = array (
+$acldefs['Factors'] = array (
   'forms' => 
   array (
     'by_name' => 

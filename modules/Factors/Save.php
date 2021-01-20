@@ -42,7 +42,7 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
  * Contributor(s): ______________________________________..
  ********************************************************************************/
 
-require_once('modules/Opportunities/OpportunityFormBase.php');
-$opportunityForm = new OpportunityFormBase();
-$opportunityForm->handleSave('', true, false);
+require_once('modules/Factors/FactorFormBase.php');
+$factorForm = new FactorFormBase();
+$factorForm->handleSave('', true, false);
 ?>

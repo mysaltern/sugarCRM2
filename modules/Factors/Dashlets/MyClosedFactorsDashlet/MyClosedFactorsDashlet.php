@@ -41,43 +41,43 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 require_once('include/Dashlets/Dashlet.php');
 
 
-class MyClosedOpportunitiesDashlet extends Dashlet { 
-	var $total_opportunities;
-	var $total_opportunities_won;
+class MyClosedFactorsDashlet extends Dashlet { 
+	var $total_factors;
+	var $total_factors_won;
 	
-	function MyClosedOpportunitiesDashlet($id, $def = null) {
+	function MyClosedFactorsDashlet($id, $def = null) {
         global $current_user, $app_strings;
         parent::Dashlet($id);
         $this->isConfigurable = false;
         $this->isRefreshable = true;        
 
-        if(empty($def['title'])) $this->title = translate('LBL_MY_CLOSED_OPPORTUNITIES', 'Opportunities');
+        if(empty($def['title'])) $this->title = translate('LBL_MY_CLOSED_OPPORTUNITIES', 'Factors');
         
-        $this->seedBean = new Opportunity();      
+        $this->seedBean = new Factor();      
 
-        $qry = "SELECT * from opportunities WHERE assigned_user_id = '" . $current_user->id . "' AND deleted=0";
+        $qry = "SELECT * from factors WHERE assigned_user_id = '" . $current_user->id . "' AND deleted=0";
 		$result = $this->seedBean->db->query($this->seedBean->create_list_count_query($qry));	
 		$row = $this->seedBean->db->fetchByAssoc($result);
 
-		$this->total_opportunities = $row['c'];
-        $qry = "SELECT * from opportunities WHERE assigned_user_id = '" . $current_user->id . "' AND sales_stage = 'Closed Won'  AND deleted=0";
+		$this->total_factors = $row['c'];
+        $qry = "SELECT * from factors WHERE assigned_user_id = '" . $current_user->id . "' AND sales_stage = 'Closed Won'  AND deleted=0";
 		$result = $this->seedBean->db->query($this->seedBean->create_list_count_query($qry));	
 		$row = $this->seedBean->db->fetchByAssoc($result);
 
-		$this->total_opportunities_won = $row['c'];
+		$this->total_factors_won = $row['c'];
     }
     
     function display(){
     	
     	
     	$ss = new Sugar_Smarty();
-    	$ss->assign('lblTotalOpportunities', translate('LBL_TOTAL_OPPORTUNITIES', 'Opportunities'));
-    	$ss->assign('lblClosedWonOpportunities', translate('LBL_CLOSED_WON_OPPORTUNITIES', 'Opportunities'));    	
+    	$ss->assign('lblTotalFactors', translate('LBL_TOTAL_OPPORTUNITIES', 'Factors'));
+    	$ss->assign('lblClosedWonFactors', translate('LBL_CLOSED_WON_OPPORTUNITIES', 'Factors'));    	
     	
-    	$ss->assign('total_opportunities', $this->total_opportunities);
-    	$ss->assign('total_opportunities_won', $this->total_opportunities_won);    	
+    	$ss->assign('total_factors', $this->total_factors);
+    	$ss->assign('total_factors_won', $this->total_factors_won);    	
     	
-    	return parent::display() . $ss->fetch('modules/Opportunities/Dashlets/MyClosedOpportunitiesDashlet/MyClosedOpportunitiesDashlet.tpl');
+    	return parent::display() . $ss->fetch('modules/Factors/Dashlets/MyClosedFactorsDashlet/MyClosedFactorsDashlet.tpl');
     }
     
 }

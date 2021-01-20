@@ -73,3 +73,15 @@
 01/18/21 09:49:57 [12508][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where   calls.date_end  <'2021-01-30'  ORDER BY calls.id DESC' at line 1
 01/18/21 12:48:12 [12508][1][FATAL] Error: Module Account does not exist.
 01/18/21 12:48:45 [12508][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM    ORDER BY .id DESC' at line 1
+01/19/21 10:18:09 [12508][1][FATAL] MySQL error 1054: Unknown column 'a_o.factor_id' in 'where clause'
+01/19/21 10:18:21 [12508][1][FATAL] MySQL error 1054: Unknown column 'a_o.factor_id' in 'where clause'
+01/19/21 10:18:54 [12508][1][FATAL] Error fetching relationship from cache accounts_factors
+01/19/21 10:19:10 [12508][1][FATAL] MySQL error 1054: Unknown column 'a_o.factor_id' in 'where clause'
+01/19/21 10:20:55 [12508][1][FATAL] MySQL error 1054: Unknown column 'a_o.factor_id' in 'where clause'
+01/19/21 10:22:40 [12508][1][FATAL] Error fetching relationship from cache accounts_factors
+01/19/21 13:31:56 [12508][1][FATAL] Error fetching relationship from cache accounts_custom_module_1
+01/19/21 13:36:08 [12508][1][FATAL] Error fetching relationship from cache accounts_custom_module_1
+01/19/21 13:36:12 [12508][1][FATAL] Error fetching relationship from cache accounts_factors
+01/19/21 13:36:27 [12508][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/19/21 13:36:27 [12508][1][FATAL] Error fetching relationship from cache emails_factors_rel
+01/19/21 13:36:27 [12508][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1

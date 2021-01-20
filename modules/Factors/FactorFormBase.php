@@ -37,15 +37,15 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 
 
 
-class OpportunityFormBase{
+class FactorFormBase{
 
 
 function checkForDuplicates($prefix){
 	require_once('include/formbase.php');
 	
-	$focus = new Opportunity();
+	$focus = new Factor();
 	$query = '';
-	$baseQuery = 'select id, name, sales_stage,amount, date_closed  from opportunities where deleted!=1 and (';
+	$baseQuery = 'select id, name, sales_stage,amount, date_closed  from factors where deleted!=1 and (';
 
 	if(isset($_POST[$prefix.'name']) && !empty($_POST[$prefix.'name'])){
 		$query = $baseQuery ."  name like '%".$_POST[$prefix.'name']."%'";
@@ -69,7 +69,7 @@ function checkForDuplicates($prefix){
 }
 
 
-function buildTableForm($rows, $mod='Opportunities'){
+function buildTableForm($rows, $mod='Factors'){
 	if(!empty($mod)){
 	global $current_language;
 	$mod_strings = return_module_language($current_language, $mod);
@@ -78,9 +78,9 @@ function buildTableForm($rows, $mod='Opportunities'){
 	$cols = sizeof($rows[0]) * 2 + 1;
 	$form = '<table width="100%"><tr><td>'.$mod_strings['MSG_DUPLICATE']. '</td></tr><tr><td height="20"></td></tr></table>';
 
-	$form .= "<form action='index.php' method='post' name='dupOpps'><input type='hidden' name='selectedOpportunity' value=''>";
+	$form .= "<form action='index.php' method='post' name='dupOpps'><input type='hidden' name='selectedFactor' value=''>";
 	$form .= "<table width='100%' cellpadding='0' cellspacing='0' class='list view'>";
-	$form .= "<tr class='pagination'><td colspan='$cols'><table width='100%' cellspacing='0' cellpadding='0' border='0'><tr><td><input type='submit' class='button' name='ContinueOpportunity' value='${mod_strings['LNK_NEW_OPPORTUNITY']}'></td></tr></table></td></tr><tr>";
+	$form .= "<tr class='pagination'><td colspan='$cols'><table width='100%' cellspacing='0' cellpadding='0' border='0'><tr><td><input type='submit' class='button' name='ContinueFactor' value='${mod_strings['LNK_NEW_OPPORTUNITY']}'></td></tr></table></td></tr><tr>";
 	$form .= "<tr><td scope='col'>&nbsp;</td>";
     require_once('include/formbase.php');
 	$form .= getPostToForm();
@@ -97,15 +97,15 @@ function buildTableForm($rows, $mod='Opportunities'){
 
 		$form .= "<tr class='$rowColor'>";
 
-		$form .= "<td width='1%' nowrap='nowrap'><a href='#' onclick='document.dupOpps.selectedOpportunity.value=\"${row['id']}\";document.dupOpps.submit();'>[${app_strings['LBL_SELECT_BUTTON_LABEL']}]</a>&nbsp;&nbsp;</td>";
+		$form .= "<td width='1%' nowrap='nowrap'><a href='#' onclick='document.dupOpps.selectedFactor.value=\"${row['id']}\";document.dupOpps.submit();'>[${app_strings['LBL_SELECT_BUTTON_LABEL']}]</a>&nbsp;&nbsp;</td>";
 		$wasSet = false;
 		foreach ($row as $key=>$value){
 				if($key != 'id'){
 					if(!$wasSet){
-					$form .= "<td scope='row'><a target='_blank' href='index.php?module=Opportunities&action=DetailView&record=${row['id']}'>$value</a></td>";
+					$form .= "<td scope='row'><a target='_blank' href='index.php?module=Factors&action=DetailView&record=${row['id']}'>$value</a></td>";
 					$wasSet = true;
 					}else{
-					$form .= "<td><a target='_blank' href='index.php?module=Opportunities&action=DetailView&record=${row['id']}'>$value</a></td>";
+					$form .= "<td><a target='_blank' href='index.php?module=Factors&action=DetailView&record=${row['id']}'>$value</a></td>";
 					}
 				}}
 
@@ -116,7 +116,7 @@ function buildTableForm($rows, $mod='Opportunities'){
 		}
 		$form .= "</tr>";
 	}
-    $form .= "<tr class='pagination'><td colspan='$cols'><table width='100%' cellspacing='0' cellpadding='0' border='0'><tr><td><input type='submit' class='button' name='ContinueOpportunity' value='${mod_strings['LNK_NEW_OPPORTUNITY']}'></td></tr></table></td></tr><tr>";
+    $form .= "<tr class='pagination'><td colspan='$cols'><table width='100%' cellspacing='0' cellpadding='0' border='0'><tr><td><input type='submit' class='button' name='ContinueFactor' value='${mod_strings['LNK_NEW_OPPORTUNITY']}'></td></tr></table></td></tr><tr>";
 	$form .= "</table><BR></form>";
 
 	return $form;
@@ -125,8 +125,8 @@ function buildTableForm($rows, $mod='Opportunities'){
 
 }
 
-function getForm($prefix, $mod='Opportunities'){
-	if(!ACLController::checkAccess('Opportunities', 'edit', true)){
+function getForm($prefix, $mod='Factors'){
+	if(!ACLController::checkAccess('Factors', 'edit', true)){
 		return '';
 	}
 if(!empty($mod)){
@@ -145,7 +145,7 @@ $lbl_save_button_label = $app_strings['LBL_SAVE_BUTTON_LABEL'];
 $the_form = get_left_form_header($mod_strings['LBL_NEW_FORM_TITLE']);
 $the_form .= <<<EOQ
 		<form name="{$prefix}OppSave" onSubmit="return check_form('{$prefix}OppSave')" method="POST" action="index.php">
-			<input type="hidden" name="{$prefix}module" value="Opportunities">
+			<input type="hidden" name="{$prefix}module" value="Factors">
 			<input type="hidden" name="${prefix}action" value="Save">
 EOQ;
 $the_form .= $this->getFormBody($prefix, $mod, "{$prefix}OppSave");
@@ -160,8 +160,8 @@ $the_form .= get_validate_record_js();
 return $the_form;
 }
 
-function getWideFormBody($prefix, $mod='Opportunities', $formname='', $lead='', $showaccount = true){
-	if(!ACLController::checkAccess('Opportunities', 'edit', true)){
+function getWideFormBody($prefix, $mod='Factors', $formname='', $lead='', $showaccount = true){
+	if(!ACLController::checkAccess('Factors', 'edit', true)){
 		return '';
 	}
 	
@@ -187,7 +187,7 @@ global $timedate;
 // global $cal_codes;
 
 $lbl_required_symbol = $app_strings['LBL_REQUIRED_SYMBOL'];
-$lbl_opportunity_name = $mod_strings['LBL_OPPORTUNITY_NAME'];
+$lbl_factor_name = $mod_strings['LBL_OPPORTUNITY_NAME'];
 $lbl_sales_stage = $mod_strings['LBL_SALES_STAGE'];
 $lbl_date_closed = $mod_strings['LBL_DATE_CLOSED'];
 $lbl_amount = $mod_strings['LBL_AMOUNT'];
@@ -222,8 +222,8 @@ if (isset($lead->assigned_user_id)) {
 $cal_lang = "en";
 
 $the_form="";
-if (isset($lead->opportunity_amount)) {
-	$opp_amount=$lead->opportunity_amount;
+if (isset($lead->factor_amount)) {
+	$opp_amount=$lead->factor_amount;
 } else {
  	$opp_amount='';
 }
@@ -236,11 +236,11 @@ $the_form .= <<<EOQ
 
 <table cellspacing="0" cellpadding="0" border="0" width="100%">
 <tr>
-    <td width="20%" scope="row">$lbl_opportunity_name&nbsp;<span class="required">$lbl_required_symbol</span></td>
+    <td width="20%" scope="row">$lbl_factor_name&nbsp;<span class="required">$lbl_required_symbol</span></td>
     <td width="80%" scope="row">{$mod_strings['LBL_DESCRIPTION']}</td>
 </tr>
 <tr>
-    <td ><input name='{$prefix}name' type="text" value="{$lead->opportunity_name}"></td>
+    <td ><input name='{$prefix}name' type="text" value="{$lead->factor_name}"></td>
 	<td  rowspan="7"><textarea name='{$prefix}description' rows='5' cols='50'></textarea></td>
 </tr>
 <tr>
@@ -278,8 +278,8 @@ $the_form .= <<<EOQ
     <td ><input name='{$prefix}amount' type="text" value='{$opp_amount}'></td>
 </tr>
 EOQ;
-//carry forward custom lead fields to opportunities during Lead Conversion
-	$tempOpp = new Opportunity();
+//carry forward custom lead fields to factors during Lead Conversion
+	$tempOpp = new Factor();
 	if (method_exists($lead, 'convertCustomFieldsForm')) $lead->convertCustomFieldsForm($the_form, $tempOpp, $prefix);
 	unset($tempOpp);
 
@@ -300,7 +300,7 @@ EOQ;
 
 $javascript = new javascript();
 $javascript->setFormName($formname);
-$javascript->setSugarBean(new Opportunity());
+$javascript->setSugarBean(new Factor());
 $javascript->addRequiredFields($prefix);
 $the_form .=$javascript->getScript();
 $mod_strings = $temp_strings;
@@ -308,8 +308,8 @@ return $the_form;
 
 } // end getWideFormBody
 
-function getFormBody($prefix, $mod='Opportunities', $formname=''){
-	if(!ACLController::checkAccess('Opportunities', 'edit', true)){
+function getFormBody($prefix, $mod='Factors', $formname=''){
+	if(!ACLController::checkAccess('Factors', 'edit', true)){
 		return '';
 	}
 if(!empty($mod)){
@@ -328,7 +328,7 @@ global $timedate;
 // global $cal_codes;
 
 $lbl_required_symbol = $app_strings['LBL_REQUIRED_SYMBOL'];
-$lbl_opportunity_name = $mod_strings['LBL_OPPORTUNITY_NAME'];
+$lbl_factor_name = $mod_strings['LBL_OPPORTUNITY_NAME'];
 $lbl_sales_stage = $mod_strings['LBL_SALES_STAGE'];
 $lbl_date_closed = $mod_strings['LBL_DATE_CLOSED'];
 $lbl_amount = $mod_strings['LBL_AMOUNT'];
@@ -347,7 +347,7 @@ $the_form = <<<EOQ
 			<input type="hidden" name="{$prefix}record" value="">
 			<input type="hidden" name="{$prefix}assigned_user_id" value='${user_id}'>
 
-		$lbl_opportunity_name&nbsp;<span class="required">$lbl_required_symbol</span><br>
+		$lbl_factor_name&nbsp;<span class="required">$lbl_required_symbol</span><br>
 		<input name='{$prefix}name' type="text" value="">
 EOQ;
 if($sugar_config['require_accounts']){
@@ -409,7 +409,7 @@ $the_form .= $quicksearch_js;
 
 $javascript = new javascript();
 $javascript->setFormName($formname);
-$javascript->setSugarBean(new Opportunity());
+$javascript->setSugarBean(new Factor());
 $javascript->addRequiredFields($prefix);
 $the_form .=$javascript->getScript();
 
@@ -425,7 +425,7 @@ function handleSave($prefix,$redirect=true, $useRequired=false){
 	
 	require_once('include/formbase.php');
 	
-	$focus = new Opportunity();
+	$focus = new Factor();
 	if($useRequired &&  !checkRequired($prefix, array_keys($focus->required_fields))){
 		return null;
 	}
@@ -449,13 +449,13 @@ function handleSave($prefix,$redirect=true, $useRequired=false){
 	$focus->save($check_notify);
 
 	if(!empty($_POST['duplicate_parent_id'])){
-		clone_relationship($focus->db, array('opportunities_contacts'),'opportunity_id',  $_POST['duplicate_parent_id'], $focus->id);
+		clone_relationship($focus->db, array('factors_contacts'),'factor_id',  $_POST['duplicate_parent_id'], $focus->id);
 	}
 	$return_id = $focus->id;
 	
 	$GLOBALS['log']->debug("Saved record with id of ".$return_id);
 	if($redirect){
-		handleRedirect($return_id,"Opportunities" );
+		handleRedirect($return_id,"Factors" );
 	}else{
 		return $focus;
 	}

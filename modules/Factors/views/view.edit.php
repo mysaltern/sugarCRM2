@@ -46,9 +46,9 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 
 require_once('include/MVC/View/views/view.edit.php');
 
-class OpportunitiesViewEdit extends ViewEdit {
+class FactorsViewEdit extends ViewEdit {
 
- 	function OpportunitiesViewEdit(){
+ 	function FactorsViewEdit(){
  		parent::ViewEdit();
  		$this->useForSubpanel = true;
  	}

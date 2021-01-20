@@ -37,7 +37,7 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 
 
 
-$listViewDefs['Opportunities'] = array(
+$listViewDefs['Factors'] = array(
 	'NAME' => array(
 		'width'   => '30',  
 		'label'   => 'LBL_LIST_OPPORTUNITY_NAME', 

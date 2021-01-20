@@ -42,7 +42,7 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
  ********************************************************************************/
 
 $viewdefs = array (
-  'Opportunities' => 
+  'Factors' => 
   array (
     'QuickCreate' => 
     array (
@@ -96,7 +96,7 @@ $viewdefs = array (
           array (
             0 => 
             array (
-              'name' => 'opportunity_type',
+              'name' => 'factor_type',
             ),
             1 => 
             array (

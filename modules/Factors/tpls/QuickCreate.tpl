@@ -40,8 +40,8 @@
 *}
 
 
-<form name="opportunitiesQuickCreate" id="opportunitiesQuickCreate" method="POST" action="index.php">
-<input type="hidden" name="module" value="Opportunities">
+<form name="factorsQuickCreate" id="factorsQuickCreate" method="POST" action="index.php">
+<input type="hidden" name="module" value="Factors">
 <input type="hidden" name="record" value="">
 <input type="hidden" name="contact_id" value="{$REQUEST.contact_id}">
 <input type="hidden" name="contact_name" value="{$REQUEST.contact_name}">
@@ -57,9 +57,9 @@
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
 	<tr>
 	<td align="left" style="padding-bottom: 2px;">
-		<input title="{$APP.LBL_SAVE_BUTTON_TITLE}" accessKey="{$APP.LBL_SAVE_BUTTON_KEY}" class="button" type="submit" name="button" {$saveOnclick|default:"onclick=\"return check_form('OpportunitiesQuickCreate');\""} value="  {$APP.LBL_SAVE_BUTTON_LABEL}  " >
+		<input title="{$APP.LBL_SAVE_BUTTON_TITLE}" accessKey="{$APP.LBL_SAVE_BUTTON_KEY}" class="button" type="submit" name="button" {$saveOnclick|default:"onclick=\"return check_form('FactorsQuickCreate');\""} value="  {$APP.LBL_SAVE_BUTTON_LABEL}  " >
 		<input title="{$APP.LBL_CANCEL_BUTTON_TITLE}" accessKey="{$APP.LBL_CANCEL_BUTTON_KEY}" class="button" type="submit" name="button" {$cancelOnclick|default:"onclick=\"this.form.action.value='$RETURN_ACTION'; this.form.module.value='$RETURN_MODULE'; this.form.record.value='$RETURN_ID'\""} value="  {$APP.LBL_CANCEL_BUTTON_LABEL}  ">
-		<input title="{$APP.LBL_FULL_FORM_BUTTON_TITLE}" accessKey="{$APP.LBL_FULL_FORM_BUTTON_KEY}" class="button" type="submit" name="button" onclick="this.form.to_pdf.value='0';this.form.action.value='EditView'; this.form.module.value='Opportunities';" value="  {$APP.LBL_FULL_FORM_BUTTON_LABEL}  "></td>
+		<input title="{$APP.LBL_FULL_FORM_BUTTON_TITLE}" accessKey="{$APP.LBL_FULL_FORM_BUTTON_KEY}" class="button" type="submit" name="button" onclick="this.form.to_pdf.value='0';this.form.action.value='EditView'; this.form.module.value='Factors';" value="  {$APP.LBL_FULL_FORM_BUTTON_LABEL}  "></td>
 	<td align="right" nowrap><span class="required">{$APP.LBL_REQUIRED_SYMBOL}</span> {$APP.NTC_REQUIRED}</td>
 	</tr>
 </table>
@@ -80,9 +80,9 @@
 	</tr>
 	<tr>
 	<td scope="row"><slot>{$MOD.LBL_SALES_STAGE} <span class="required">{$APP.LBL_REQUIRED_SYMBOL}</span></slot></td>
-	<td ><slot><select tabindex='1' name='sales_stage' id='opportunities_sales_stage'>{$SALES_STAGE_OPTIONS}</select></slot></td>
+	<td ><slot><select tabindex='1' name='sales_stage' id='factors_sales_stage'>{$SALES_STAGE_OPTIONS}</select></slot></td>
 	<td scope="row"><slot>{$MOD.LBL_PROBABILITY}</slot></td>
-	<td ><slot><input name='probability' id='opportunities_probability' tabindex='2' size='4' maxlength='3' type="text" value=''></slot></td>
+	<td ><slot><input name='probability' id='factors_probability' tabindex='2' size='4' maxlength='3' type="text" value=''></slot></td>
 	</tr><tr>
 	<td scope="row"><slot>{$MOD.LBL_ACCOUNT_NAME} <span class="required">{$APP.LBL_REQUIRED_SYMBOL}</span></slot></td>
 	<td ><slot>{$REQUEST.parent_name}<input id='account_name' name='account_name' type="hidden" value='{$REQUEST.parent_name}'><input id='account_id' name='account_id' type="hidden" value='{$REQUEST.parent_id}'>&nbsp;</slot></td>
@@ -98,9 +98,9 @@
 		inputField : "jscal_field", ifFormat : "{/literal}{$CALENDAR_DATEFORMAT}{literal}", showsTime : false, button : "jscal_trigger", singleClick : true, step : 1, weekNumbers:false
 	});
 	prob_array = {/literal}{$prob_array}{literal}
-	document.getElementById('opportunities_sales_stage').onchange = function() {
-			if(typeof(document.getElementById('opportunities_sales_stage').value) != "undefined" && prob_array[document.getElementById('opportunities_sales_stage').value]) {
-				document.getElementById('opportunities_probability').value = prob_array[document.getElementById('opportunities_sales_stage').value];
+	document.getElementById('factors_sales_stage').onchange = function() {
+			if(typeof(document.getElementById('factors_sales_stage').value) != "undefined" && prob_array[document.getElementById('factors_sales_stage').value]) {
+				document.getElementById('factors_probability').value = prob_array[document.getElementById('factors_sales_stage').value];
 			} 
 		};
 {/literal}

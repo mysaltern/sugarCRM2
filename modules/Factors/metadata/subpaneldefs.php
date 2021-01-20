@@ -37,7 +37,7 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 
 
 
-$layout_defs['Opportunities'] = array(
+$layout_defs['Factors'] = array(
 	// list of what Subpanels to show in the DetailView
 	'subpanel_setup' => array(
         'activities' => array(
@@ -130,7 +130,7 @@ $layout_defs['Opportunities'] = array(
 			'top_buttons' => array(
 				array('widget_class' => 'SubPanelTopCreateLeadNameButton'),
 				array('widget_class' => 'SubPanelTopSelectButton',
-					'popup_module' => 'Opportunities',
+					'popup_module' => 'Factors',
 					'mode' => 'MultiSelect',
 				),
 			),
@@ -140,14 +140,14 @@ $layout_defs['Opportunities'] = array(
 			'module' => 'Contacts',
 			'sort_order' => 'asc',
 			'sort_by' => 'last_name, first_name',
-			'subpanel_name' => 'ForOpportunities',
+			'subpanel_name' => 'ForFactors',
 			'get_subpanel_data' => 'contacts',
 			'add_subpanel_data' => 'contact_id',
 			'title_key' => 'LBL_CONTACTS_SUBPANEL_TITLE',
 			'top_buttons' => array(
 				array('widget_class' => 'SubPanelTopCreateAccountNameButton'),
 				array('widget_class' => 'SubPanelTopSelectButton',
-					'popup_module' => 'Opportunities',
+					'popup_module' => 'Factors',
 					'mode' => 'MultiSelect',
 					'initial_filter_fields' => array('account_id' => 'account_id', 'account_name' => 'account_name'),
 				),

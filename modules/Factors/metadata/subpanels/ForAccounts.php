@@ -39,7 +39,7 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 $subpanel_layout = array(
 	'top_buttons' => array(
 		array('widget_class' => 'SubPanelTopCreateButton'),
-		array('widget_class' => 'SubPanelTopSelectButton', 'popup_module' => 'Opportunities'),
+		array('widget_class' => 'SubPanelTopSelectButton', 'popup_module' => 'Factors'),
 	),
 
 	'where' => '',
@@ -74,7 +74,7 @@ $subpanel_layout = array(
 		'edit_button'=>array(
 	    	'vname' => 'LBL_EDIT_BUTTON',
 			'widget_class' => 'SubPanelEditButton',
-		 	'module' => 'Opportunities',
+		 	'module' => 'Factors',
 			'width' => '4%',
 		),
 		'amount_usdollar'=>array(

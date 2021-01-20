@@ -35,7 +35,7 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
  * "Powered by SugarCRM".
  ********************************************************************************/
 
-$viewdefs['Opportunities']['SideQuickCreate'] = array(
+$viewdefs['Factors']['SideQuickCreate'] = array(
     'templateMeta' => array('form'=>array('buttons'=>array('SAVE'),
     									  'headerTpl'=>'include/EditView/header.tpl',
     									  'footerTpl'=>'include/EditView/footer.tpl',

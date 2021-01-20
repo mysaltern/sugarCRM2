@@ -33,12 +33,12 @@
  * technical reasons, the Appropriate Legal Notices must display the words
  * "Powered by SugarCRM".
  ********************************************************************************/
-$viewdefs['Opportunities']['DetailView'] = array(
+$viewdefs['Factors']['DetailView'] = array(
     'templateMeta' => array('form' => array('buttons'=>array('EDIT', 'DUPLICATE', 'DELETE', 
                                                          array('customCode'=>'<input title="{$APP.LBL_DUP_MERGE}" ' .
                                                          		'accesskey="M" ' .
                                                          		'class="button" ' .
-                                                         		'onclick="this.form.return_module.value=\'Opportunities\';this.form.return_action.value=\'DetailView\';this.form.return_id.value=\'{$fields.id.value}\'; this.form.action.value=\'Step1\'; this.form.module.value=\'MergeRecords\';" ' .
+                                                         		'onclick="this.form.return_module.value=\'Factors\';this.form.return_action.value=\'DetailView\';this.form.return_id.value=\'{$fields.id.value}\'; this.form.action.value=\'Step1\'; this.form.module.value=\'MergeRecords\';" ' .
                                                          		'name="button" ' .
                                                          		'value="{$APP.LBL_DUP_MERGE}" ' .
                                                          		'type="submit">'),)),
@@ -51,7 +51,7 @@ $viewdefs['Opportunities']['DetailView'] = array(
     'panels' => array(
         array('name', array('name'=>'amount','label' => '{$MOD.LBL_AMOUNT} ({$CURRENCY})'),),
         array('account_name','date_closed'),
-        array('opportunity_type', 'next_step'),
+        array('factor_type', 'next_step'),
         array('lead_source', 'sales_stage'),
         array('campaign_name'),
         array(

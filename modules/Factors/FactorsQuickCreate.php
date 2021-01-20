@@ -39,13 +39,13 @@ require_once('include/EditView/QuickCreate.php');
 
 
 
-class OpportunitiesQuickCreate extends QuickCreate {
+class FactorsQuickCreate extends QuickCreate {
     
     var $javascript;
     
     function process() {
         global $current_user, $timedate, $app_list_strings, $current_language, $mod_strings;
-        $mod_strings = return_module_language($current_language, 'Opportunities');
+        $mod_strings = return_module_language($current_language, 'Factors');
         
         $json = getJSONobj();
         
@@ -61,16 +61,16 @@ class OpportunitiesQuickCreate extends QuickCreate {
         $this->ss->assign('prob_array', $json->encode($app_list_strings['sales_probability_dom']));        
         
         if($this->viaAJAX) { // override for ajax call
-            $this->ss->assign('saveOnclick', "onclick='if(check_form(\"opportunitiesQuickCreate\")) return SUGAR.subpanelUtils.inlineSave(this.form.id, \"opportunities\"); else return false;'");
-            $this->ss->assign('cancelOnclick', "onclick='return SUGAR.subpanelUtils.cancelCreate(\"subpanel_opportunities\")';");
+            $this->ss->assign('saveOnclick', "onclick='if(check_form(\"factorsQuickCreate\")) return SUGAR.subpanelUtils.inlineSave(this.form.id, \"factors\"); else return false;'");
+            $this->ss->assign('cancelOnclick', "onclick='return SUGAR.subpanelUtils.cancelCreate(\"subpanel_factors\")';");
         }
         
         $this->ss->assign('viaAJAX', $this->viaAJAX);
 
         $this->javascript = new javascript();
-        $this->javascript->setFormName('opportunitiesQuickCreate');
+        $this->javascript->setFormName('factorsQuickCreate');
         
-        $focus = new Opportunity();
+        $focus = new Factor();
         $this->javascript->setSugarBean($focus);
         $this->javascript->addAllFields('');
 

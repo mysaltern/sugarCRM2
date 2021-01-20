@@ -35,8 +35,8 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
  * "Powered by SugarCRM".
  ********************************************************************************/
 
-$dictionary['Opportunity'] = array('table' => 'opportunities','audited'=>true, 'unified_search' => true,'duplicate_merge'=>true,
-		'comment' => 'An opportunity is the target of selling activities',
+$dictionary['Factor'] = array('table' => 'factors','audited'=>true, 'unified_search' => true,'duplicate_merge'=>true,
+		'comment' => 'An factor is the target of selling activities',
 		'fields' => array (
   'name' =>
   array (
@@ -46,19 +46,19 @@ $dictionary['Opportunity'] = array('table' => 'opportunities','audited'=>true, '
     'dbType' => 'varchar',
     'len' => '50',
     'unified_search' => true,
-    'comment' => 'Name of the opportunity',
+    'comment' => 'Name of the factor',
     'merge_filter' => 'selected',
     'importable' => 'required',
   ),
-  'opportunity_type' =>
+  'factor_type' =>
   array (
-    'name' => 'opportunity_type',
+    'name' => 'factor_type',
     'vname' => 'LBL_TYPE',
     'type' => 'enum',
-    'options'=> 'opportunity_type_dom',
+    'options'=> 'factor_type_dom',
     'len' => '255',
     'audited'=>true,
-    'comment' => 'Type of opportunity (ex: Existing, New)',
+    'comment' => 'Type of factor (ex: Existing, New)',
     'merge_filter' => 'enabled',
   ),
   'account_name' =>
@@ -112,18 +112,18 @@ $dictionary['Opportunity'] = array('table' => 'opportunities','audited'=>true, '
 		'id_name'=>'campaign_id',
 		'vname'=>'LBL_CAMPAIGN',
 		'type'=>'relate',
-		'link' => 'campaign_opportunities',   	      	   
+		'link' => 'campaign_factors',   	      	   
 		'isnull'=>'true',
 		'table' => 'campaigns',
 		'module'=>'Campaigns',
 		'source' => 'non-db',
 	),
-  'campaign_opportunities' =>
+  'campaign_factors' =>
 		array (
-		'name' => 'campaign_opportunities',
+		'name' => 'campaign_factors',
 		'type' => 'link',
 		'vname' => 'LBL_CAMPAIGN_OPPORTUNITY',
-		'relationship' => 'campaign_opportunities',
+		'relationship' => 'campaign_factors',
 		'source' => 'non-db',
     ),
 	
@@ -134,7 +134,7 @@ $dictionary['Opportunity'] = array('table' => 'opportunities','audited'=>true, '
     'type' => 'enum',
     'options' => 'lead_source_dom',
     'len' => '50',
-    'comment' => 'Source of the opportunity',
+    'comment' => 'Source of the factor',
     'merge_filter' => 'enabled',
   ),
   'amount' =>
@@ -145,7 +145,7 @@ $dictionary['Opportunity'] = array('table' => 'opportunities','audited'=>true, '
     'type' => 'currency',
 //    'disable_num_format' => true,
     'dbType' => 'double',
-    'comment' => 'Unconverted amount of the opportunity',
+    'comment' => 'Unconverted amount of the factor',
     'duplicate_merge'=>'disabled',
     'importable' => 'required',
   ),
@@ -158,7 +158,7 @@ $dictionary['Opportunity'] = array('table' => 'opportunities','audited'=>true, '
     'dbType' => 'double',
     'disable_num_format' => true,
     'audited'=>true,
-    'comment' => 'Formatted amount of the opportunity'
+    'comment' => 'Formatted amount of the factor'
   ),
   'currency_id' =>
   array (
@@ -242,7 +242,7 @@ $dictionary['Opportunity'] = array('table' => 'opportunities','audited'=>true, '
   array (
   	'name' => 'accounts',
     'type' => 'link',
-    'relationship' => 'accounts_opportunities',
+    'relationship' => 'accounts_factors',
     'source'=>'non-db',
 		'link_type'=>'one',
     'module'=>'Accounts',
@@ -253,18 +253,18 @@ $dictionary['Opportunity'] = array('table' => 'opportunities','audited'=>true, '
   array (
   	'name' => 'contacts',
     'type' => 'link',
-    'relationship' => 'opportunities_contacts',
+    'relationship' => 'factors_contacts',
     'source'=>'non-db',
     'module'=>'Contacts',
     'bean_name'=>'Contact',
-    'rel_fields'=>array('contact_role'=>array('type'=>'enum', 'options'=>'opportunity_relationship_type_dom')),
+    'rel_fields'=>array('contact_role'=>array('type'=>'enum', 'options'=>'factor_relationship_type_dom')),
 	'vname'=>'LBL_CONTACTS',
   ),
   'tasks' =>
   array (
   	'name' => 'tasks',
     'type' => 'link',
-    'relationship' => 'opportunity_tasks',
+    'relationship' => 'factor_tasks',
     'source'=>'non-db',
 		'vname'=>'LBL_TASKS',
   ),
@@ -272,7 +272,7 @@ $dictionary['Opportunity'] = array('table' => 'opportunities','audited'=>true, '
   array (
   	'name' => 'notes',
     'type' => 'link',
-    'relationship' => 'opportunity_notes',
+    'relationship' => 'factor_notes',
     'source'=>'non-db',
 		'vname'=>'LBL_NOTES',
   ),
@@ -280,7 +280,7 @@ $dictionary['Opportunity'] = array('table' => 'opportunities','audited'=>true, '
   array (
   	'name' => 'meetings',
     'type' => 'link',
-    'relationship' => 'opportunity_meetings',
+    'relationship' => 'factor_meetings',
     'source'=>'non-db',
 		'vname'=>'LBL_MEETINGS',
   ),
@@ -288,7 +288,7 @@ $dictionary['Opportunity'] = array('table' => 'opportunities','audited'=>true, '
   array (
   	'name' => 'calls',
     'type' => 'link',
-    'relationship' => 'opportunity_calls',
+    'relationship' => 'factor_calls',
     'source'=>'non-db',
 		'vname'=>'LBL_CALLS',
   ),
@@ -296,7 +296,7 @@ $dictionary['Opportunity'] = array('table' => 'opportunities','audited'=>true, '
   array (
   	'name' => 'emails',
     'type' => 'link',
-    'relationship' => 'emails_opportunities_rel',/* reldef in emails */
+    'relationship' => 'emails_factors_rel',/* reldef in emails */
     'source'=>'non-db',
 		'vname'=>'LBL_EMAILS',
   ),
@@ -304,7 +304,7 @@ $dictionary['Opportunity'] = array('table' => 'opportunities','audited'=>true, '
   array (
   	'name' => 'project',
     'type' => 'link',
-    'relationship' => 'projects_opportunities',
+    'relationship' => 'projects_factors',
     'source'=>'non-db',
 		'vname'=>'LBL_PROJECTS',
   ),
@@ -312,7 +312,7 @@ $dictionary['Opportunity'] = array('table' => 'opportunities','audited'=>true, '
   array (
   	'name' => 'leads',
     'type' => 'link',
-    'relationship' => 'opportunity_leads',
+    'relationship' => 'factor_leads',
     'source'=>'non-db',
 		'vname'=>'LBL_LEADS',
   ),
@@ -320,7 +320,7 @@ $dictionary['Opportunity'] = array('table' => 'opportunities','audited'=>true, '
 		array (
   			'name' => 'campaigns',
     		'type' => 'link',
-    		'relationship' => 'opportunities_campaign',
+    		'relationship' => 'factors_campaign',
     		'module'=>'CampaignLog',
     		'bean_name'=>'CampaignLog',
     		'source'=>'non-db',
@@ -331,7 +331,7 @@ $dictionary['Opportunity'] = array('table' => 'opportunities','audited'=>true, '
   array (
     'name' => 'campaign_link',
     'type' => 'link',
-    'relationship' => 'opportunities_campaign',
+    'relationship' => 'factors_campaign',
     'vname' => 'LBL_CAMPAIGNS',
     'link_type' => 'one',
     'module'=>'Campaigns',
@@ -342,7 +342,7 @@ $dictionary['Opportunity'] = array('table' => 'opportunities','audited'=>true, '
   array (
     'name' => 'currencies',
     'type' => 'link',
-    'relationship' => 'opportunity_currencies',
+    'relationship' => 'factor_currencies',
     'source'=>'non-db',
     'vname'=>'LBL_CURRENCIES',
   ),
@@ -361,54 +361,54 @@ $dictionary['Opportunity'] = array('table' => 'opportunities','audited'=>true, '
 		),
 
  'relationships' => array (
-	'opportunity_calls' => array('lhs_module'=> 'Opportunities', 'lhs_table'=> 'opportunities', 'lhs_key' => 'id',
+	'factor_calls' => array('lhs_module'=> 'Factors', 'lhs_table'=> 'factors', 'lhs_key' => 'id',
 							  'rhs_module'=> 'Calls', 'rhs_table'=> 'calls', 'rhs_key' => 'parent_id',
 							  'relationship_type'=>'one-to-many', 'relationship_role_column'=>'parent_type',
-							  'relationship_role_column_value'=>'Opportunities')
-	,'opportunity_meetings' => array('lhs_module'=> 'Opportunities', 'lhs_table'=> 'opportunities', 'lhs_key' => 'id',
+							  'relationship_role_column_value'=>'Factors')
+	,'factor_meetings' => array('lhs_module'=> 'Factors', 'lhs_table'=> 'factors', 'lhs_key' => 'id',
 							  'rhs_module'=> 'Meetings', 'rhs_table'=> 'meetings', 'rhs_key' => 'parent_id',
 							  'relationship_type'=>'one-to-many', 'relationship_role_column'=>'parent_type',
-							  'relationship_role_column_value'=>'Opportunities')
-	,'opportunity_tasks' => array('lhs_module'=> 'Opportunities', 'lhs_table'=> 'opportunities', 'lhs_key' => 'id',
+							  'relationship_role_column_value'=>'Factors')
+	,'factor_tasks' => array('lhs_module'=> 'Factors', 'lhs_table'=> 'factors', 'lhs_key' => 'id',
 							  'rhs_module'=> 'Tasks', 'rhs_table'=> 'tasks', 'rhs_key' => 'parent_id',
 							  'relationship_type'=>'one-to-many', 'relationship_role_column'=>'parent_type',
-							  'relationship_role_column_value'=>'Opportunities')
-	,'opportunity_notes' => array('lhs_module'=> 'Opportunities', 'lhs_table'=> 'opportunities', 'lhs_key' => 'id',
+							  'relationship_role_column_value'=>'Factors')
+	,'factor_notes' => array('lhs_module'=> 'Factors', 'lhs_table'=> 'factors', 'lhs_key' => 'id',
 							  'rhs_module'=> 'Notes', 'rhs_table'=> 'notes', 'rhs_key' => 'parent_id',
 							  'relationship_type'=>'one-to-many', 'relationship_role_column'=>'parent_type',
-							  'relationship_role_column_value'=>'Opportunities')
-	,'opportunity_emails' => array('lhs_module'=> 'Opportunities', 'lhs_table'=> 'opportunities', 'lhs_key' => 'id',
+							  'relationship_role_column_value'=>'Factors')
+	,'factor_emails' => array('lhs_module'=> 'Factors', 'lhs_table'=> 'factors', 'lhs_key' => 'id',
 							  'rhs_module'=> 'Emails', 'rhs_table'=> 'emails', 'rhs_key' => 'parent_id',
 							  'relationship_type'=>'one-to-many', 'relationship_role_column'=>'parent_type',
-							  'relationship_role_column_value'=>'Opportunities')
-	,'opportunity_leads' => array('lhs_module'=> 'Opportunities', 'lhs_table'=> 'opportunities', 'lhs_key' => 'id',
-							  'rhs_module'=> 'Leads', 'rhs_table'=> 'leads', 'rhs_key' => 'opportunity_id',
+							  'relationship_role_column_value'=>'Factors')
+	,'factor_leads' => array('lhs_module'=> 'Factors', 'lhs_table'=> 'factors', 'lhs_key' => 'id',
+							  'rhs_module'=> 'Leads', 'rhs_table'=> 'leads', 'rhs_key' => 'factor_id',
 							  'relationship_type'=>'one-to-many')
-    ,'opportunity_currencies' => array('lhs_module'=> 'Opportunities', 'lhs_table'=> 'opportunities', 'lhs_key' => 'currency_id',
+    ,'factor_currencies' => array('lhs_module'=> 'Factors', 'lhs_table'=> 'factors', 'lhs_key' => 'currency_id',
                               'rhs_module'=> 'Currencies', 'rhs_table'=> 'currencies', 'rhs_key' => 'id',
                               'relationship_type'=>'one-to-many')
-  ,'opportunities_assigned_user' =>
+  ,'factors_assigned_user' =>
    array('lhs_module'=> 'Users', 'lhs_table'=> 'users', 'lhs_key' => 'id',
-   'rhs_module'=> 'Opportunities', 'rhs_table'=> 'opportunities', 'rhs_key' => 'assigned_user_id',
+   'rhs_module'=> 'Factors', 'rhs_table'=> 'factors', 'rhs_key' => 'assigned_user_id',
    'relationship_type'=>'one-to-many')
 
-   ,'opportunities_modified_user' =>
+   ,'factors_modified_user' =>
    array('lhs_module'=> 'Users', 'lhs_table'=> 'users', 'lhs_key' => 'id',
-   'rhs_module'=> 'Opportunities', 'rhs_table'=> 'opportunities', 'rhs_key' => 'modified_user_id',
+   'rhs_module'=> 'Factors', 'rhs_table'=> 'factors', 'rhs_key' => 'modified_user_id',
    'relationship_type'=>'one-to-many')
 
-   ,'opportunities_created_by' =>
+   ,'factors_created_by' =>
    array('lhs_module'=> 'Users', 'lhs_table'=> 'users', 'lhs_key' => 'id',
-   'rhs_module'=> 'Opportunities', 'rhs_table'=> 'opportunities', 'rhs_key' => 'created_by',
+   'rhs_module'=> 'Factors', 'rhs_table'=> 'factors', 'rhs_key' => 'created_by',
    'relationship_type'=>'one-to-many'),
-'opportunities_campaign' =>
+'factors_campaign' =>
    array('lhs_module'=> 'campaigns', 'lhs_table'=> 'campaigns', 'lhs_key' => 'id',
-   'rhs_module'=> 'Opportunities', 'rhs_table'=> 'opportunities', 'rhs_key' => 'campaign_id',
+   'rhs_module'=> 'Factors', 'rhs_table'=> 'factors', 'rhs_key' => 'campaign_id',
    'relationship_type'=>'one-to-many'),
 )
 //This enables optimistic locking for Saves From EditView
 	,'optimistic_locking'=>true,
 );
-VardefManager::createVardef('Opportunities','Opportunity', array('default', 'assignable',
+VardefManager::createVardef('Factors','Factor', array('default', 'assignable',
 ));
 ?>

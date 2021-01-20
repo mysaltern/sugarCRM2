@@ -36,9 +36,9 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
  ********************************************************************************/
  
 
-function additionalDetailsOpportunity($fields) {
+function additionalDetailsFactor($fields) {
 	global $current_language;
-	$mod_strings = return_module_language($current_language, 'Opportunities');
+	$mod_strings = return_module_language($current_language, 'Factors');
 	$overlib_string = '';
 	
 	if(!empty($fields['LEAD_SOURCE'])) $overlib_string .= '<b>'. $mod_strings['LBL_LEAD_SOURCE'] . '</b> ' . $fields['LEAD_SOURCE'] . '<br>';
@@ -54,8 +54,8 @@ function additionalDetailsOpportunity($fields) {
 	
 	return array('fieldToAddTo' => 'NAME', 
 				 'string' => $overlib_string, 
-				 'editLink' => "index.php?action=EditView&module=Opportunities&return_module=Opportunities&record={$fields['ID']}", 
-				 'viewLink' => "index.php?action=DetailView&module=Opportunities&return_module=Opportunities&record={$fields['ID']}");
+				 'editLink' => "index.php?action=EditView&module=Factors&return_module=Factors&record={$fields['ID']}", 
+				 'viewLink' => "index.php?action=DetailView&module=Factors&return_module=Factors&record={$fields['ID']}");
 }
  
  ?>

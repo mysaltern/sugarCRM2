@@ -37,11 +37,11 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 
 global $mod_strings;
 
-$popupMeta = array('moduleMain' => 'Opportunity',
+$popupMeta = array('moduleMain' => 'Factor',
 						'varName' => 'OPPORTUNITY',
 						'orderBy' => 'name',
 						'whereClauses' => 
-							array('name' => 'opportunities.name', 
+							array('name' => 'factors.name', 
 									'account_name' => 'accounts.name'),
 						'searchInputs' =>
 							array('name', 'account_name'),
@@ -75,7 +75,7 @@ $popupMeta = array('moduleMain' => 'Opportunity',
 						'searchdefs'   => array(
 										 	'name', 
 											array('name' => 'account_name', 'displayParams' => array('hideButtons'=>'true', 'size'=>30, 'class'=>'sqsEnabled sqsNoAutofill')), 
-											'opportunity_type',
+											'factor_type',
 											'sales_stage',
 											array('name' => 'assigned_user_id', 'type' => 'enum', 'label' => 'LBL_ASSIGNED_TO', 'function' => array('name' => 'get_user_array', 'params' => array(false))),
 										  )

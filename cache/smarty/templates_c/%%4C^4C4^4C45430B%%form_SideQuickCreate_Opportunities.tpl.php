@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2021-01-10 07:56:13
+<?php /* Smarty version 2.6.11, created on 2021-01-19 13:35:43
          compiled from cache/modules/Opportunities/form_SideQuickCreate_Opportunities.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_include', 'cache/modules/Opportunities/form_SideQuickCreate_Opportunities.tpl', 30, false),array('function', 'counter', 'cache/modules/Opportunities/form_SideQuickCreate_Opportunities.tpl', 35, false),array('function', 'sugar_translate', 'cache/modules/Opportunities/form_SideQuickCreate_Opportunities.tpl', 39, false),array('function', 'sugar_getimagepath', 'cache/modules/Opportunities/form_SideQuickCreate_Opportunities.tpl', 76, false),array('function', 'html_options', 'cache/modules/Opportunities/form_SideQuickCreate_Opportunities.tpl', 99, false),array('modifier', 'default', 'cache/modules/Opportunities/form_SideQuickCreate_Opportunities.tpl', 36, false),)), $this); ?>

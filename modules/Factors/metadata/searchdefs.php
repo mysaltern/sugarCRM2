@@ -33,7 +33,7 @@
  * technical reasons, the Appropriate Legal Notices must display the words
  * "Powered by SugarCRM".
  ********************************************************************************/
-$searchdefs['Opportunities'] = array(
+$searchdefs['Factors'] = array(
 					'templateMeta' => array(
 							'maxColumns' => '3', 
                             'widths' => array('label' => '10', 'field' => '30'),                 
@@ -43,7 +43,7 @@ $searchdefs['Opportunities'] = array(
 						 	'name',
                             'account_name',
 							array('name'=>'current_user_only', 'label'=>'LBL_CURRENT_USER_FILTER', 'type'=>'bool'),
-                            'opportunity_type',
+                            'factor_type',
                             
 							),
 						'advanced_search' => array(

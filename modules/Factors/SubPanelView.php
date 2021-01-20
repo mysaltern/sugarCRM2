@@ -49,7 +49,7 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 global $app_strings;
 //we don't want the parent module's string file, but rather the string file specifc to this subpanel
 global $current_language;
-$current_module_strings = return_module_language($current_language, 'Opportunities');
+$current_module_strings = return_module_language($current_language, 'Factors');
 
 global $currentModule;
 
@@ -64,7 +64,7 @@ global $action;
 global $focus_list;
 
 $button  = "<form action='index.php' method='post' name='form' id='form'>\n";
-$button .= "<input type='hidden' name='module' value='Opportunities'>\n";
+$button .= "<input type='hidden' name='module' value='Factors'>\n";
 if ($currentModule == 'Accounts') $button .= "<input type='hidden' name='account_id' value='$focus->id'>\n<input type='hidden' name='account_name' value=\"".urlencode($focus->name)."\">\n";
 if ($currentModule == 'Contacts') {
 	$button .= "<input type='hidden' name='account_id' value='$focus->account_id'>\n<input type='hidden' name='account_name' value=\"".urlencode($focus->account_name)."\">\n";
@@ -86,7 +86,7 @@ if ($currentModule == 'Accounts')
 		'call_back_function' => 'set_return_and_save',
 		'form_name' => 'DetailView',
 		'field_to_name_array' => array(
-			'id' => 'opportunity_id',
+			'id' => 'factor_id',
 			),
 		);
 	
@@ -99,8 +99,8 @@ if ($currentModule == 'Accounts')
 	$button .= "<input title='".$app_strings['LBL_SELECT_BUTTON_TITLE']
 		."' accessyKey='".$app_strings['LBL_SELECT_BUTTON_KEY']
 		."' type='button' class='button' value='  ".$app_strings['LBL_SELECT_BUTTON_LABEL']
-		."  ' name='button' onclick='open_popup(\"Opportunities\", 600, 400, \"\", false, true, {$encoded_popup_request_data});'>\n";
-//		."  ' name='button' onclick='window.open(\"index.php?module=Opportunities&action=Popup&html=Popup_picker&form=DetailView&form_submit=true\",\"new\",\"width=600,height=400,resizable=1,scrollbars=1\");'>\n";
+		."  ' name='button' onclick='open_popup(\"Factors\", 600, 400, \"\", false, true, {$encoded_popup_request_data});'>\n";
+//		."  ' name='button' onclick='window.open(\"index.php?module=Factors&action=Popup&html=Popup_picker&form=DetailView&form_submit=true\",\"new\",\"width=600,height=400,resizable=1,scrollbars=1\");'>\n";
 }
 else
 {
@@ -112,7 +112,7 @@ else
 		'call_back_function' => 'set_return_and_save',
 		'form_name' => 'DetailView',
 		'field_to_name_array' => array(
-			'id' => 'opportunity_id',
+			'id' => 'factor_id',
 			),
 		);
 	
@@ -125,16 +125,16 @@ else
 	$button .= "<input title='".$app_strings['LBL_SELECT_BUTTON_TITLE']
 		."' accessyKey='".$app_strings['LBL_SELECT_BUTTON_KEY']
 		."' type='button' class='button' value='  ".$app_strings['LBL_SELECT_BUTTON_LABEL']
-		."  ' name='button' onclick='open_popup(\"Opportunities\", 600, 400, \"\", false, true, {$encoded_popup_request_data});'>\n";
-//		."  ' name='button' onclick='window.open(\"index.php?module=Opportunities&action=Popup&html=Popup_picker&form=ContactDetailView&form_submit=true&query=true&account_id=$focus->account_id&account_name=$focus->account_name\",\"new\",\"width=600,height=400,resizable=1,scrollbars=1\");'>\n";
+		."  ' name='button' onclick='open_popup(\"Factors\", 600, 400, \"\", false, true, {$encoded_popup_request_data});'>\n";
+//		."  ' name='button' onclick='window.open(\"index.php?module=Factors&action=Popup&html=Popup_picker&form=ContactDetailView&form_submit=true&query=true&account_id=$focus->account_id&account_name=$focus->account_name\",\"new\",\"width=600,height=400,resizable=1,scrollbars=1\");'>\n";
 }
 $button .= "</form>\n";
 $header_text = '';
 if(is_admin($current_user) && $_REQUEST['module'] != 'DynamicLayout' && !empty($_SESSION['editinplace'])){	
-		$header_text = "&nbsp;<a href='index.php?action=index&module=DynamicLayout&from_action=SubPanelView&from_module=Opportunities&record=". $_REQUEST['record']."'>".SugarThemeRegistry::current()->getImage("EditLayout","border='0' alt='Edit Layout' align='bottom'")."</a>";
+		$header_text = "&nbsp;<a href='index.php?action=index&module=DynamicLayout&from_action=SubPanelView&from_module=Factors&record=". $_REQUEST['record']."'>".SugarThemeRegistry::current()->getImage("EditLayout","border='0' alt='Edit Layout' align='bottom'")."</a>";
 }
 $ListView = new ListView();
-$ListView->initNewXTemplate( 'modules/Opportunities/SubPanelView.html',$current_module_strings);
+$ListView->initNewXTemplate( 'modules/Factors/SubPanelView.html',$current_module_strings);
 $ListView->xTemplateAssign("RETURN_URL", "&return_module=".$currentModule."&return_action=DetailView&return_id={$_REQUEST['record']}");
 $ListView->xTemplateAssign("EDIT_INLINE_PNG",  SugarThemeRegistry::current()->getImage('edit_inline','align="absmiddle" alt="'.$app_strings['LNK_EDIT'].'" border="0"'));
 $ListView->setHeaderTitle($current_module_strings['LBL_MODULE_NAME']. $header_text );

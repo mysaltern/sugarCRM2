@@ -58,6 +58,7 @@ $GLOBALS['tabStructure'] = array(
             "Forecasts",
             "My_Module",
             "Custom_Module_1",
+            "Factors",
         )
     ),
     "LBL_TABGROUP_MARKETING" => array(

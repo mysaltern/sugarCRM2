@@ -39,15 +39,15 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 
 global $current_user;
 
-$dashletData['MyOpportunitiesDashlet']['searchFields'] = array('date_entered'     => array('default' => ''),
+$dashletData['MyFactorsDashlet']['searchFields'] = array('date_entered'     => array('default' => ''),
                                                                'date_modified'    => array('default' => ''),
-                                                               'opportunity_type' => array('default' => ''),
+                                                               'factor_type' => array('default' => ''),
                                                                'sales_stage'      => array('default' => 
                                                                     array('Prospecting', 'Qualification', 'Needs Analysis', 'Value Proposition', 'Id. Decision Makers', 'Perception Analysis', 'Proposal/Price Quote', 'Negotiation/Review')),
                                                                'assigned_user_id' => array('type'    => 'assigned_user_name', 
                                                                                            'default' => $current_user->name));
                                                                                            
-$dashletData['MyOpportunitiesDashlet']['columns'] = array('name' => array('width'   => '40', 
+$dashletData['MyFactorsDashlet']['columns'] = array('name' => array('width'   => '40', 
                                                                           'label'   => 'LBL_OPPORTUNITY_NAME',
                                                                           'link'    => true,
                                                                           'default' => true 
@@ -66,7 +66,7 @@ $dashletData['MyOpportunitiesDashlet']['columns'] = array('name' => array('width
                                                                                  'label'   => 'LBL_DATE_CLOSED',
                                                                                  'default'        => true,
                                                                                  'defaultOrderColumn' => array('sortOrder' => 'ASC')),  
-                                                          'opportunity_type' => array('width'   => '15', 
+                                                          'factor_type' => array('width'   => '15', 
                                                                                       'label'   => 'LBL_TYPE'),
                                                           'lead_source' => array('width'   => '15', 
                                                                                  'label'   => 'LBL_LEAD_SOURCE'),

@@ -56,6 +56,7 @@ $app_list_strings = array(
 		'Contacts' => 'Contacts',
 		'Accounts' => 'Accounts',
 		'Opportunities' => 'Opportunities',
+		'Factors' => 'Factors',
 		'Cases' => 'Cases',
 		'Notes' => 'Notes',
 		'Calls' => 'Calls',

@@ -44,15 +44,13 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 
 
 
+			
 
 
 
 
-
-
-
-// Opportunity is used to store customer information.
-class Opportunity extends SugarBean {
+// Factor is used to store customer information.
+class Factor extends SugarBean {
 	var $field_name_map;
 	// Stored fields
 	var $id;
@@ -66,7 +64,7 @@ class Opportunity extends SugarBean {
 	var $modified_by_name;
 	var $description;
 	var $name;
-	var $opportunity_type;
+	var $factor_type;
 	var $amount;
 	var $amount_usdollar;
 	var $currency_id;
@@ -87,13 +85,13 @@ class Opportunity extends SugarBean {
 	var $email_id;
 	var $assigned_user_name;
 
-	var $table_name = "opportunities";
-	var $rel_account_table = "accounts_opportunities";
-	var $rel_contact_table = "opportunities_contacts";
-	var $module_dir = "Opportunities";
+	var $table_name = "factors";
+	var $rel_account_table = "accounts_factors";
+	var $rel_contact_table = "factors_contacts";
+	var $module_dir = "Factors";
 	
 	var $importable = true;
-	var $object_name = "Opportunity";
+	var $object_name = "Factor";
 
 	// This is used to retrieve related fields from form posts.
 	var $additional_column_fields = Array('assigned_user_name', 'assigned_user_id', 'account_name', 'account_id', 'contact_id', 'task_id', 'note_id', 'meeting_id', 'call_id', 'email_id'
@@ -103,7 +101,7 @@ class Opportunity extends SugarBean {
 									'meeting_id'=>'meetings', 'call_id'=>'calls', 'email_id'=>'emails', 'project_id'=>'project',
 									);
 	
-	function Opportunity() {
+	function Factor() {
 		parent::SugarBean();
 		global $sugar_config;
 		if(!$sugar_config['require_accounts']){
@@ -134,14 +132,14 @@ $custom_join = $this->custom_fields->getJOIN();
                             if($custom_join){
    								$query .= $custom_join['select'];
  							}
-                            $query .= " ,opportunities.*
-                            FROM opportunities ";
+                            $query .= " ,factors.*
+                            FROM factors ";
 
 
 $query .= 			"LEFT JOIN users
-                            ON opportunities.assigned_user_id=users.id ";
+                            ON factors.assigned_user_id=users.id ";
                             $query .= "LEFT JOIN $this->rel_account_table
-                            ON opportunities.id=$this->rel_account_table.opportunity_id
+                            ON factors.id=$this->rel_account_table.factor_id
                             LEFT JOIN accounts
                             ON $this->rel_account_table.account_id=accounts.id ";
 			    if($custom_join){
@@ -152,9 +150,9 @@ $query .= 			"LEFT JOIN users
 			$where_auto = "
 			($this->rel_account_table.deleted is null OR $this->rel_account_table.deleted=0)
 			AND (accounts.deleted is null OR accounts.deleted=0)  
-			AND opportunities.deleted=0";
+			AND factors.deleted=0";
 		}else 	if($show_deleted == 1){
-				$where_auto = " opportunities.deleted=1";
+				$where_auto = " factors.deleted=1";
 		}
 
 		if($where != "")
@@ -165,7 +163,7 @@ $query .= 			"LEFT JOIN users
 		if($order_by != "")
 			$query .= " ORDER BY $order_by";
 		else
-			$query .= " ORDER BY opportunities.name";
+			$query .= " ORDER BY factors.name";
 
 		return $query;
 	}
@@ -177,17 +175,17 @@ $query .= 			"LEFT JOIN users
 		if($custom_join)
 				$custom_join['join'] .= $relate_link_join;
                                 $query = "SELECT
-                                opportunities.*,
+                                factors.*,
                                 accounts.name as account_name,
                                 users.user_name as assigned_user_name ";
 								if($custom_join){
    									$query .= $custom_join['select'];
  								}
-	                            $query .= " FROM opportunities ";
+	                            $query .= " FROM factors ";
 		$query .= 				"LEFT JOIN users
-                                ON opportunities.assigned_user_id=users.id";
+                                ON factors.assigned_user_id=users.id";
                                 $query .= " LEFT JOIN $this->rel_account_table
-                                ON opportunities.id=$this->rel_account_table.opportunity_id
+                                ON factors.id=$this->rel_account_table.factor_id
                                 LEFT JOIN accounts
                                 ON $this->rel_account_table.account_id=accounts.id ";
 								if($custom_join){
@@ -196,7 +194,7 @@ $query .= 			"LEFT JOIN users
 		$where_auto = "
 			($this->rel_account_table.deleted is null OR $this->rel_account_table.deleted=0)
 			AND (accounts.deleted is null OR accounts.deleted=0)  
-			AND opportunities.deleted=0";
+			AND factors.deleted=0";
 
         if($where != "")
                 $query .= "where $where AND ".$where_auto;
@@ -204,9 +202,9 @@ $query .= 			"LEFT JOIN users
                 $query .= "where ".$where_auto;
 
         if($order_by != "")
-                $query .= " ORDER BY opportunities.$order_by";
+                $query .= " ORDER BY factors.$order_by";
         else
-                $query .= " ORDER BY opportunities.name";
+                $query .= " ORDER BY factors.name";
         return $query;
     }
 
@@ -236,7 +234,7 @@ $query .= 			"LEFT JOIN users
 		
 		$this->account_name = '';
 		$this->account_id = '';
-		$ret_values=Opportunity::get_account_detail($this->id);
+		$ret_values=Factor::get_account_detail($this->id);
 		if (!empty($ret_values)) {
 			$this->account_name=$ret_values['name'];
 			$this->account_id=$ret_values['id'];
@@ -274,7 +272,7 @@ $query .= 			"LEFT JOIN users
 	function build_generic_where_clause ($the_query_string) {
 	$where_clauses = Array();
 	$the_query_string = $GLOBALS['db']->quote($the_query_string);
-	array_push($where_clauses, "opportunities.name like '$the_query_string%'");
+	array_push($where_clauses, "factors.name like '$the_query_string%'");
 	array_push($where_clauses, "accounts.name like '$the_query_string%'");
 
 	$the_where = "";
@@ -298,7 +296,7 @@ $query .= 			"LEFT JOIN users
         if ( empty($this->currency_id) )
             $this->currency_id = -99;
         
-		require_once('modules/Opportunities/SaveOverload.php');
+		require_once('modules/Factors/SaveOverload.php');
 		
 		perform_save($this);
 		return parent::save($check_notify);
@@ -319,14 +317,14 @@ $query .= 			"LEFT JOIN users
 		parent::save_relationship_changes($is_update);
 		
 		if (!empty($this->contact_id)) {
-			$this->set_opportunity_contact_relationship($this->contact_id);
+			$this->set_factor_contact_relationship($this->contact_id);
 		}
 	}
 
-	function set_opportunity_contact_relationship($contact_id)
+	function set_factor_contact_relationship($contact_id)
 	{
 		global $app_list_strings;
-		$default = $app_list_strings['opportunity_relationship_type_default_key'];
+		$default = $app_list_strings['factor_relationship_type_default_key'];
 		$this->load_relationship('contacts');
 		$this->contacts->add($contact_id,array('contact_role'=>$default));
 	}
@@ -376,12 +374,12 @@ $query .= 			"LEFT JOIN users
 		$ret_array = array();
 		$db = DBManagerFactory::getInstance();
 		$query = "SELECT acc.id, acc.name, acc.assigned_user_id "
-			. "FROM accounts acc, accounts_opportunities a_o "
+			. "FROM accounts acc, accounts_factors a_o "
 			. "WHERE acc.id=a_o.account_id"
-			. " AND a_o.opportunity_id='$opp_id'"
+			. " AND a_o.factor_id='$opp_id'"
 			. " AND a_o.deleted=0"
 			. " AND acc.deleted=0";
-		$result = $db->query($query, true,"Error filling in opportunity account details: ");
+		$result = $db->query($query, true,"Error filling in factor account details: ");
 		$row = $db->fetchByAssoc($result);
 		if($row != null) {
 			$ret_array['name'] = $row['name'];
@@ -391,8 +389,6 @@ $query .= 			"LEFT JOIN users
 		return $ret_array;
 	}
 }
-function getCurrencyType(){
-	
-}
+			
 
 ?>

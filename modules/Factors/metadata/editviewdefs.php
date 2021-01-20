@@ -33,7 +33,7 @@
  * technical reasons, the Appropriate Legal Notices must display the words
  * "Powered by SugarCRM".
  ********************************************************************************/
-$viewdefs['Opportunities']['EditView'] = array(
+$viewdefs['Factors']['EditView'] = array(
     'templateMeta' => array('maxColumns' => '2', 
                             'widths' => array(
                                             array('label' => '10', 'field' => '30'), 
@@ -56,7 +56,7 @@ $viewdefs['Opportunities']['EditView'] = array(
     ),
     
     array (
-      'opportunity_type',
+      'factor_type',
       array('name'=>'date_closed', 'displayParams'=>array('required'=>true)),
     ),
     
