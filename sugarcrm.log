@@ -85,3 +85,5 @@
 01/19/21 13:36:27 [12508][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
 01/19/21 13:36:27 [12508][1][FATAL] Error fetching relationship from cache emails_factors_rel
 01/19/21 13:36:27 [12508][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+01/20/21 08:25:29 [12508][1][FATAL] Bad subpanel definition, it has incorrect value for get_subpanel_data property opportunities
+01/20/21 08:25:50 [12508][1][FATAL] Bad subpanel definition, it has incorrect value for get_subpanel_data property opportunities

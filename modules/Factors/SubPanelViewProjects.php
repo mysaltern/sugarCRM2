@@ -103,8 +103,8 @@ $ListView = new ListView();
 $ListView->initNewXTemplate('modules/Factors/SubPanelViewProjects.html',$current_module_strings);
 $ListView->xTemplateAssign("RETURN_URL", "&return_module=".$currentModule."&return_action=DetailView&return_id={$_REQUEST['record']}");
 $ListView->xTemplateAssign("REMOVE_INLINE_PNG", SugarThemeRegistry::current()->getImage('delete_inline','align="absmiddle" alt="'.$app_strings['LNK_REMOVE'].'" border="0"'));
-$ListView->setHeaderTitle($project_module_strings['LBL_OPPORTUNITY_SUBPANEL_TITLE']. $header_text );
+$ListView->setHeaderTitle($project_module_strings['LBL_FACTOR_SUBPANEL_TITLE']. $header_text );
 $ListView->setHeaderText($button);
-$ListView->processListView($focus_list, "main", "OPPORTUNITY");
+$ListView->processListView($focus_list, "main", "FACTOR");
 
 ?>

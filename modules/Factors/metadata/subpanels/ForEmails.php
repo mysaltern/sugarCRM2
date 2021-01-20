@@ -47,7 +47,7 @@ $subpanel_layout = array(
 	'list_fields' => array(
 		'name'=>array(
 	 		'name' => 'name',
-	 		'vname' => 'LBL_LIST_OPPORTUNITY_NAME',
+	 		'vname' => 'LBL_LIST_FACTOR_NAME',
 			'widget_class' => 'SubPanelDetailViewLink',
 			'width' => '50%',
 		),

@@ -48,7 +48,7 @@ $dashletData['MyFactorsDashlet']['searchFields'] = array('date_entered'     => a
                                                                                            'default' => $current_user->name));
                                                                                            
 $dashletData['MyFactorsDashlet']['columns'] = array('name' => array('width'   => '40', 
-                                                                          'label'   => 'LBL_OPPORTUNITY_NAME',
+                                                                          'label'   => 'LBL_FACTOR_NAME',
                                                                           'link'    => true,
                                                                           'default' => true 
                                                                           ), 

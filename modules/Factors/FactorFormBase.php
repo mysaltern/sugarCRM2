@@ -80,7 +80,7 @@ function buildTableForm($rows, $mod='Factors'){
 
 	$form .= "<form action='index.php' method='post' name='dupOpps'><input type='hidden' name='selectedFactor' value=''>";
 	$form .= "<table width='100%' cellpadding='0' cellspacing='0' class='list view'>";
-	$form .= "<tr class='pagination'><td colspan='$cols'><table width='100%' cellspacing='0' cellpadding='0' border='0'><tr><td><input type='submit' class='button' name='ContinueFactor' value='${mod_strings['LNK_NEW_OPPORTUNITY']}'></td></tr></table></td></tr><tr>";
+	$form .= "<tr class='pagination'><td colspan='$cols'><table width='100%' cellspacing='0' cellpadding='0' border='0'><tr><td><input type='submit' class='button' name='ContinueFactor' value='${mod_strings['LNK_NEW_FACTOR']}'></td></tr></table></td></tr><tr>";
 	$form .= "<tr><td scope='col'>&nbsp;</td>";
     require_once('include/formbase.php');
 	$form .= getPostToForm();
@@ -116,7 +116,7 @@ function buildTableForm($rows, $mod='Factors'){
 		}
 		$form .= "</tr>";
 	}
-    $form .= "<tr class='pagination'><td colspan='$cols'><table width='100%' cellspacing='0' cellpadding='0' border='0'><tr><td><input type='submit' class='button' name='ContinueFactor' value='${mod_strings['LNK_NEW_OPPORTUNITY']}'></td></tr></table></td></tr><tr>";
+    $form .= "<tr class='pagination'><td colspan='$cols'><table width='100%' cellspacing='0' cellpadding='0' border='0'><tr><td><input type='submit' class='button' name='ContinueFactor' value='${mod_strings['LNK_NEW_FACTOR']}'></td></tr></table></td></tr><tr>";
 	$form .= "</table><BR></form>";
 
 	return $form;
@@ -187,7 +187,7 @@ global $timedate;
 // global $cal_codes;
 
 $lbl_required_symbol = $app_strings['LBL_REQUIRED_SYMBOL'];
-$lbl_factor_name = $mod_strings['LBL_OPPORTUNITY_NAME'];
+$lbl_factor_name = $mod_strings['LBL_FACTOR_NAME'];
 $lbl_sales_stage = $mod_strings['LBL_SALES_STAGE'];
 $lbl_date_closed = $mod_strings['LBL_DATE_CLOSED'];
 $lbl_amount = $mod_strings['LBL_AMOUNT'];
@@ -328,7 +328,7 @@ global $timedate;
 // global $cal_codes;
 
 $lbl_required_symbol = $app_strings['LBL_REQUIRED_SYMBOL'];
-$lbl_factor_name = $mod_strings['LBL_OPPORTUNITY_NAME'];
+$lbl_factor_name = $mod_strings['LBL_FACTOR_NAME'];
 $lbl_sales_stage = $mod_strings['LBL_SALES_STAGE'];
 $lbl_date_closed = $mod_strings['LBL_DATE_CLOSED'];
 $lbl_amount = $mod_strings['LBL_AMOUNT'];

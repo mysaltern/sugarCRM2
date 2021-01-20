@@ -229,7 +229,17 @@ $dictionary['Account'] = array('table' => 'accounts', 'audited'=>true, 'unified_
     'source'=>'non-db',
         'vname'=>'LBL_OPPORTUNITY',
   ),
-  'project' =>
+  'factors' =>
+		array(
+			'name' => 'factors',
+			'type' => 'link',
+			'relationship' => 'accounts_factors',
+			'module' => 'Factors',
+			'bean_name' => 'Factor',
+			'source' => 'non-db',
+			'vname' => 'LBL_FACTOR',
+		),
+		'project' =>
   array (
     'name' => 'project',
     'type' => 'link',

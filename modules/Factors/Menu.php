@@ -45,10 +45,10 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 global $mod_strings, $app_strings, $sugar_config;
 $module_menu = Array();
 if(ACLController::checkAccess('Factors','edit',true)){
-	$module_menu[]=	Array("index.php?module=Factors&action=EditView&return_module=Factors&return_action=DetailView", $mod_strings['LNK_NEW_OPPORTUNITY'],"CreateFactors");
+	$module_menu[]=	Array("index.php?module=Factors&action=EditView&return_module=Factors&return_action=DetailView", $mod_strings['LNK_NEW_FACTOR'],"CreateFactors");
 }
 if(ACLController::checkAccess('Factors','list',true)){
-	$module_menu[]=	Array("index.php?module=Factors&action=index&return_module=Factors&return_action=DetailView", $mod_strings['LNK_OPPORTUNITY_LIST'],"Factors");
+	$module_menu[]=	Array("index.php?module=Factors&action=index&return_module=Factors&return_action=DetailView", $mod_strings['LNK_FACTOR_LIST'],"Factors");
 }
 if(ACLController::checkAccess('Factors','import',true)){
 	$module_menu[]=	Array("index.php?module=Import&action=Step1&import_module=Factors&return_module=Factors&return_action=index", $app_strings['LBL_IMPORT'],"Import");

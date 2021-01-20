@@ -41,7 +41,7 @@ $dictionary['Factor'] = array('table' => 'factors','audited'=>true, 'unified_sea
   'name' =>
   array (
     'name' => 'name',
-    'vname' => 'LBL_OPPORTUNITY_NAME',
+    'vname' => 'LBL_FACTOR_NAME',
     'type' => 'name',
     'dbType' => 'varchar',
     'len' => '50',
@@ -122,7 +122,7 @@ $dictionary['Factor'] = array('table' => 'factors','audited'=>true, 'unified_sea
 		array (
 		'name' => 'campaign_factors',
 		'type' => 'link',
-		'vname' => 'LBL_CAMPAIGN_OPPORTUNITY',
+		'vname' => 'LBL_CAMPAIGN_FACTOR',
 		'relationship' => 'campaign_factors',
 		'source' => 'non-db',
     ),

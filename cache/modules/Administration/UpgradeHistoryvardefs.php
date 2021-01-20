@@ -1,5 +1,5 @@
 <?php
-// created: 2021-01-19 13:35:36
+// created: 2021-01-20 09:09:23
 $GLOBALS["dictionary"]["UpgradeHistory"] = array (
   'table' => 'upgrade_history',
   'comment' => 'Tracks Sugar upgrades made over time; used by Upgrade Wizard and Module Loader',

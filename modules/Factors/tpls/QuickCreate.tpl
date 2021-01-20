@@ -68,7 +68,7 @@
 <td>
 	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 	<tr>
-	<td width="15%" scope="row"><slot>{$MOD.LBL_OPPORTUNITY_NAME} <span class="required">{$APP.LBL_REQUIRED_SYMBOL}</span></slot></td>
+	<td width="15%" scope="row"><slot>{$MOD.LBL_FACTOR_NAME} <span class="required">{$APP.LBL_REQUIRED_SYMBOL}</span></slot></td>
 	<td width="35%" ><slot><input name='name' type="text" tabindex='1' size='35' maxlength='50' value=""></slot></td>
 	<td width="20%" scope="row"><slot>{$MOD.LBL_AMOUNT} <span class="required">{$APP.LBL_REQUIRED_SYMBOL}</span></slot></td>
 	<td width="30%" ><slot><input name='amount' tabindex='2' size='15' maxlength='25' type="text" value=''></slot></td>

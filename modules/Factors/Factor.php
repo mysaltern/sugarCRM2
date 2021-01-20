@@ -333,11 +333,11 @@ $query .= 			"LEFT JOIN users
 	{
 		global $app_list_strings;
 		
-		$xtpl->assign("OPPORTUNITY_NAME", $oppty->name);
-		$xtpl->assign("OPPORTUNITY_AMOUNT", $oppty->amount);
-		$xtpl->assign("OPPORTUNITY_CLOSEDATE", $oppty->date_closed);
-		$xtpl->assign("OPPORTUNITY_STAGE", (isset($oppty->sales_stage)?$app_list_strings['sales_stage_dom'][$oppty->sales_stage]:""));
-		$xtpl->assign("OPPORTUNITY_DESCRIPTION", $oppty->description);
+		$xtpl->assign("FACTOR_NAME", $oppty->name);
+		$xtpl->assign("FACTOR_AMOUNT", $oppty->amount);
+		$xtpl->assign("FACTOR_CLOSEDATE", $oppty->date_closed);
+		$xtpl->assign("FACTOR_STAGE", (isset($oppty->sales_stage)?$app_list_strings['sales_stage_dom'][$oppty->sales_stage]:""));
+		$xtpl->assign("FACTOR_DESCRIPTION", $oppty->description);
 
 		return $xtpl;
 	}

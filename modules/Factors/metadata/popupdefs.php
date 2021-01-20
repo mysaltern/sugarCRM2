@@ -38,7 +38,7 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 global $mod_strings;
 
 $popupMeta = array('moduleMain' => 'Factor',
-						'varName' => 'OPPORTUNITY',
+						'varName' => 'FACTOR',
 						'orderBy' => 'name',
 						'whereClauses' => 
 							array('name' => 'factors.name', 
@@ -48,7 +48,7 @@ $popupMeta = array('moduleMain' => 'Factor',
 						'listviewdefs' => array(
 											'NAME' => array(
 												'width'   => '30',  
-												'label'   => 'LBL_LIST_OPPORTUNITY_NAME', 
+												'label'   => 'LBL_LIST_FACTOR_NAME', 
 												'link'    => true,
 										        'default' => true),
 											'ACCOUNT_NAME' => array(
@@ -59,7 +59,7 @@ $popupMeta = array('moduleMain' => 'Factor',
 										        'default' => true,
 										        'sortable'=> true,
 										        'ACLTag' => 'ACCOUNT'),
-										    'OPPORTUNITY_TYPE' => array(
+										    'FACTOR_TYPE' => array(
 										        'width' => '15', 
 										        'default' => true,
 										        'label' => 'LBL_TYPE'),
