@@ -1,5 +1,5 @@
 <?php
-// created: 2021-01-20 13:20:12
+// created: 2021-01-23 10:22:57
 $GLOBALS["dictionary"]["ACLRole"] = array (
   'table' => 'acl_roles',
   'comment' => 'ACL Role definition',

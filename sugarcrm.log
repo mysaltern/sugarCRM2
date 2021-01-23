@@ -107,3 +107,12 @@
 01/23/21 09:04:21 [19136][1][FATAL] Error fetching relationship from cache emails_factors_rel
 01/23/21 09:04:21 [19136][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
 01/23/21 09:04:41 [19136][1][FATAL] Missing relationship definition accounts_factors. skipping factors subpanel
+01/23/21 10:02:58 [19136][1][FATAL] Missing relationship definition accounts_factors. skipping factors subpanel
+01/23/21 10:03:17 [19136][1][FATAL] Missing relationship definition accounts_factors. skipping factors subpanel
+01/23/21 10:03:22 [19136][1][FATAL] Missing relationship definition accounts_factors. skipping factors subpanel
+01/23/21 10:04:36 [19136][1][FATAL] Missing relationship definition accounts_opportunities. skipping opportunities subpanel
+01/23/21 10:04:36 [19136][1][FATAL] Missing relationship definition accounts_factors. skipping factors subpanel
+01/23/21 10:05:02 [19136][1][FATAL] Missing relationship definition accounts_factors. skipping factors subpanel
+01/23/21 10:10:41 [19136][1][FATAL] Missing relationship definition accounts_factors. skipping factors subpanel
+01/23/21 10:12:55 [19136][1][FATAL] Missing relationship definition accounts_factors. skipping factors subpanel
+01/23/21 10:12:58 [19136][1][FATAL] Missing relationship definition accounts_factors. skipping factors subpanel
