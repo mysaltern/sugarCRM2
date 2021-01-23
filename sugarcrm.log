@@ -87,3 +87,23 @@
 01/19/21 13:36:27 [12508][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
 01/20/21 08:25:29 [12508][1][FATAL] Bad subpanel definition, it has incorrect value for get_subpanel_data property opportunities
 01/20/21 08:25:50 [12508][1][FATAL] Bad subpanel definition, it has incorrect value for get_subpanel_data property opportunities
+01/20/21 09:57:39 [12508][1][FATAL] Error fetching relationship from cache accounts_factors
+01/20/21 09:58:51 [12508][1][FATAL] Error fetching relationship from cache accounts_factors
+01/20/21 11:49:51 [12508][1][FATAL] Error fetching relationship from cache accounts_factors
+01/20/21 11:50:57 [12508][1][FATAL] Error fetching relationship from cache accounts_factors
+01/20/21 11:51:06 [12508][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/20/21 11:51:06 [12508][1][FATAL] Error fetching relationship from cache emails_factors_rel
+01/20/21 11:51:06 [12508][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+01/20/21 11:51:16 [12508][1][FATAL] Error fetching relationship from cache accounts_factors
+01/20/21 11:51:18 [12508][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/20/21 11:51:18 [12508][1][FATAL] Error fetching relationship from cache emails_factors_rel
+01/20/21 11:51:18 [12508][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+01/20/21 11:51:24 [12508][1][FATAL] Error fetching relationship from cache accounts_factors
+01/20/21 11:59:06 [12508][1][FATAL] Missing relationship definition accounts_factors. skipping factors subpanel
+01/20/21 11:59:44 [12508][1][FATAL] Missing relationship definition accounts_factors. skipping factors subpanel
+01/20/21 11:59:45 [12508][1][FATAL] Missing relationship definition accounts_factors. skipping factors subpanel
+01/23/21 09:04:15 [19136][1][FATAL] Error fetching relationship from cache accounts_factors
+01/23/21 09:04:20 [19136][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/23/21 09:04:21 [19136][1][FATAL] Error fetching relationship from cache emails_factors_rel
+01/23/21 09:04:21 [19136][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+01/23/21 09:04:41 [19136][1][FATAL] Missing relationship definition accounts_factors. skipping factors subpanel

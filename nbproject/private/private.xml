@@ -3,13 +3,29 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Factors/field_arrays.php</file>
-            <file>file:/C:/xampp56/htdocs/Sugar7/include/language/en_us.lang.php</file>
-            <file>file:/C:/xampp56/htdocs/Sugar7/include/modules.php</file>
-            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Factors/Factor.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Factors/metadata/sidecreateviewdefs.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Accounts/Account.js</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Factors/tpls/QuickCreate.tpl</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Accounts/ShowDuplicates.html</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Factors/metadata/searchdefs.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Factors/Dashlets/MyClosedFactorsDashlet/MyClosedFactorsDashlet.meta.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Accounts/ShowDuplicates.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Accounts/AccountFormBase.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Factors/metadata/quickcreatedefs.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Accounts/Forms.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Accounts/Account.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Accounts/Save.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Accounts/metadata/subpaneldefs.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Factors/metadata/subpaneldefs.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Factors/metadata/studio.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Factors/metadata/popupdefs.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Accounts/Menu.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Accounts/field_arrays.php</file>
             <file>file:/C:/xampp56/htdocs/Sugar7/modules/Factors/vardefs.php</file>
-            <file>file:/C:/xampp56/htdocs/Sugar7/include/tabConfig.php</file>
-            <file>file:/C:/xampp56/htdocs/Sugar7/include/language/en_us.lang%20-%20Copy.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Accounts/Popup_picker.html</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Factors/Dashlets/MyFactorsDashlet/MyFactorsDashlet.data.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Accounts/vardefs.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Accounts/AccountsQuickCreate.php</file>
         </group>
     </open-files>
 </project-private>

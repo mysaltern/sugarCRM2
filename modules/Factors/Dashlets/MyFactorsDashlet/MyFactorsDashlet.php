@@ -48,7 +48,7 @@ class MyFactorsDashlet extends DashletGeneric {
         
         parent::DashletGeneric($id, $def);
 
-        if(empty($def['title'])) $this->title = translate('LBL_TOP_OPPORTUNITIES', 'Factors');
+        if(empty($def['title'])) $this->title = translate('LBL_TOP_FACTORS', 'Factors');
          
         $this->searchFields = $dashletData['MyFactorsDashlet']['searchFields'];
         $this->columns = $dashletData['MyFactorsDashlet']['columns'];

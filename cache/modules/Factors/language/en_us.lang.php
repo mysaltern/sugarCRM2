@@ -1,5 +1,5 @@
 <?php
-// created: 2021-01-20 09:09:22
+// created: 2021-01-20 09:58:39
 $mod_strings = array (
   'LBL_ID' => 'ID',
   'LBL_DATE_ENTERED' => 'Date Created',
@@ -21,11 +21,11 @@ $mod_strings = array (
   'LBL_SEARCH_FORM_TITLE' => 'Factor Search',
   'LBL_VIEW_FORM_TITLE' => 'Factor View',
   'LBL_LIST_FORM_TITLE' => 'Factor List',
-  'LBL_OPPORTUNITY_NAME' => 'Factor Name:',
-  'LBL_OPPORTUNITY' => 'Factor:',
+  'LBL_FACTOR_NAME' => 'Factor Name:',
+  'LBL_FACTOR' => 'Factor:',
   'LBL_INVITEE' => 'Contacts',
   'LBL_CURRENCIES' => 'Currencies',
-  'LBL_LIST_OPPORTUNITY_NAME' => 'Name',
+  'LBL_LIST_FACTOR_NAME' => 'Name',
   'LBL_LIST_ACCOUNT_NAME' => 'Account Name',
   'LBL_LIST_AMOUNT' => 'Amount',
   'LBL_LIST_DATE_CLOSED' => 'Close',
@@ -77,12 +77,12 @@ $mod_strings = array (
   'LBL_DUPLICATE' => 'Possible Duplicate Factor',
   'MSG_DUPLICATE' => 'The factor record you are about to create might be a duplicate of a factor record that already exists. Factor records containing similar names are listed below.<br>Click Save to continue creating this new factor, or click Cancel to return to the module without creating the factor.',
   'LBL_NEW_FORM_TITLE' => 'Create Factor',
-  'LNK_NEW_OPPORTUNITY' => 'Create Factor',
-  'LNK_OPPORTUNITY_LIST' => 'Factors',
+  'LNK_NEW_FACTOR' => 'Create Factor',
+  'LNK_FACTOR_LIST' => 'Factors',
   'ERR_DELETE_RECORD' => 'A record number must be specified to delete the factor.',
-  'LBL_TOP_OPPORTUNITIES' => 'My Top Open Factors',
+  'LBL_TOP_FACTORS' => 'My Top Open Factors',
   'NTC_REMOVE_OPP_CONFIRMATION' => 'Are you sure you want to remove this contact from the factor?',
-  'OPPORTUNITY_REMOVE_PROJECT_CONFIRM' => 'Are you sure you want to remove this factor from the project?',
+  'FACTOR_REMOVE_PROJECT_CONFIRM' => 'Are you sure you want to remove this factor from the project?',
   'LBL_DEFAULT_SUBPANEL_TITLE' => 'Factors',
   'LBL_ACTIVITIES_SUBPANEL_TITLE' => 'Activities',
   'LBL_HISTORY_SUBPANEL_TITLE' => 'History',
@@ -91,10 +91,10 @@ $mod_strings = array (
   'LBL_CONTACTS_SUBPANEL_TITLE' => 'Contacts',
   'LBL_PROJECTS_SUBPANEL_TITLE' => 'Projects',
   'LBL_LIST_ASSIGNED_TO_NAME' => 'Assigned User',
-  'LBL_MY_CLOSED_OPPORTUNITIES' => 'My Closed Factors',
-  'LBL_TOTAL_OPPORTUNITIES' => 'Total Factors',
-  'LBL_CLOSED_WON_OPPORTUNITIES' => 'Closed Won Factors',
-  'LBL_CAMPAIGN_OPPORTUNITY' => 'Campaigns',
+  'LBL_MY_CLOSED_FACTORS' => 'My Closed Factors',
+  'LBL_TOTAL_FACTORS' => 'Total Factors',
+  'LBL_CLOSED_WON_FACTORS' => 'Closed Won Factors',
+  'LBL_CAMPAIGN_FACTOR' => 'Campaigns',
   'LBL_PROJECT_SUBPANEL_TITLE' => 'Projects',
 );
 ?>

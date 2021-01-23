@@ -51,7 +51,7 @@ class MyClosedFactorsDashlet extends Dashlet {
         $this->isConfigurable = false;
         $this->isRefreshable = true;        
 
-        if(empty($def['title'])) $this->title = translate('LBL_MY_CLOSED_OPPORTUNITIES', 'Factors');
+        if(empty($def['title'])) $this->title = translate('LBL_MY_CLOSED_FACTORS', 'Factors');
         
         $this->seedBean = new Factor();      
 
@@ -71,8 +71,8 @@ class MyClosedFactorsDashlet extends Dashlet {
     	
     	
     	$ss = new Sugar_Smarty();
-    	$ss->assign('lblTotalFactors', translate('LBL_TOTAL_OPPORTUNITIES', 'Factors'));
-    	$ss->assign('lblClosedWonFactors', translate('LBL_CLOSED_WON_OPPORTUNITIES', 'Factors'));    	
+    	$ss->assign('lblTotalFactors', translate('LBL_TOTAL_FACTORS', 'Factors'));
+    	$ss->assign('lblClosedWonFactors', translate('LBL_CLOSED_WON_FACTORS', 'Factors'));    	
     	
     	$ss->assign('total_factors', $this->total_factors);
     	$ss->assign('total_factors_won', $this->total_factors_won);    	

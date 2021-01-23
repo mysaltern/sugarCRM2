@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2021-01-19 13:36:26
+<?php /* Smarty version 2.6.11, created on 2021-01-20 11:51:05
          compiled from cache/modules/Factors/DetailView.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_include', 'cache/modules/Factors/DetailView.tpl', 29, false),array('function', 'counter', 'cache/modules/Factors/DetailView.tpl', 31, false),array('function', 'sugar_translate', 'cache/modules/Factors/DetailView.tpl', 37, false),array('modifier', 'strip_semicolon', 'cache/modules/Factors/DetailView.tpl', 39, false),array('modifier', 'url2html', 'cache/modules/Factors/DetailView.tpl', 210, false),array('modifier', 'nl2br', 'cache/modules/Factors/DetailView.tpl', 210, false),)), $this); ?>
@@ -63,7 +63,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_inclu
 
 <tr>
 <td width='12.5%' scope="row">
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_OPPORTUNITY_NAME','module' => 'Factors'), $this);?>
+<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_FACTOR_NAME','module' => 'Factors'), $this);?>
 
 <?php $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :

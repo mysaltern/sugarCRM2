@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2021-01-19 13:36:11
+<?php /* Smarty version 2.6.11, created on 2021-01-20 09:58:50
          compiled from cache/modules/Factors/form_SideQuickCreate_Factors.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_include', 'cache/modules/Factors/form_SideQuickCreate_Factors.tpl', 30, false),array('function', 'counter', 'cache/modules/Factors/form_SideQuickCreate_Factors.tpl', 35, false),array('function', 'sugar_translate', 'cache/modules/Factors/form_SideQuickCreate_Factors.tpl', 39, false),array('function', 'sugar_getimagepath', 'cache/modules/Factors/form_SideQuickCreate_Factors.tpl', 76, false),array('function', 'html_options', 'cache/modules/Factors/form_SideQuickCreate_Factors.tpl', 99, false),array('modifier', 'default', 'cache/modules/Factors/form_SideQuickCreate_Factors.tpl', 36, false),)), $this); ?>
@@ -55,7 +55,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_inclu
 ">
 <tr>
 <td valign="top" width='75%' >
-<?php echo smarty_function_sugar_translate(array('label' => 'LBL_OPPORTUNITY_NAME','module' => 'Factors'), $this);?>
+<?php echo smarty_function_sugar_translate(array('label' => 'LBL_FACTOR_NAME','module' => 'Factors'), $this);?>
 :
 <span class="required">*</span>
 <br>
@@ -238,7 +238,7 @@ enableQS(false);
 <!-- End Meta-Data Javascript --><?php echo '
 <script type="text/javascript">
 addToValidate(\'form_SideQuickCreate_Factors\', \'id\', \'id\', false,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_ID','module' => 'Factors'), $this); echo '\' );
-addToValidate(\'form_SideQuickCreate_Factors\', \'name\', \'name\', true,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_OPPORTUNITY_NAME','module' => 'Factors'), $this); echo '\' );
+addToValidate(\'form_SideQuickCreate_Factors\', \'name\', \'name\', true,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_FACTOR_NAME','module' => 'Factors'), $this); echo '\' );
 addToValidate(\'form_SideQuickCreate_Factors\', \'date_entered_date\', \'date\', false,\'Date Created\' );
 addToValidate(\'form_SideQuickCreate_Factors\', \'date_modified_date\', \'date\', false,\'Date Modified\' );
 addToValidate(\'form_SideQuickCreate_Factors\', \'modified_user_id\', \'assigned_user_name\', false,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_MODIFIED_ID','module' => 'Factors'), $this); echo '\' );
