@@ -159,6 +159,14 @@ $dictionary['Case'] = array('table' => 'cases','audited'=>true, 'unified_search'
     'source'=>'non-db',
 		'vname'=>'LBL_BUGS',
   ),
+  'factors' =>
+  array (
+  	'name' => 'factors',
+    'type' => 'link',
+    'relationship' => 'factors_cases',
+    'source'=>'non-db',
+		'vname'=>'LBL_FACTORS',
+  ),
   'contacts' =>
   array (
   	'name' => 'contacts',

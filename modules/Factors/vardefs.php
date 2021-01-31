@@ -1,6 +1,8 @@
 <?php
-if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
-/*********************************************************************************
+
+if (!defined('sugarEntry') || !sugarEntry)
+	die('Not A Valid Entry Point');
+/* * *******************************************************************************
  * SugarCRM is a customer relationship management program developed by
  * SugarCRM, Inc. Copyright (C) 2004-2010 SugarCRM Inc.
  * 
@@ -33,382 +35,319 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
  * SugarCRM" logo. If the display of the logo is not reasonably feasible for
  * technical reasons, the Appropriate Legal Notices must display the words
  * "Powered by SugarCRM".
- ********************************************************************************/
+ * ****************************************************************************** */
 
-$dictionary['Factor'] = array('table' => 'factors','audited'=>true, 'unified_search' => true,'duplicate_merge'=>true,
-		'comment' => 'An factor is the target of selling activities',
-		'fields' => array (
-  'name' =>
-  array (
-    'name' => 'name',
-    'vname' => 'LBL_FACTOR_NAME',
-    'type' => 'name',
-    'dbType' => 'varchar',
-    'len' => '50',
-    'unified_search' => true,
-    'comment' => 'Name of the factor',
-    'merge_filter' => 'selected',
-    'importable' => 'required',
-  ),
-  'factor_type' =>
-  array (
-    'name' => 'factor_type',
-    'vname' => 'LBL_TYPE',
-    'type' => 'enum',
-    'options'=> 'factor_type_dom',
-    'len' => '255',
-    'audited'=>true,
-    'comment' => 'Type of factor (ex: Existing, New)',
-    'merge_filter' => 'enabled',
-  ),
-  'account_name' =>
-  array (
-    'name' => 'account_name',
-    'rname' => 'name',
-    'id_name' => 'account_id',
-    'vname' => 'LBL_ACCOUNT_NAME',
-    'type' => 'relate',
-    'table' => 'accounts',
-    'join_name'=>'accounts',
-    'isnull' => 'true',
-    'module' => 'Accounts',
-    'dbType' => 'varchar',
-    'link'=>'accounts',
-    'len' => '255',
-   	 'source'=>'non-db',
-   	 'unified_search' => true,
-   	 'required' => true,
-   	 'importable' => 'required',
-  ),
-  'account_id' =>
-   array (
-    'name' => 'account_id',
-    'vname' => 'LBL_ACCOUNT_ID',
-    'type' => 'id',
-    'source'=>'non-db',
-    'audited'=>true,
-  ),
-
-  'campaign_id' =>
-      array (
-        'name' => 'campaign_id',
-        'comment' => 'Campaign that generated lead',
-        'vname'=>'LBL_CAMPAIGN_ID',
-        'rname' => 'id',
-        'type' => 'id',
-        'dbType'=>'id',
-        'table' => 'campaigns',
-        'isnull' => 'true',
-        'module' => 'Campaigns',
-        //'dbType' => 'char',
-        'reportable'=>false,
-        'massupdate' => false,
-        'duplicate_merge'=> 'disabled',
-      ),
-  'campaign_name'=>
-   	   array(
-		'name'=>'campaign_name',
-		'rname'=>'name',
-		'id_name'=>'campaign_id',
-		'vname'=>'LBL_CAMPAIGN',
-		'type'=>'relate',
-		'link' => 'campaign_factors',   	      	   
-		'isnull'=>'true',
-		'table' => 'campaigns',
-		'module'=>'Campaigns',
-		'source' => 'non-db',
-	),
-  'campaign_factors' =>
-		array (
-		'name' => 'campaign_factors',
-		'type' => 'link',
-		'vname' => 'LBL_CAMPAIGN_FACTOR',
-		'relationship' => 'campaign_factors',
-		'source' => 'non-db',
-    ),
-	
-  'lead_source' =>
-  array (
-    'name' => 'lead_source',
-    'vname' => 'LBL_LEAD_SOURCE',
-    'type' => 'enum',
-    'options' => 'lead_source_dom',
-    'len' => '50',
-    'comment' => 'Source of the factor',
-    'merge_filter' => 'enabled',
-  ),
-  'amount' =>
-  array (
-    'name' => 'amount',
-    'vname' => 'LBL_AMOUNT',
-    //'function'=>array('vname'=>'getCurrencyType'),
-    'type' => 'currency',
-//    'disable_num_format' => true,
-    'dbType' => 'double',
-    'comment' => 'Unconverted amount of the factor',
-    'duplicate_merge'=>'disabled',
-    'importable' => 'required',
-  ),
-  'amount_usdollar' =>
-  array (
-    'name' => 'amount_usdollar',
-    'vname' => 'LBL_AMOUNT_USDOLLAR',
-    'type' => 'currency',
-    'group'=>'amount',
-    'dbType' => 'double',
-    'disable_num_format' => true,
-    'audited'=>true,
-    'comment' => 'Formatted amount of the factor'
-  ),
-  'currency_id' =>
-  array (
-    'name' => 'currency_id',
-    'type' => 'id',
-    'group'=>'currency_id',
-    'vname' => 'LBL_CURRENCY_ID',
-	'function'=>array('name'=>'getCurrencyDropDown', 'returns'=>'html'),
-    'reportable'=>false,
-    'comment' => 'Currency used for display purposes'
-  ),
-  'currency_name'=>
-   	   array(
-		'name'=>'currency_name',
-		'rname'=>'name',
-		'id_name'=>'currency_id',
-		'vname'=>'LBL_CURRENCY_NAME',
-		'type'=>'relate',
-		'isnull'=>'true',
-		'table' => 'currencies',
-		'module'=>'Currencies',
-		'source' => 'non-db',
-        'function'=>array('name'=>'getCurrencyNameDropDown', 'returns'=>'html'),
-        'studio' => 'false',
-	),
-   'currency_symbol'=>
-   	   array(
-		'name'=>'currency_symbol',
-		'rname'=>'symbol',
-		'id_name'=>'currency_id',
-		'vname'=>'LBL_CURRENCY_SYMBOL',
-		'type'=>'relate',
-		'isnull'=>'true',
-		'table' => 'currencies',
-		'module'=>'Currencies',
-		'source' => 'non-db',
-        'function'=>array('name'=>'getCurrencySymbolDropDown', 'returns'=>'html'),
-	),
-  'date_closed' =>
-  array (
-    'name' => 'date_closed',
-    'vname' => 'LBL_DATE_CLOSED',
-    'type' => 'date',
-    'audited'=>true,
-    'comment' => 'Expected or actual date the oppportunity will close',
-	'importable' => 'required',
-  ),
-  'next_step' =>
-  array (
-    'name' => 'next_step',
-    'vname' => 'LBL_NEXT_STEP',
-    'type' => 'varchar',
-    'len' => '100',
-    'comment' => 'The next step in the sales process',
-    'merge_filter' => 'enabled',
-  ),
-  'sales_stage' =>
-  array (
-    'name' => 'sales_stage',
-    'vname' => 'LBL_SALES_STAGE',
-    'type' => 'enum',
-    'options' => 'sales_stage_dom',
-    'len' => '25',
-    'audited'=>true,
-    'comment' => 'Indication of progression towards closure',
-    'merge_filter' => 'enabled',
-    'importable' => 'required',
-  ),
-  'probability' =>
-  array (
-    'name' => 'probability',
-    'vname' => 'LBL_PROBABILITY',
-    'type' => 'int',
-    'dbType' => 'double',
-    'audited'=>true,
-    'comment' => 'The probability of closure',
-    'validation' => array('type' => 'range', 'min' => 0, 'max' => 100),
-    'merge_filter' => 'enabled', 
-  ),
-  'accounts' =>
-  array (
-  	'name' => 'accounts',
-    'type' => 'link',
-    'relationship' => 'accounts_factors',
-    'source'=>'non-db',
-		'link_type'=>'one',
-    'module'=>'Accounts',
-    'bean_name'=>'Account',
-		'vname'=>'LBL_ACCOUNTS',
-  ),
-  'contacts' =>
-  array (
-  	'name' => 'contacts',
-    'type' => 'link',
-    'relationship' => 'factors_contacts',
-    'source'=>'non-db',
-    'module'=>'Contacts',
-    'bean_name'=>'Contact',
-    'rel_fields'=>array('contact_role'=>array('type'=>'enum', 'options'=>'factor_relationship_type_dom')),
-	'vname'=>'LBL_CONTACTS',
-  ),
-  'tasks' =>
-  array (
-  	'name' => 'tasks',
-    'type' => 'link',
-    'relationship' => 'factor_tasks',
-    'source'=>'non-db',
-		'vname'=>'LBL_TASKS',
-  ),
-  'notes' =>
-  array (
-  	'name' => 'notes',
-    'type' => 'link',
-    'relationship' => 'factor_notes',
-    'source'=>'non-db',
-		'vname'=>'LBL_NOTES',
-  ),
-  'meetings' =>
-  array (
-  	'name' => 'meetings',
-    'type' => 'link',
-    'relationship' => 'factor_meetings',
-    'source'=>'non-db',
-		'vname'=>'LBL_MEETINGS',
-  ),
-  'calls' =>
-  array (
-  	'name' => 'calls',
-    'type' => 'link',
-    'relationship' => 'factor_calls',
-    'source'=>'non-db',
-		'vname'=>'LBL_CALLS',
-  ),
-  'emails' =>
-  array (
-  	'name' => 'emails',
-    'type' => 'link',
-    'relationship' => 'emails_factors_rel',/* reldef in emails */
-    'source'=>'non-db',
-		'vname'=>'LBL_EMAILS',
-  ),
-  'project' =>
-  array (
-  	'name' => 'project',
-    'type' => 'link',
-    'relationship' => 'projects_factors',
-    'source'=>'non-db',
-		'vname'=>'LBL_PROJECTS',
-  ),
-  'leads' =>
-  array (
-  	'name' => 'leads',
-    'type' => 'link',
-    'relationship' => 'factor_leads',
-    'source'=>'non-db',
-		'vname'=>'LBL_LEADS',
-  ),
-  'campaigns' =>
-		array (
-  			'name' => 'campaigns',
-    		'type' => 'link',
-    		'relationship' => 'factors_campaign',
-    		'module'=>'CampaignLog',
-    		'bean_name'=>'CampaignLog',
-    		'source'=>'non-db',
-			'vname'=>'LBL_CAMPAIGNS',
-	  	),
-
-  'campaign_link' =>
-  array (
-    'name' => 'campaign_link',
-    'type' => 'link',
-    'relationship' => 'factors_campaign',
-    'vname' => 'LBL_CAMPAIGNS',
-    'link_type' => 'one',
-    'module'=>'Campaigns',
-    'bean_name'=>'Campaign',
-    'source'=>'non-db',
-  ),
-  'currencies' =>
-  array (
-    'name' => 'currencies',
-    'type' => 'link',
-    'relationship' => 'factor_currencies',
-    'source'=>'non-db',
-    'vname'=>'LBL_CURRENCIES',
-  ),
-),
-		'indices' => array (
-			array(
-				'name' => 'idx_opp_name',
-				'type' => 'index',
-				'fields' => array('name'),
-			),
-			array(
-				'name' => 'idx_opp_assigned',
-				'type' => 'index',
-				'fields' => array('assigned_user_id'),
-			),
+$dictionary['Factor'] = array('table' => 'factors', 'audited' => true, 'unified_search' => true, 'duplicate_merge' => true,
+	'comment' => 'An factor is the target of selling activities',
+	'fields' => array(
+		'id' => array(
+			'name' => 'id',
+			'vname' => 'LBL_ID',
+			'required' => true,
+			'type' => 'id',
+			'reportable' => true,
+			'comment' => 'Unique identifier'
 		),
-
- 'relationships' => array (
-	'factor_calls' => array('lhs_module'=> 'Factors', 'lhs_table'=> 'factors', 'lhs_key' => 'id',
-							  'rhs_module'=> 'Calls', 'rhs_table'=> 'calls', 'rhs_key' => 'parent_id',
-							  'relationship_type'=>'one-to-many', 'relationship_role_column'=>'parent_type',
-							  'relationship_role_column_value'=>'Factors')
-	,'factor_meetings' => array('lhs_module'=> 'Factors', 'lhs_table'=> 'factors', 'lhs_key' => 'id',
-							  'rhs_module'=> 'Meetings', 'rhs_table'=> 'meetings', 'rhs_key' => 'parent_id',
-							  'relationship_type'=>'one-to-many', 'relationship_role_column'=>'parent_type',
-							  'relationship_role_column_value'=>'Factors')
-	,'factor_tasks' => array('lhs_module'=> 'Factors', 'lhs_table'=> 'factors', 'lhs_key' => 'id',
-							  'rhs_module'=> 'Tasks', 'rhs_table'=> 'tasks', 'rhs_key' => 'parent_id',
-							  'relationship_type'=>'one-to-many', 'relationship_role_column'=>'parent_type',
-							  'relationship_role_column_value'=>'Factors')
-	,'factor_notes' => array('lhs_module'=> 'Factors', 'lhs_table'=> 'factors', 'lhs_key' => 'id',
-							  'rhs_module'=> 'Notes', 'rhs_table'=> 'notes', 'rhs_key' => 'parent_id',
-							  'relationship_type'=>'one-to-many', 'relationship_role_column'=>'parent_type',
-							  'relationship_role_column_value'=>'Factors')
-	,'factor_emails' => array('lhs_module'=> 'Factors', 'lhs_table'=> 'factors', 'lhs_key' => 'id',
-							  'rhs_module'=> 'Emails', 'rhs_table'=> 'emails', 'rhs_key' => 'parent_id',
-							  'relationship_type'=>'one-to-many', 'relationship_role_column'=>'parent_type',
-							  'relationship_role_column_value'=>'Factors')
-	,'factor_leads' => array('lhs_module'=> 'Factors', 'lhs_table'=> 'factors', 'lhs_key' => 'id',
-							  'rhs_module'=> 'Leads', 'rhs_table'=> 'leads', 'rhs_key' => 'factor_id',
-							  'relationship_type'=>'one-to-many')
-    ,'factor_currencies' => array('lhs_module'=> 'Factors', 'lhs_table'=> 'factors', 'lhs_key' => 'currency_id',
-                              'rhs_module'=> 'Currencies', 'rhs_table'=> 'currencies', 'rhs_key' => 'id',
-                              'relationship_type'=>'one-to-many')
-  ,'factors_assigned_user' =>
-   array('lhs_module'=> 'Users', 'lhs_table'=> 'users', 'lhs_key' => 'id',
-   'rhs_module'=> 'Factors', 'rhs_table'=> 'factors', 'rhs_key' => 'assigned_user_id',
-   'relationship_type'=>'one-to-many')
-
-   ,'factors_modified_user' =>
-   array('lhs_module'=> 'Users', 'lhs_table'=> 'users', 'lhs_key' => 'id',
-   'rhs_module'=> 'Factors', 'rhs_table'=> 'factors', 'rhs_key' => 'modified_user_id',
-   'relationship_type'=>'one-to-many')
-
-   ,'factors_created_by' =>
-   array('lhs_module'=> 'Users', 'lhs_table'=> 'users', 'lhs_key' => 'id',
-   'rhs_module'=> 'Factors', 'rhs_table'=> 'factors', 'rhs_key' => 'created_by',
-   'relationship_type'=>'one-to-many'),
-'factors_campaign' =>
-   array('lhs_module'=> 'campaigns', 'lhs_table'=> 'campaigns', 'lhs_key' => 'id',
-   'rhs_module'=> 'Factors', 'rhs_table'=> 'factors', 'rhs_key' => 'campaign_id',
-   'relationship_type'=>'one-to-many'),
-)
+		'cases' =>
+		array(
+			'name' => 'cases',
+			'type' => 'link',
+			'relationship' => 'factors_cases',
+			'side' => 'right',
+			'source' => 'non-db',
+			'vname' => 'LBL_CASES',
+		),
+		'name' =>
+		array(
+			'name' => 'name',
+			'vname' => 'LBL_FACTOR_NAME',
+			'type' => 'name',
+			'dbType' => 'varchar',
+			'len' => '50',
+			'unified_search' => true,
+			'comment' => 'Name of the factor',
+			'merge_filter' => 'selected',
+			'importable' => 'required',
+		),
+		'factor_type' =>
+		array(
+			'name' => 'factor_type',
+			'vname' => 'LBL_TYPE',
+			'type' => 'enum',
+			'options' => 'factor_type_dom',
+			'len' => '255',
+			'audited' => true,
+			'comment' => 'Type of factor (ex: Existing, New)',
+			'merge_filter' => 'enabled',
+		),
+		'account_name' =>
+		array(
+			'name' => 'account_name',
+			'rname' => 'name',
+			'id_name' => 'account_id',
+			'vname' => 'LBL_ACCOUNT_NAME',
+			'type' => 'relate',
+			'table' => 'accounts',
+			'join_name' => 'accounts',
+			'isnull' => 'true',
+			'module' => 'Accounts',
+			'dbType' => 'varchar',
+			'link' => 'accounts',
+			'len' => '255',
+			'source' => 'non-db',
+			'unified_search' => true,
+			'required' => true,
+			'importable' => 'required',
+		),
+		'account_id' =>
+		array(
+			'name' => 'account_id',
+			'vname' => 'LBL_ACCOUNT_ID',
+			'type' => 'id',
+			'source' => 'non-db',
+			'audited' => true,
+		),
+		'campaign_id' =>
+		array(
+			'name' => 'campaign_id',
+			'comment' => 'Campaign that generated lead',
+			'vname' => 'LBL_CAMPAIGN_ID',
+			'rname' => 'id',
+			'type' => 'id',
+			'dbType' => 'id',
+			'table' => 'campaigns',
+			'isnull' => 'true',
+			'module' => 'Campaigns',
+			//'dbType' => 'char',
+			'reportable' => false,
+			'massupdate' => false,
+			'duplicate_merge' => 'disabled',
+		),
+		'campaign_name' =>
+		array(
+			'name' => 'campaign_name',
+			'rname' => 'name',
+			'id_name' => 'campaign_id',
+			'vname' => 'LBL_CAMPAIGN',
+			'type' => 'relate',
+			'link' => 'campaign_factors',
+			'isnull' => 'true',
+			'table' => 'campaigns',
+			'module' => 'Campaigns',
+			'source' => 'non-db',
+		),
+		'campaign_factors' =>
+		array(
+			'name' => 'campaign_factors',
+			'type' => 'link',
+			'vname' => 'LBL_CAMPAIGN_FACTOR',
+			'relationship' => 'campaign_factors',
+			'source' => 'non-db',
+		),
+		'lead_source' =>
+		array(
+			'name' => 'lead_source',
+			'vname' => 'LBL_LEAD_SOURCE',
+			'type' => 'enum',
+			'options' => 'lead_source_dom',
+			'len' => '50',
+			'comment' => 'Source of the factor',
+			'merge_filter' => 'enabled',
+		),
+		'amount' =>
+		array(
+			'name' => 'amount',
+			'vname' => 'LBL_AMOUNT',
+			//'function'=>array('vname'=>'getCurrencyType'),
+			'type' => 'currency',
+//    'disable_num_format' => true,
+			'dbType' => 'double',
+			'comment' => 'Unconverted amount of the factor',
+			'duplicate_merge' => 'disabled',
+			'importable' => 'required',
+		),
+		'amount_usdollar' =>
+		array(
+			'name' => 'amount_usdollar',
+			'vname' => 'LBL_AMOUNT_USDOLLAR',
+			'type' => 'currency',
+			'group' => 'amount',
+			'dbType' => 'double',
+			'disable_num_format' => true,
+			'audited' => true,
+			'comment' => 'Formatted amount of the factor'
+		),
+		'currency_id' =>
+		array(
+			'name' => 'currency_id',
+			'type' => 'id',
+			'group' => 'currency_id',
+			'vname' => 'LBL_CURRENCY_ID',
+			'function' => array('name' => 'getCurrencyDropDown', 'returns' => 'html'),
+			'reportable' => false,
+			'comment' => 'Currency used for display purposes'
+		),
+		'currency_name' =>
+		array(
+			'name' => 'currency_name',
+			'rname' => 'name',
+			'id_name' => 'currency_id',
+			'vname' => 'LBL_CURRENCY_NAME',
+			'type' => 'relate',
+			'isnull' => 'true',
+			'table' => 'currencies',
+			'module' => 'Currencies',
+			'source' => 'non-db',
+			'function' => array('name' => 'getCurrencyNameDropDown', 'returns' => 'html'),
+			'studio' => 'false',
+		),
+		'currency_symbol' =>
+		array(
+			'name' => 'currency_symbol',
+			'rname' => 'symbol',
+			'id_name' => 'currency_id',
+			'vname' => 'LBL_CURRENCY_SYMBOL',
+			'type' => 'relate',
+			'isnull' => 'true',
+			'table' => 'currencies',
+			'module' => 'Currencies',
+			'source' => 'non-db',
+			'function' => array('name' => 'getCurrencySymbolDropDown', 'returns' => 'html'),
+		),
+		'date_closed' =>
+		array(
+			'name' => 'date_closed',
+			'vname' => 'LBL_DATE_CLOSED',
+			'type' => 'date',
+			'audited' => true,
+			'comment' => 'Expected or actual date the oppportunity will close',
+			'importable' => 'required',
+		),
+		'next_step' =>
+		array(
+			'name' => 'next_step',
+			'vname' => 'LBL_NEXT_STEP',
+			'type' => 'varchar',
+			'len' => '100',
+			'comment' => 'The next step in the sales process',
+			'merge_filter' => 'enabled',
+		),
+		'sales_stage' =>
+		array(
+			'name' => 'sales_stage',
+			'vname' => 'LBL_SALES_STAGE',
+			'type' => 'enum',
+			'options' => 'sales_stage_dom',
+			'len' => '25',
+			'audited' => true,
+			'comment' => 'Indication of progression towards closure',
+			'merge_filter' => 'enabled',
+			'importable' => 'required',
+		),
+		'probability' =>
+		array(
+			'name' => 'probability',
+			'vname' => 'LBL_PROBABILITY',
+			'type' => 'int',
+			'dbType' => 'double',
+			'audited' => true,
+			'comment' => 'The probability of closure',
+			'validation' => array('type' => 'range', 'min' => 0, 'max' => 100),
+			'merge_filter' => 'enabled',
+		),
+		'accounts' =>
+		array(
+			'name' => 'accounts',
+			'type' => 'link',
+			'relationship' => 'accounts_factors',
+			'source' => 'non-db',
+			'link_type' => 'one',
+			'module' => 'Accounts',
+			'bean_name' => 'Account',
+			'vname' => 'LBL_ACCOUNTS',
+		),
+		'contacts' =>
+		array(
+			'name' => 'contacts',
+			'type' => 'link',
+			'relationship' => 'factors_contacts',
+			'source' => 'non-db',
+			'module' => 'Contacts',
+			'bean_name' => 'Contact',
+			'rel_fields' => array('contact_role' => array('type' => 'enum', 'options' => 'factor_relationship_type_dom')),
+			'vname' => 'LBL_CONTACTS',
+		),
+		'project' =>
+		array(
+			'name' => 'project',
+			'type' => 'link',
+			'relationship' => 'projects_factors',
+			'source' => 'non-db',
+			'vname' => 'LBL_PROJECTS',
+		),
+		'campaigns' =>
+		array(
+			'name' => 'campaigns',
+			'type' => 'link',
+			'relationship' => 'factors_campaign',
+			'module' => 'CampaignLog',
+			'bean_name' => 'CampaignLog',
+			'source' => 'non-db',
+			'vname' => 'LBL_CAMPAIGNS',
+		),
+		'campaign_link' =>
+		array(
+			'name' => 'campaign_link',
+			'type' => 'link',
+			'relationship' => 'factors_campaign',
+			'vname' => 'LBL_CAMPAIGNS',
+			'link_type' => 'one',
+			'module' => 'Campaigns',
+			'bean_name' => 'Campaign',
+			'source' => 'non-db',
+		),
+		'currencies' =>
+		array(
+			'name' => 'currencies',
+			'type' => 'link',
+			'relationship' => 'factor_currencies',
+			'source' => 'non-db',
+			'vname' => 'LBL_CURRENCIES',
+		),
+	),
+	'indices' => array(
+		array(
+			'name' => 'idx_opp_name',
+			'type' => 'index',
+			'fields' => array('name'),
+		),
+		array(
+			'name' => 'idx_opp_assigned',
+			'type' => 'index',
+			'fields' => array('assigned_user_id'),
+		),
+	),
+	'relationships' => array(
+		'factors_assigned_user' =>
+		array('lhs_module' => 'Users', 'lhs_table' => 'users', 'lhs_key' => 'id',
+			'rhs_module' => 'Factors', 'rhs_table' => 'factors', 'rhs_key' => 'assigned_user_id',
+			'relationship_type' => 'one-to-many')
+		, 'factors_modified_user' =>
+		array('lhs_module' => 'Users', 'lhs_table' => 'users', 'lhs_key' => 'id',
+			'rhs_module' => 'Factors', 'rhs_table' => 'factors', 'rhs_key' => 'modified_user_id',
+			'relationship_type' => 'one-to-many')
+		, 'factors_created_by' =>
+		array('lhs_module' => 'Users', 'lhs_table' => 'users', 'lhs_key' => 'id',
+			'rhs_module' => 'Factors', 'rhs_table' => 'factors', 'rhs_key' => 'created_by',
+			'relationship_type' => 'one-to-many'),
+		'factors_campaign' =>
+		array('lhs_module' => 'campaigns', 'lhs_table' => 'campaigns', 'lhs_key' => 'id',
+			'rhs_module' => 'Factors', 'rhs_table' => 'factors', 'rhs_key' => 'campaign_id',
+			'relationship_type' => 'one-to-many'),
+	)
 //This enables optimistic locking for Saves From EditView
-	,'optimistic_locking'=>true,
+	, 'optimistic_locking' => true,
 );
-VardefManager::createVardef('Factors','Factor', array('default', 'assignable',
+VardefManager::createVardef('Factors', 'Factor', array('default', 'assignable',
 ));
 ?>

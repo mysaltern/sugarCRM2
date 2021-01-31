@@ -1,5 +1,5 @@
 <?php
-// created: 2021-01-23 10:22:57
+// created: 2021-01-31 12:46:15
 $GLOBALS["dictionary"]["Factor"] = array (
   'table' => 'factors',
   'audited' => true,
@@ -12,8 +12,8 @@ $GLOBALS["dictionary"]["Factor"] = array (
     array (
       'name' => 'id',
       'vname' => 'LBL_ID',
-      'type' => 'id',
       'required' => true,
+      'type' => 'id',
       'reportable' => true,
       'comment' => 'Unique identifier',
     ),
@@ -184,6 +184,15 @@ $GLOBALS["dictionary"]["Factor"] = array (
       'rname' => 'user_name',
       'id_name' => 'assigned_user_id',
       'table' => 'users',
+    ),
+    'cases' => 
+    array (
+      'name' => 'cases',
+      'type' => 'link',
+      'relationship' => 'factors_cases',
+      'side' => 'right',
+      'source' => 'non-db',
+      'vname' => 'LBL_CASES',
     ),
     'factor_type' => 
     array (
@@ -414,46 +423,6 @@ $GLOBALS["dictionary"]["Factor"] = array (
       ),
       'vname' => 'LBL_CONTACTS',
     ),
-    'tasks' => 
-    array (
-      'name' => 'tasks',
-      'type' => 'link',
-      'relationship' => 'factor_tasks',
-      'source' => 'non-db',
-      'vname' => 'LBL_TASKS',
-    ),
-    'notes' => 
-    array (
-      'name' => 'notes',
-      'type' => 'link',
-      'relationship' => 'factor_notes',
-      'source' => 'non-db',
-      'vname' => 'LBL_NOTES',
-    ),
-    'meetings' => 
-    array (
-      'name' => 'meetings',
-      'type' => 'link',
-      'relationship' => 'factor_meetings',
-      'source' => 'non-db',
-      'vname' => 'LBL_MEETINGS',
-    ),
-    'calls' => 
-    array (
-      'name' => 'calls',
-      'type' => 'link',
-      'relationship' => 'factor_calls',
-      'source' => 'non-db',
-      'vname' => 'LBL_CALLS',
-    ),
-    'emails' => 
-    array (
-      'name' => 'emails',
-      'type' => 'link',
-      'relationship' => 'emails_factors_rel',
-      'source' => 'non-db',
-      'vname' => 'LBL_EMAILS',
-    ),
     'project' => 
     array (
       'name' => 'project',
@@ -461,14 +430,6 @@ $GLOBALS["dictionary"]["Factor"] = array (
       'relationship' => 'projects_factors',
       'source' => 'non-db',
       'vname' => 'LBL_PROJECTS',
-    ),
-    'leads' => 
-    array (
-      'name' => 'leads',
-      'type' => 'link',
-      'relationship' => 'factor_leads',
-      'source' => 'non-db',
-      'vname' => 'LBL_LEADS',
     ),
     'campaigns' => 
     array (
@@ -560,86 +521,6 @@ $GLOBALS["dictionary"]["Factor"] = array (
       'rhs_module' => 'Factors',
       'rhs_table' => 'factors',
       'rhs_key' => 'assigned_user_id',
-      'relationship_type' => 'one-to-many',
-    ),
-    'factor_calls' => 
-    array (
-      'lhs_module' => 'Factors',
-      'lhs_table' => 'factors',
-      'lhs_key' => 'id',
-      'rhs_module' => 'Calls',
-      'rhs_table' => 'calls',
-      'rhs_key' => 'parent_id',
-      'relationship_type' => 'one-to-many',
-      'relationship_role_column' => 'parent_type',
-      'relationship_role_column_value' => 'Factors',
-    ),
-    'factor_meetings' => 
-    array (
-      'lhs_module' => 'Factors',
-      'lhs_table' => 'factors',
-      'lhs_key' => 'id',
-      'rhs_module' => 'Meetings',
-      'rhs_table' => 'meetings',
-      'rhs_key' => 'parent_id',
-      'relationship_type' => 'one-to-many',
-      'relationship_role_column' => 'parent_type',
-      'relationship_role_column_value' => 'Factors',
-    ),
-    'factor_tasks' => 
-    array (
-      'lhs_module' => 'Factors',
-      'lhs_table' => 'factors',
-      'lhs_key' => 'id',
-      'rhs_module' => 'Tasks',
-      'rhs_table' => 'tasks',
-      'rhs_key' => 'parent_id',
-      'relationship_type' => 'one-to-many',
-      'relationship_role_column' => 'parent_type',
-      'relationship_role_column_value' => 'Factors',
-    ),
-    'factor_notes' => 
-    array (
-      'lhs_module' => 'Factors',
-      'lhs_table' => 'factors',
-      'lhs_key' => 'id',
-      'rhs_module' => 'Notes',
-      'rhs_table' => 'notes',
-      'rhs_key' => 'parent_id',
-      'relationship_type' => 'one-to-many',
-      'relationship_role_column' => 'parent_type',
-      'relationship_role_column_value' => 'Factors',
-    ),
-    'factor_emails' => 
-    array (
-      'lhs_module' => 'Factors',
-      'lhs_table' => 'factors',
-      'lhs_key' => 'id',
-      'rhs_module' => 'Emails',
-      'rhs_table' => 'emails',
-      'rhs_key' => 'parent_id',
-      'relationship_type' => 'one-to-many',
-      'relationship_role_column' => 'parent_type',
-      'relationship_role_column_value' => 'Factors',
-    ),
-    'factor_leads' => 
-    array (
-      'lhs_module' => 'Factors',
-      'lhs_table' => 'factors',
-      'lhs_key' => 'id',
-      'rhs_module' => 'Leads',
-      'rhs_table' => 'leads',
-      'rhs_key' => 'factor_id',
-      'relationship_type' => 'one-to-many',
-    ),
-    'factor_currencies' => 
-    array (
-      'lhs_module' => 'Factors',
-      'lhs_table' => 'factors',
-      'lhs_key' => 'currency_id',
-      'rhs_module' => 'Currencies',
-      'rhs_table' => 'currencies',
-      'rhs_key' => 'id',
       'relationship_type' => 'one-to-many',
     ),
     'factors_campaign' => 

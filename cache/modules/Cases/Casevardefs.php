@@ -1,5 +1,5 @@
 <?php
-// created: 2021-01-23 10:22:57
+// created: 2021-01-31 12:46:21
 $GLOBALS["dictionary"]["Case"] = array (
   'table' => 'cases',
   'audited' => true,
@@ -328,6 +328,14 @@ $GLOBALS["dictionary"]["Case"] = array (
       'relationship' => 'cases_bugs',
       'source' => 'non-db',
       'vname' => 'LBL_BUGS',
+    ),
+    'factors' => 
+    array (
+      'name' => 'factors',
+      'type' => 'link',
+      'relationship' => 'factors_cases',
+      'source' => 'non-db',
+      'vname' => 'LBL_FACTORS',
     ),
     'contacts' => 
     array (

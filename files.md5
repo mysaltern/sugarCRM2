@@ -1,4 +1,5 @@
 <?php
+
 // created: 2010-06-23 07:00:38
 $md5_string = array (
   './LICENSE.txt' => 'd32239bcb673463ab874e80d47fae504',
@@ -3430,6 +3431,7 @@ $md5_string = array (
   './metadata/prospect_lists_prospectsMetaData.php' => '82b0ee9c12d784e386fad443b60921c9',
   './metadata/queues_beansMetaData.php' => 'e47e22e909a00e014ef72956966f8bf1',
   './metadata/cases_bugsMetaData.php' => 'ee66353cd69114a3a9ce17e45c64265e',
+  './metadata/factos_casesMetaData.php' => 'ee26353cd69114a3a9ce17e45c64265e',
   './metadata/queues_queueMetaData.php' => '29182c9ef0d5b45d37457c66546e9d4b',
   './metadata/email_cacheMetaData.php' => '19d1509c3599305ba0e68896d3c99c3d',
   './metadata/inboundEmail_autoreplyMetaData.php' => '49d74df29fc2632a6c34a34ba31a48fd',

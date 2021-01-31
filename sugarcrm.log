@@ -116,3 +116,88 @@
 01/23/21 10:10:41 [19136][1][FATAL] Missing relationship definition accounts_factors. skipping factors subpanel
 01/23/21 10:12:55 [19136][1][FATAL] Missing relationship definition accounts_factors. skipping factors subpanel
 01/23/21 10:12:58 [19136][1][FATAL] Missing relationship definition accounts_factors. skipping factors subpanel
+01/31/21 08:35:04 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 08:35:04 [10440][1][FATAL] Error fetching relationship from cache emails_factors_rel
+01/31/21 08:35:04 [10440][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+01/31/21 08:45:41 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 08:45:42 [10440][1][FATAL] Error fetching relationship from cache emails_factors_rel
+01/31/21 08:45:42 [10440][1][FATAL] MySQL error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+01/31/21 08:46:09 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 08:46:09 [10440][1][FATAL] Bad subpanel definition, it has incorrect value for get_subpanel_data property leads
+01/31/21 08:46:09 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 08:46:09 [10440][1][FATAL] Missing relationship definition factors_contacts. skipping contacts subpanel
+01/31/21 08:46:09 [10440][1][FATAL] Missing relationship definition projects_factors. skipping project subpanel
+01/31/21 08:46:29 [10440][1][FATAL] Bad subpanel definition, it has incorrect value for get_subpanel_data property leads
+01/31/21 08:46:29 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 08:46:29 [10440][1][FATAL] Missing relationship definition factors_contacts. skipping contacts subpanel
+01/31/21 08:46:35 [10440][1][FATAL] Bad subpanel definition, it has incorrect value for get_subpanel_data property leads
+01/31/21 08:46:35 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 08:46:35 [10440][1][FATAL] Missing relationship definition factors_contacts. skipping contacts subpanel
+01/31/21 08:46:48 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 08:46:48 [10440][1][FATAL] Bad subpanel definition, it has incorrect value for get_subpanel_data property leads
+01/31/21 08:46:48 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 08:46:48 [10440][1][FATAL] Missing relationship definition factors_contacts. skipping contacts subpanel
+01/31/21 08:59:33 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 08:59:33 [10440][1][FATAL] Bad subpanel definition, it has incorrect value for get_subpanel_data property leads
+01/31/21 08:59:33 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 08:59:33 [10440][1][FATAL] Missing relationship definition factors_contacts. skipping contacts subpanel
+01/31/21 09:03:15 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 09:03:15 [10440][1][FATAL] Bad subpanel definition, it has incorrect value for get_subpanel_data property leads
+01/31/21 09:03:15 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 09:03:15 [10440][1][FATAL] Missing relationship definition factors_contacts. skipping contacts subpanel
+01/31/21 09:03:21 [10440][1][FATAL] Bad subpanel definition, it has incorrect value for get_subpanel_data property leads
+01/31/21 09:03:21 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 09:03:21 [10440][1][FATAL] Missing relationship definition factors_contacts. skipping contacts subpanel
+01/31/21 09:03:21 [10440][1][FATAL] Missing relationship definition projects_factors. skipping project subpanel
+01/31/21 09:03:22 [10440][1][FATAL] Bad subpanel definition, it has incorrect value for get_subpanel_data property leads
+01/31/21 09:03:22 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 09:03:22 [10440][1][FATAL] Missing relationship definition factors_contacts. skipping contacts subpanel
+01/31/21 09:03:24 [10440][1][FATAL] Bad subpanel definition, it has incorrect value for get_subpanel_data property leads
+01/31/21 09:03:24 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 09:03:24 [10440][1][FATAL] Missing relationship definition factors_contacts. skipping contacts subpanel
+01/31/21 09:03:24 [10440][1][FATAL] Missing relationship definition projects_factors. skipping project subpanel
+01/31/21 09:11:22 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 09:11:22 [10440][1][FATAL] Bad subpanel definition, it has incorrect value for get_subpanel_data property leads
+01/31/21 09:11:22 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 09:11:22 [10440][1][FATAL] Missing relationship definition factors_contacts. skipping contacts subpanel
+01/31/21 09:11:22 [10440][1][FATAL] Missing relationship definition projects_factors. skipping project subpanel
+01/31/21 09:12:22 [10440][1][FATAL] MySQL error 1146: Table 'sugarcrm.opportunities_contacts' doesn't exist
+01/31/21 09:14:33 [10440][1][FATAL] MySQL error 1146: Table 'sugarcrm.opportunities_contacts' doesn't exist
+01/31/21 09:15:01 [10440][1][FATAL] MySQL error 1146: Table 'sugarcrm.opportunities_contacts' doesn't exist
+01/31/21 09:18:48 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 09:18:48 [10440][1][FATAL] Bad subpanel definition, it has incorrect value for get_subpanel_data property leads
+01/31/21 09:18:48 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 09:18:48 [10440][1][FATAL] Missing relationship definition factors_contacts. skipping contacts subpanel
+01/31/21 09:18:48 [10440][1][FATAL] Missing relationship definition projects_factors. skipping project subpanel
+01/31/21 09:18:49 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 09:18:49 [10440][1][FATAL] Bad subpanel definition, it has incorrect value for get_subpanel_data property leads
+01/31/21 09:18:49 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 09:18:49 [10440][1][FATAL] Missing relationship definition factors_contacts. skipping contacts subpanel
+01/31/21 09:18:49 [10440][1][FATAL] Missing relationship definition projects_factors. skipping project subpanel
+01/31/21 09:48:11 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 09:48:12 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 09:48:12 [10440][1][FATAL] Missing relationship definition factors_contacts. skipping contacts subpanel
+01/31/21 09:48:12 [10440][1][FATAL] Missing relationship definition projects_factors. skipping project subpanel
+01/31/21 09:48:12 [10440][1][FATAL] MySQL error 1054: Unknown column 'project.deleted' in 'where clause'
+01/31/21 09:49:36 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 09:49:36 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 09:49:36 [10440][1][FATAL] Missing relationship definition factors_contacts. skipping contacts subpanel
+01/31/21 09:49:37 [10440][1][FATAL] MySQL error 1054: Unknown column 'project.deleted' in 'where clause'
+01/31/21 09:50:08 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 09:50:08 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 09:50:08 [10440][1][FATAL] Missing relationship definition factors_contacts. skipping contacts subpanel
+01/31/21 09:50:08 [10440][1][FATAL] MySQL error 1054: Unknown column 'project.deleted' in 'where clause'
+01/31/21 09:50:27 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 09:50:27 [10440][1][FATAL] Failed to load original or custom subpanel data for contacts in modules/Contacts/metadata/subpanels/ForFactors.php
+01/31/21 09:50:27 [10440][1][FATAL] Missing relationship definition factors_contacts. skipping contacts subpanel
+01/31/21 09:50:28 [10440][1][FATAL] Missing relationship definition factors_cases. skipping cases subpanel
+01/31/21 09:51:49 [10440][1][FATAL] Missing relationship definition factors_cases. skipping cases subpanel
+01/31/21 09:58:00 [10440][1][FATAL] Missing relationship definition factors_cases. skipping cases subpanel
+01/31/21 09:58:21 [10440][1][FATAL] Bad subpanel definition, it has incorrect value for get_subpanel_data property projecttask
+01/31/21 10:03:14 [5160][1][FATAL] Missing relationship definition factors_cases. skipping cases subpanel
+01/31/21 11:02:49 [5160][1][FATAL] Missing relationship definition factors_cases. skipping cases subpanel
+01/31/21 11:03:59 [5160][1][FATAL] Missing relationship definition factors_cases. skipping cases subpanel
+01/31/21 12:38:20 [5160][1][FATAL] Missing relationship definition factors_cases. skipping cases subpanel
+01/31/21 12:39:49 [5160][1][FATAL] Missing relationship definition factors_cases. skipping cases subpanel
+01/31/21 12:43:56 [5160][1][FATAL] Missing relationship definition factors_cases. skipping cases subpanel
+01/31/21 12:45:21 [5160][1][FATAL] Missing relationship definition factors_cases. skipping cases subpanel

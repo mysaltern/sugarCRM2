@@ -45,6 +45,7 @@ include("metadata/calls_contactsMetaData.php");
 include("metadata/calls_usersMetaData.php");
 include("metadata/calls_leadsMetaData.php");
 include("metadata/cases_bugsMetaData.php");
+include("metadata/factors_casesMetaData.php");
 include("metadata/configMetaData.php");
 include("metadata/contacts_bugsMetaData.php");
 include("metadata/contacts_casesMetaData.php");
