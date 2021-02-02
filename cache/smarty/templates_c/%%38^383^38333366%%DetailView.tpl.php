@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.11, created on 2021-01-31 12:46:18
+<?php /* Smarty version 2.6.11, created on 2021-02-02 09:51:06
          compiled from cache/modules/Factors/DetailView.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_include', 'cache/modules/Factors/DetailView.tpl', 29, false),array('function', 'counter', 'cache/modules/Factors/DetailView.tpl', 31, false),array('function', 'sugar_translate', 'cache/modules/Factors/DetailView.tpl', 37, false),array('modifier', 'strip_semicolon', 'cache/modules/Factors/DetailView.tpl', 39, false),array('modifier', 'url2html', 'cache/modules/Factors/DetailView.tpl', 210, false),array('modifier', 'nl2br', 'cache/modules/Factors/DetailView.tpl', 210, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_include', 'cache/modules/Factors/DetailView.tpl', 29, false),array('function', 'counter', 'cache/modules/Factors/DetailView.tpl', 31, false),array('function', 'sugar_translate', 'cache/modules/Factors/DetailView.tpl', 37, false),array('modifier', 'strip_semicolon', 'cache/modules/Factors/DetailView.tpl', 39, false),array('modifier', 'url2html', 'cache/modules/Factors/DetailView.tpl', 204, false),array('modifier', 'nl2br', 'cache/modules/Factors/DetailView.tpl', 204, false),)), $this); ?>
 
 
 <table cellpadding="1" cellspacing="0" border="0" width="100%">
@@ -62,13 +62,13 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_inclu
 <?php echo $this->_tpl_vars['PAGINATION']; ?>
 
 <tr>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 <?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_FACTOR_NAME','module' => 'Factors'), $this);?>
 
 <?php $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
 </td>
-<td width='37.5%' >
+<td width='25%' >
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 
@@ -76,14 +76,14 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_inclu
 '><?php echo $this->_tpl_vars['fields']['name']['value']; ?>
 </span>
 </td>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 <?php ob_start();  echo $this->_tpl_vars['MOD']['LBL_AMOUNT']; ?>
  (<?php echo $this->_tpl_vars['CURRENCY']; ?>
 )
 <?php $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
 </td>
-<td width='37.5%' >
+<td width='25%' >
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 
@@ -93,13 +93,13 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_inclu
 </td>
 </tr>
 <tr>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 <?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_ACCOUNT_NAME','module' => 'Factors'), $this);?>
 
 <?php $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
 </td>
-<td width='37.5%' >
+<td width='25%' >
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 
@@ -108,13 +108,13 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_inclu
 
 <?php if (! empty ( $this->_tpl_vars['fields']['account_id']['value'] )): ?></a><?php endif; ?>
 </td>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 <?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_DATE_CLOSED','module' => 'Factors'), $this);?>
 
 <?php $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
 </td>
-<td width='37.5%' >
+<td width='25%' >
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 
@@ -124,55 +124,48 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_inclu
 </td>
 </tr>
 <tr>
-<td width='12.5%' scope="row">
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_TYPE','module' => 'Factors'), $this);?>
+<td width='8.33%' scope="row">
+<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_RELATED_TO','module' => 'Factors'), $this);?>
 
 <?php $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
 </td>
-<td width='37.5%' >
+<td width='25%' >
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 
-<?php echo $this->_tpl_vars['fields']['factor_type']['options'][$this->_tpl_vars['fields']['factor_type']['value']]; ?>
-
+<a href="index.php?module=<?php echo $this->_tpl_vars['fields']['parent_type']['value']; ?>
+&action=DetailView&record=<?php echo $this->_tpl_vars['fields']['parent_id']['value']; ?>
+" class="tabDetailViewDFLink"><?php echo $this->_tpl_vars['fields']['parent_name']['value']; ?>
+</a>
 </td>
-<td width='12.5%' scope="row">
-<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_NEXT_STEP','module' => 'Factors'), $this);?>
-
-<?php $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
-:
+<td width='8.33%' scope="row">
+&nbsp;
 </td>
-<td width='37.5%' >
-<?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
-
-
-<span id='<?php echo $this->_tpl_vars['fields']['next_step']['name']; ?>
-'><?php echo $this->_tpl_vars['fields']['next_step']['value']; ?>
-</span>
+<td width='25%' >
 </td>
 </tr>
 <tr>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 <?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_LEAD_SOURCE','module' => 'Factors'), $this);?>
 
 <?php $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
 </td>
-<td width='37.5%' >
+<td width='25%' >
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 
 <?php echo $this->_tpl_vars['fields']['lead_source']['options'][$this->_tpl_vars['fields']['lead_source']['value']]; ?>
 
 </td>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 <?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_SALES_STAGE','module' => 'Factors'), $this);?>
 
 <?php $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
 </td>
-<td width='37.5%' >
+<td width='25%' >
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 
@@ -181,13 +174,13 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_inclu
 </td>
 </tr>
 <tr>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 <?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_CAMPAIGN','module' => 'Factors'), $this);?>
 
 <?php $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
 </td>
-<td width='37.5%' colspan='3'>
+<td width='25%' colspan='3'>
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 
@@ -198,13 +191,13 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_inclu
 </td>
 </tr>
 <tr>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 <?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_PROBABILITY','module' => 'Factors'), $this);?>
 
 <?php $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
 </td>
-<td width='37.5%' colspan='3'>
+<td width='25%' colspan='3'>
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 
@@ -214,26 +207,26 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_inclu
 </td>
 </tr>
 <tr>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 <?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_ASSIGNED_TO_NAME','module' => 'Factors'), $this);?>
 
 <?php $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
 </td>
-<td width='37.5%' >
+<td width='25%' >
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 
 <?php echo $this->_tpl_vars['fields']['assigned_user_name']['value']; ?>
 
 </td>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 <?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_DATE_MODIFIED','module' => 'Factors'), $this);?>
 
 <?php $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
 </td>
-<td width='37.5%' >
+<td width='25%' >
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 <?php echo $this->_tpl_vars['fields']['date_modified']['value']; ?>
@@ -243,18 +236,18 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_inclu
 </td>
 </tr>
 <tr>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 &nbsp;
 </td>
-<td width='37.5%' >
+<td width='25%' >
 </td>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 <?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_DATE_ENTERED','module' => 'Factors'), $this);?>
 
 <?php $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
 </td>
-<td width='37.5%' >
+<td width='25%' >
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 <?php echo $this->_tpl_vars['fields']['date_entered']['value']; ?>
@@ -264,13 +257,13 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_inclu
 </td>
 </tr>
 <tr>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 <?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_DESCRIPTION','module' => 'Factors'), $this);?>
 
 <?php $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
 :
 </td>
-<td width='37.5%' colspan='3'>
+<td width='25%' colspan='3'>
 <?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
 
 

@@ -66,9 +66,9 @@ $viewdefs['Factors']['EditView'] = array(
     ),
     
     array (
-      'campaign_name',
+      'campaign_name','parent_name'
     ),
-    
+    	 
     array (
         array('name'=>'sales_stage', 'displayParams'=>array('required'=>true)),   
     ),

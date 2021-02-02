@@ -201,3 +201,5 @@
 01/31/21 12:39:49 [5160][1][FATAL] Missing relationship definition factors_cases. skipping cases subpanel
 01/31/21 12:43:56 [5160][1][FATAL] Missing relationship definition factors_cases. skipping cases subpanel
 01/31/21 12:45:21 [5160][1][FATAL] Missing relationship definition factors_cases. skipping cases subpanel
+02/02/21 09:10:56 [5160][1][FATAL] CONCAT(IFNULL(leads.first_name,'')) like 'asd%' or CONCAT(IFNULL(leads.last_name,'')) like 'asd%'
+02/02/21 09:49:01 [5160][1][FATAL] accounts.name like 'T%'

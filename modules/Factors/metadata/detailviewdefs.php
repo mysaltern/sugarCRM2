@@ -1,5 +1,6 @@
 <?php
-/*********************************************************************************
+
+/* * *******************************************************************************
  * SugarCRM is a customer relationship management program developed by
  * SugarCRM, Inc. Copyright (C) 2004-2010 SugarCRM Inc.
  * 
@@ -32,33 +33,37 @@
  * SugarCRM" logo. If the display of the logo is not reasonably feasible for
  * technical reasons, the Appropriate Legal Notices must display the words
  * "Powered by SugarCRM".
- ********************************************************************************/
+ * ****************************************************************************** */
 $viewdefs['Factors']['DetailView'] = array(
-    'templateMeta' => array('form' => array('buttons'=>array('EDIT', 'DUPLICATE', 'DELETE', 
-                                                         array('customCode'=>'<input title="{$APP.LBL_DUP_MERGE}" ' .
-                                                         		'accesskey="M" ' .
-                                                         		'class="button" ' .
-                                                         		'onclick="this.form.return_module.value=\'Factors\';this.form.return_action.value=\'DetailView\';this.form.return_id.value=\'{$fields.id.value}\'; this.form.action.value=\'Step1\'; this.form.module.value=\'MergeRecords\';" ' .
-                                                         		'name="button" ' .
-                                                         		'value="{$APP.LBL_DUP_MERGE}" ' .
-                                                         		'type="submit">'),)),
-       						'maxColumns' => '2', 
-                            'widths' => array(
-                                            array('label' => '10', 'field' => '30'), 
-                                            array('label' => '10', 'field' => '30')
-                                            ),
-                           ),
-    'panels' => array(
-        array('name', array('name'=>'amount','label' => '{$MOD.LBL_AMOUNT} ({$CURRENCY})'),),
-        array('account_name','date_closed'),
-        array('factor_type', 'next_step'),
-        array('lead_source', 'sales_stage'),
-        array('campaign_name'),
-        array(
-		'probability'),
-        array('assigned_user_name', array('name'=>'date_modified', 'label'=>'LBL_DATE_MODIFIED', 'customCode'=>'{$fields.date_modified.value} {$APP.LBL_BY} {$fields.modified_by_name.value}')),
-        array('', array('name'=>'date_entered', 'customCode'=>'{$fields.date_entered.value} {$APP.LBL_BY} {$fields.created_by_name.value}')),
-        array(array('name' => 'description', 'nl2br' => true)),
-    )
+	'templateMeta' => array('form' => array('buttons' => array('EDIT', 'DUPLICATE', 'DELETE',
+				array('customCode' => '<input title="{$APP.LBL_DUP_MERGE}" ' .
+					'accesskey="M" ' .
+					'class="button" ' .
+					'onclick="this.form.return_module.value=\'Factors\';this.form.return_action.value=\'DetailView\';this.form.return_id.value=\'{$fields.id.value}\'; this.form.action.value=\'Step1\'; this.form.module.value=\'MergeRecords\';" ' .
+					'name="button" ' .
+					'value="{$APP.LBL_DUP_MERGE}" ' .
+					'type="submit">'),)),
+		'maxColumns' => '2',
+		'widths' => array(
+			array('label' => '10', 'field' => '30'),
+			array('label' => '10', 'field' => '30'),
+			array('label' => '10', 'field' => '30')
+		),
+	),
+	'panels' => array(
+		array('name', array('name' => 'amount', 'label' => '{$MOD.LBL_AMOUNT} ({$CURRENCY})'),),
+		array('account_name', 'date_closed'),
+		array(
+			'name' => 'parent_name',
+			'customLabel' => '{sugar_translate label=\'LBL_MODULE_NAME\' module=$fields.parent_type.value}',
+		),
+		array('lead_source', 'sales_stage'),
+		array('campaign_name'),
+		array(
+			'probability'),
+		array('assigned_user_name', array('name' => 'date_modified', 'label' => 'LBL_DATE_MODIFIED', 'customCode' => '{$fields.date_modified.value} {$APP.LBL_BY} {$fields.modified_by_name.value}')),
+		array('', array('name' => 'date_entered', 'customCode' => '{$fields.date_entered.value} {$APP.LBL_BY} {$fields.created_by_name.value}')),
+		array(array('name' => 'description', 'nl2br' => true)),
+	)
 );
 ?>

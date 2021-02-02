@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2021-01-31 08:46:38
+<?php /* Smarty version 2.6.11, created on 2021-02-02 08:53:06
          compiled from cache/modules/Factors/form_SideQuickCreate_Factors.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_include', 'cache/modules/Factors/form_SideQuickCreate_Factors.tpl', 30, false),array('function', 'counter', 'cache/modules/Factors/form_SideQuickCreate_Factors.tpl', 35, false),array('function', 'sugar_translate', 'cache/modules/Factors/form_SideQuickCreate_Factors.tpl', 39, false),array('function', 'sugar_getimagepath', 'cache/modules/Factors/form_SideQuickCreate_Factors.tpl', 76, false),array('function', 'html_options', 'cache/modules/Factors/form_SideQuickCreate_Factors.tpl', 99, false),array('modifier', 'default', 'cache/modules/Factors/form_SideQuickCreate_Factors.tpl', 36, false),)), $this); ?>
@@ -251,8 +251,12 @@ addToValidate(\'form_SideQuickCreate_Factors\', \'assigned_user_id\', \'relate\'
 addToValidate(\'form_SideQuickCreate_Factors\', \'assigned_user_name\', \'relate\', true,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_ASSIGNED_TO_NAME','module' => 'Factors'), $this); echo '\' );
 addToValidate(\'form_SideQuickCreate_Factors\', \'factor_type\', \'enum\', false,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_TYPE','module' => 'Factors'), $this); echo '\' );
 addToValidate(\'form_SideQuickCreate_Factors\', \'account_name\', \'relate\', true,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_ACCOUNT_NAME','module' => 'Factors'), $this); echo '\' );
+addToValidate(\'form_SideQuickCreate_Factors\', \'parent_type\', \'parent_type\', false,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_PARENT_TYPE','module' => 'Factors'), $this); echo '\' );
+addToValidate(\'form_SideQuickCreate_Factors\', \'parent_id\', \'id\', false,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_PARENT_ID','module' => 'Factors'), $this); echo '\' );
 addToValidate(\'form_SideQuickCreate_Factors\', \'account_id\', \'id\', false,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_ACCOUNT_ID','module' => 'Factors'), $this); echo '\' );
 addToValidate(\'form_SideQuickCreate_Factors\', \'campaign_id\', \'id\', false,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_CAMPAIGN_ID','module' => 'Factors'), $this); echo '\' );
+addToValidate(\'form_SideQuickCreate_Factors\', \'parent_name\', \'parent\', false,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_RELATED_TO','module' => 'Factors'), $this); echo '\' );
+addToValidate(\'form_SideQuickCreate_Factors\', \'acase_id\', \'id\', false,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_CASE_ID','module' => 'Factors'), $this); echo '\' );
 addToValidate(\'form_SideQuickCreate_Factors\', \'campaign_name\', \'relate\', false,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_CAMPAIGN','module' => 'Factors'), $this); echo '\' );
 addToValidate(\'form_SideQuickCreate_Factors\', \'lead_source\', \'enum\', false,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_LEAD_SOURCE','module' => 'Factors'), $this); echo '\' );
 addToValidate(\'form_SideQuickCreate_Factors\', \'amount\', \'currency\', true,\'';  echo smarty_function_sugar_translate(array('label' => 'LBL_AMOUNT','module' => 'Factors'), $this); echo '\' );

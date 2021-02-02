@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2021-01-18 09:06:54
+<?php /* Smarty version 2.6.11, created on 2021-02-01 09:17:38
          compiled from cache/modules/Cases/form_SideQuickCreate_Cases.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_include', 'cache/modules/Cases/form_SideQuickCreate_Cases.tpl', 32, false),array('function', 'counter', 'cache/modules/Cases/form_SideQuickCreate_Cases.tpl', 37, false),array('function', 'sugar_translate', 'cache/modules/Cases/form_SideQuickCreate_Cases.tpl', 41, false),array('function', 'html_options', 'cache/modules/Cases/form_SideQuickCreate_Cases.tpl', 61, false),array('modifier', 'default', 'cache/modules/Cases/form_SideQuickCreate_Cases.tpl', 38, false),)), $this); ?>

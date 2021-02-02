@@ -1,5 +1,5 @@
 <?php
-// created: 2021-01-31 12:46:14
+// created: 2021-02-02 09:47:22
 $GLOBALS["dictionary"]["User"] = array (
   'table' => 'users',
   'fields' => 

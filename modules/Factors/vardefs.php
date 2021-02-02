@@ -99,6 +99,25 @@ $dictionary['Factor'] = array('table' => 'factors', 'audited' => true, 'unified_
 			'required' => true,
 			'importable' => 'required',
 		),
+		'parent_type' =>
+		array(
+			'name' => 'parent_type',
+			'vname' => 'LBL_PARENT_TYPE',
+			'type' => 'parent_type',
+			'dbType' => 'varchar',
+			'group' => 'parent_name',
+			'len' => '25',
+			'comment' => 'Sugar module the Note is associated with'
+		),
+		'parent_id' =>
+		array(
+			'name' => 'parent_id',
+			'vname' => 'LBL_PARENT_ID',
+			'type' => 'id',
+			'required' => false,
+			'reportable' => true,
+			'comment' => 'The ID of the Sugar item specified in parent_type'
+		),
 		'account_id' =>
 		array(
 			'name' => 'account_id',
@@ -122,6 +141,24 @@ $dictionary['Factor'] = array('table' => 'factors', 'audited' => true, 'unified_
 			'reportable' => false,
 			'massupdate' => false,
 			'duplicate_merge' => 'disabled',
+		),
+		'parent_name' =>
+		array(
+			'name' => 'parent_name',
+			'parent_type' => 'record_type_display',
+			'type_name' => 'parent_type',
+			'id_name' => 'parent_id', 'vname' => 'LBL_RELATED_TO',
+			'type' => 'parent',
+			'source' => 'non-db',
+			'options' => 'record_type_display_notes',
+		),
+		'acase_id' =>
+		array(
+			'name' => 'acase_id',
+			'vname' => 'LBL_CASE_ID',
+			'type' => 'id',
+			'reportable' => false,
+			'source' => 'non-db',
 		),
 		'campaign_name' =>
 		array(
@@ -316,6 +353,7 @@ $dictionary['Factor'] = array('table' => 'factors', 'audited' => true, 'unified_
 		),
 	),
 	'indices' => array(
+		array('name' => 'idx_factors_parent', 'type' => 'index', 'fields' => array('parent_id', 'parent_type')),
 		array(
 			'name' => 'idx_opp_name',
 			'type' => 'index',

@@ -32,111 +32,105 @@
 <table id='detailpanel_1' cellspacing='{$gridline}'>
 {$PAGINATION}
 <tr>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 {capture name="label" assign="label"}
 {sugar_translate label='LBL_FACTOR_NAME' module='Factors'}
 {/capture}
 {$label|strip_semicolon}:
 </td>
-<td width='37.5%' >
+<td width='25%' >
 {counter name="panelFieldCount"}
 
 <span id='{$fields.name.name}'>{$fields.name.value}</span>
 </td>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 {capture name="label" assign="label"}
 {$MOD.LBL_AMOUNT} ({$CURRENCY})
 {/capture}
 {$label|strip_semicolon}:
 </td>
-<td width='37.5%' >
+<td width='25%' >
 {counter name="panelFieldCount"}
 
 <span id='{$fields.amount.name}'>{$fields.amount.value}</span>
 </td>
 </tr>
 <tr>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 {capture name="label" assign="label"}
 {sugar_translate label='LBL_ACCOUNT_NAME' module='Factors'}
 {/capture}
 {$label|strip_semicolon}:
 </td>
-<td width='37.5%' >
+<td width='25%' >
 {counter name="panelFieldCount"}
 
 {if !empty($fields.account_id.value)}<a href="index.php?module=Accounts&action=DetailView&record={$fields.account_id.value}">{/if}
 {$fields.account_name.value}
 {if !empty($fields.account_id.value)}</a>{/if}
 </td>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 {capture name="label" assign="label"}
 {sugar_translate label='LBL_DATE_CLOSED' module='Factors'}
 {/capture}
 {$label|strip_semicolon}:
 </td>
-<td width='37.5%' >
+<td width='25%' >
 {counter name="panelFieldCount"}
 
 <span id='{$fields.date_closed.name}'>{$fields.date_closed.value}</span>
 </td>
 </tr>
 <tr>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 {capture name="label" assign="label"}
-{sugar_translate label='LBL_TYPE' module='Factors'}
+{sugar_translate label='LBL_RELATED_TO' module='Factors'}
 {/capture}
 {$label|strip_semicolon}:
 </td>
-<td width='37.5%' >
+<td width='25%' >
 {counter name="panelFieldCount"}
 
-{ $fields.factor_type.options[$fields.factor_type.value]}
+<a href="index.php?module={$fields.parent_type.value}&action=DetailView&record={$fields.parent_id.value}" class="tabDetailViewDFLink">{$fields.parent_name.value}</a>
 </td>
-<td width='12.5%' scope="row">
-{capture name="label" assign="label"}
-{sugar_translate label='LBL_NEXT_STEP' module='Factors'}
-{/capture}
-{$label|strip_semicolon}:
+<td width='8.33%' scope="row">
+&nbsp;
 </td>
-<td width='37.5%' >
-{counter name="panelFieldCount"}
-
-<span id='{$fields.next_step.name}'>{$fields.next_step.value}</span>
+<td width='25%' >
 </td>
 </tr>
 <tr>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 {capture name="label" assign="label"}
 {sugar_translate label='LBL_LEAD_SOURCE' module='Factors'}
 {/capture}
 {$label|strip_semicolon}:
 </td>
-<td width='37.5%' >
+<td width='25%' >
 {counter name="panelFieldCount"}
 
 { $fields.lead_source.options[$fields.lead_source.value]}
 </td>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 {capture name="label" assign="label"}
 {sugar_translate label='LBL_SALES_STAGE' module='Factors'}
 {/capture}
 {$label|strip_semicolon}:
 </td>
-<td width='37.5%' >
+<td width='25%' >
 {counter name="panelFieldCount"}
 
 { $fields.sales_stage.options[$fields.sales_stage.value]}
 </td>
 </tr>
 <tr>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 {capture name="label" assign="label"}
 {sugar_translate label='LBL_CAMPAIGN' module='Factors'}
 {/capture}
 {$label|strip_semicolon}:
 </td>
-<td width='37.5%' colspan='3'>
+<td width='25%' colspan='3'>
 {counter name="panelFieldCount"}
 
 {if !empty($fields.campaign_id.value)}<a href="index.php?module=Campaigns&action=DetailView&record={$fields.campaign_id.value}">{/if}
@@ -145,66 +139,66 @@
 </td>
 </tr>
 <tr>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 {capture name="label" assign="label"}
 {sugar_translate label='LBL_PROBABILITY' module='Factors'}
 {/capture}
 {$label|strip_semicolon}:
 </td>
-<td width='37.5%' colspan='3'>
+<td width='25%' colspan='3'>
 {counter name="panelFieldCount"}
 
 <span id='{$fields.probability.name}'>{$fields.probability.value}</span>
 </td>
 </tr>
 <tr>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 {capture name="label" assign="label"}
 {sugar_translate label='LBL_ASSIGNED_TO_NAME' module='Factors'}
 {/capture}
 {$label|strip_semicolon}:
 </td>
-<td width='37.5%' >
+<td width='25%' >
 {counter name="panelFieldCount"}
 
 {$fields.assigned_user_name.value}
 </td>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 {capture name="label" assign="label"}
 {sugar_translate label='LBL_DATE_MODIFIED' module='Factors'}
 {/capture}
 {$label|strip_semicolon}:
 </td>
-<td width='37.5%' >
+<td width='25%' >
 {counter name="panelFieldCount"}
 {$fields.date_modified.value} {$APP.LBL_BY} {$fields.modified_by_name.value}	
 </td>
 </tr>
 <tr>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 &nbsp;
 </td>
-<td width='37.5%' >
+<td width='25%' >
 </td>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 {capture name="label" assign="label"}
 {sugar_translate label='LBL_DATE_ENTERED' module='Factors'}
 {/capture}
 {$label|strip_semicolon}:
 </td>
-<td width='37.5%' >
+<td width='25%' >
 {counter name="panelFieldCount"}
 {$fields.date_entered.value} {$APP.LBL_BY} {$fields.created_by_name.value}	
 </td>
 </tr>
 <tr>
-<td width='12.5%' scope="row">
+<td width='8.33%' scope="row">
 {capture name="label" assign="label"}
 {sugar_translate label='LBL_DESCRIPTION' module='Factors'}
 {/capture}
 {$label|strip_semicolon}:
 </td>
-<td width='37.5%' colspan='3'>
+<td width='25%' colspan='3'>
 {counter name="panelFieldCount"}
 
 {$fields.description.value|url2html|nl2br}

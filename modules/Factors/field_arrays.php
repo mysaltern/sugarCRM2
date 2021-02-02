@@ -1,6 +1,8 @@
 <?php
-if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
-/*********************************************************************************
+
+if (!defined('sugarEntry') || !sugarEntry)
+	die('Not A Valid Entry Point');
+/* * *******************************************************************************
  * SugarCRM is a customer relationship management program developed by
  * SugarCRM, Inc. Copyright (C) 2004-2010 SugarCRM Inc.
  * 
@@ -33,15 +35,15 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
  * SugarCRM" logo. If the display of the logo is not reasonably feasible for
  * technical reasons, the Appropriate Legal Notices must display the words
  * "Powered by SugarCRM".
- ********************************************************************************/
-/*********************************************************************************
+ * ****************************************************************************** */
+/* * *******************************************************************************
 
  * Description:  Contains field arrays that are used for caching
  * Portions created by SugarCRM are Copyright (C) SugarCRM, Inc.
  * All Rights Reserved.
  * Contributor(s): ______________________________________..
- ********************************************************************************/
-$fields_array['Factor'] = array ('column_fields' => Array("id"
+ * ****************************************************************************** */
+$fields_array['Factor'] = array('column_fields' => Array("id"
 		, "name"
 		, "factor_type"
 		, "lead_source"
@@ -54,15 +56,17 @@ $fields_array['Factor'] = array ('column_fields' => Array("id"
 		, "assigned_user_id"
 		, "created_by"
 		, "date_closed"
+		, "parent_type"
+		, "parent_id"
 		, "next_step"
 		, "sales_stage"
 		, "probability"
 		, "description"
-		,"campaign_id"
-		),
-        'list_fields' => Array('id', 'name', 'account_id', 'sales_stage', 'account_name', 'date_closed', 'amount', 'assigned_user_name', 'assigned_user_id','sales_stage','probability','lead_source','factor_type'
-	, "amount_usdollar"
+		, "campaign_id"
 	),
-        'required_fields' => Array('name'=>1, 'date_closed'=>2, 'amount'=>3, 'sales_stage'=>4, 'account_name'=>5),
+	'list_fields' => Array('id', 'name', 'account_id', 'sales_stage', 'parent_type', 'parent_name', 'parent_id', 'account_name', 'date_closed', 'amount', 'assigned_user_name', 'assigned_user_id', 'sales_stage', 'probability', 'lead_source', 'factor_type'
+		, "amount_usdollar"
+	),
+	'required_fields' => Array('name' => 1, 'date_closed' => 2, 'amount' => 3, 'sales_stage' => 4, 'account_name' => 5),
 );
 ?>

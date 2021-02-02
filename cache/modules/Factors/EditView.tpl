@@ -3,24 +3,21 @@
 <form action="index.php" method="POST" name="{$form_name}" id="{$form_id}" {$enctype}>
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
-<td class="buttons">
+<td>
 <input type="hidden" name="module" value="{$module}">
 {if isset($smarty.request.isDuplicate) && $smarty.request.isDuplicate eq "true"}
 <input type="hidden" name="record" value="">
-<input type="hidden" name="duplicateSave" value="true">
-<input type="hidden" name="duplicateId" value="{$fields.id.value}">
 {else}
 <input type="hidden" name="record" value="{$fields.id.value}">
 {/if}
-<input type="hidden" name="isDuplicate" value="false">
+<input type="hidden" name="isDuplicate" value="{$smarty.request.isDuplicate}">
 <input type="hidden" name="action">
 <input type="hidden" name="return_module" value="{$smarty.request.return_module}">
 <input type="hidden" name="return_action" value="{$smarty.request.return_action}">
 <input type="hidden" name="return_id" value="{$smarty.request.return_id}">
-<input type="hidden" name="module_tab"> 
 <input type="hidden" name="contact_role">
 {if !empty($smarty.request.return_module)}
-<input type="hidden" name="relate_to" value="{if $smarty.request.return_relationship}{$smarty.request.return_relationship}{else}{$smarty.request.return_module}{/if}">
+<input type="hidden" name="relate_to" value="{$smarty.request.return_module}">
 <input type="hidden" name="relate_id" value="{$smarty.request.return_id}">
 {/if}
 <input type="hidden" name="offset" value="{$offset}">
@@ -185,7 +182,7 @@ weekNumbers:false
 {/capture}
 {$label|strip_semicolon}:
 </td>
-<td valign="top" width='37.5%' colspan='3'>
+<td valign="top" width='37.5%' >
 {counter name="panelFieldCount"}
 
 <input type="text" name="{$fields.campaign_name.name}" class="sqsEnabled" tabindex="108" id="{$fields.campaign_name.name}" size="" value="{$fields.campaign_name.value}" title='' autocomplete="off"  >
@@ -197,6 +194,62 @@ weekNumbers:false
 enableQS(false);
 -->
 </script>
+<td valign="top" id='parent_name_label' width='12.5%' scope="row">
+{capture name="label" assign="label}
+{sugar_translate label='LBL_RELATED_TO' module='Factors'}
+{/capture}
+{$label|strip_semicolon}:
+</td>
+<td valign="top" width='37.5%' >
+{counter name="panelFieldCount"}
+
+<select name='parent_type' tabindex="109" id='parent_type' title='' onchange='document.{$form_name}.{$fields.parent_name.name}.value="";document.{$form_name}.parent_id.value=""; changeQS(); checkParentType(document.{$form_name}.parent_type.value, document.{$form_name}.btn_{$fields.parent_name.name});'>
+{html_options options=$fields.parent_name.options selected=$fields.parent_type.value}
+</select>
+{if empty($fields.parent_name.options[$fields.parent_type.value])}
+{assign var="keepParent" value = 0}
+{else}
+{assign var="keepParent value = 1}
+{/if}
+<input type="text" name="{$fields.parent_name.name}" id="{$fields.parent_name.name}" class="sqsEnabled" tabindex="109" size="" {if $keepParent}value="{$fields.parent_name.value}"{/if} autocomplete="off">
+<input type="hidden" name="{$fields.parent_id.name}" id="{$fields.parent_id.name}"  {if $keepParent}value="{$fields.parent_id.value}"{/if}>
+<input type="button" name="btn_{$fields.parent_name.name}" id="btn_{$fields.parent_name.name}" tabindex="109" title="{$APP.LBL_SELECT_BUTTON_TITLE}" accessKey="{$APP.LBL_SELECT_BUTTON_KEY}" class="button" value="{$APP.LBL_SELECT_BUTTON_LABEL}" onclick='open_popup(document.{$form_name}.parent_type.value, 600, 400, "", true, false, {literal}{"call_back_function":"set_return","form_name":"EditView","field_to_name_array":{"id":"parent_id","name":"parent_name"}}{/literal}, "single", true);' >
+<input type="button" name="btn_clr_{$fields.parent_name.name}" id="btn_clr_{$fields.parent_name.name}" tabindex="109" title="{$APP.LBL_CLEAR_BUTTON_TITLE}" accessKey="{$APP.LBL_CLEAR_BUTTON_KEY}" class="button" onclick="this.form.{$fields.parent_name.name}.value = ''; this.form.{$fields.parent_id.name}.value = '';" value="{$APP.LBL_CLEAR_BUTTON_LABEL}" >
+{literal}
+<script type="text/javascript">
+function changeQS() {
+{/literal}
+	new_module = document.forms["{$form_name}"].elements["parent_type"].value;
+{literal}
+	if(typeof(disabledModules[new_module]) != 'undefined') {
+{/literal}
+		sqs_objects["{$form_name}_parent_name"]["disable"] = true;
+		document.forms["{$form_name}"].elements["parent_name"].readOnly = true;
+{literal}
+	} else {
+{/literal}
+		sqs_objects["{$form_name}_parent_name"]["disable"] = false;
+		document.forms["{$form_name}"].elements["parent_name"].readOnly = false;
+{literal}
+	}
+{/literal}
+	sqs_objects["{$form_name}_parent_name"]["modules"] = new Array(new_module);
+	if(typeof QSProcessedFieldsArray != 'undefined')
+{literal}
+    {
+{/literal}
+	   QSProcessedFieldsArray["{$form_name}_parent_name"] = false;
+{literal}
+	}	
+{/literal}    
+    enableQS(false);
+{literal}
+}
+{/literal}
+</script>
+{literal}
+<script>var disabledModules=[];</script>
+{/literal}
 </tr>
 <tr>
 <td valign="top" id='sales_stage_label' width='12.5%' scope="row">
@@ -209,7 +262,7 @@ enableQS(false);
 <td valign="top" width='37.5%' colspan='3'>
 {counter name="panelFieldCount"}
 
-<select name="{$fields.sales_stage.name}" id="{$fields.sales_stage.name}" title='' tabindex="109"  >
+<select name="{$fields.sales_stage.name}" id="{$fields.sales_stage.name}" title='' tabindex="110"  >
 {if isset($fields.sales_stage.value) && $fields.sales_stage.value != ''}
 {html_options options=$fields.sales_stage.options selected=$fields.sales_stage.value}
 {else}
@@ -227,10 +280,10 @@ enableQS(false);
 <td valign="top" width='37.5%' >
 {counter name="panelFieldCount"}
 
-<input type="text" name="{$fields.assigned_user_name.name}" class="sqsEnabled" tabindex="110" id="{$fields.assigned_user_name.name}" size="" value="{$fields.assigned_user_name.value}" title='' autocomplete="off"  >
+<input type="text" name="{$fields.assigned_user_name.name}" class="sqsEnabled" tabindex="111" id="{$fields.assigned_user_name.name}" size="" value="{$fields.assigned_user_name.value}" title='' autocomplete="off"  >
 <input type="hidden" name="{$fields.assigned_user_name.id_name}" id="{$fields.assigned_user_name.id_name}" value="{$fields.assigned_user_id.value}">
-<input type="button" name="btn_{$fields.assigned_user_name.name}" id="btn_{$fields.assigned_user_name.name}" tabindex="110" title="{$APP.LBL_SELECT_BUTTON_TITLE}" accessKey="{$APP.LBL_SELECT_BUTTON_KEY}" class="button" value="{$APP.LBL_SELECT_BUTTON_LABEL}" onclick='open_popup("{$fields.assigned_user_name.module}", 600, 400, "", true, false, {literal}{"call_back_function":"set_return","form_name":"EditView","field_to_name_array":{"id":"assigned_user_id","user_name":"assigned_user_name"}}{/literal}, "single", true);' >
-<input type="button" name="btn_clr_{$fields.assigned_user_name.name}" id="btn_clr_{$fields.assigned_user_name.name}" tabindex="110" title="{$APP.LBL_CLEAR_BUTTON_TITLE}" accessKey="{$APP.LBL_CLEAR_BUTTON_KEY}" class="button" onclick="this.form.{$fields.assigned_user_name.name}.value = ''; this.form.{$fields.assigned_user_name.id_name}.value = '';" value="{$APP.LBL_CLEAR_BUTTON_LABEL}" >
+<input type="button" name="btn_{$fields.assigned_user_name.name}" id="btn_{$fields.assigned_user_name.name}" tabindex="111" title="{$APP.LBL_SELECT_BUTTON_TITLE}" accessKey="{$APP.LBL_SELECT_BUTTON_KEY}" class="button" value="{$APP.LBL_SELECT_BUTTON_LABEL}" onclick='open_popup("{$fields.assigned_user_name.module}", 600, 400, "", true, false, {literal}{"call_back_function":"set_return","form_name":"EditView","field_to_name_array":{"id":"assigned_user_id","user_name":"assigned_user_name"}}{/literal}, "single", true);' >
+<input type="button" name="btn_clr_{$fields.assigned_user_name.name}" id="btn_clr_{$fields.assigned_user_name.name}" tabindex="111" title="{$APP.LBL_CLEAR_BUTTON_TITLE}" accessKey="{$APP.LBL_CLEAR_BUTTON_KEY}" class="button" onclick="this.form.{$fields.assigned_user_name.name}.value = ''; this.form.{$fields.assigned_user_name.id_name}.value = '';" value="{$APP.LBL_CLEAR_BUTTON_LABEL}" >
 <script type="text/javascript">
 <!--
 enableQS(false);
@@ -250,7 +303,7 @@ enableQS(false);
 {else}
 {assign var="value" value=$fields.probability.value }
 {/if}  
-<input type='text' name='{$fields.probability.name}' id='{$fields.probability.name}' size='30'  value='{$value}' title='' tabindex='111' > 
+<input type='text' name='{$fields.probability.name}' id='{$fields.probability.name}' size='30'  value='{$value}' title='' tabindex='112' > 
 </tr>
 <tr>
 <td valign="top" id='description_label' width='12.5%' scope="row">
@@ -267,7 +320,7 @@ enableQS(false);
 {else}
 {assign var="value" value=$fields.description.value }
 {/if}  
-<textarea id="{$fields.description.name}" name="{$fields.description.name}" rows="4" cols="60" title='' tabindex="112" >{$value}</textarea>
+<textarea id="{$fields.description.name}" name="{$fields.description.name}" rows="4" cols="60" title='' tabindex="113" >{$value}</textarea>
 </tr>
 </table>
 </div>
@@ -300,8 +353,12 @@ addToValidate('EditView', 'assigned_user_id', 'relate', false,'{/literal}{sugar_
 addToValidate('EditView', 'assigned_user_name', 'relate', false,'{/literal}{sugar_translate label='LBL_ASSIGNED_TO_NAME' module='Factors'}{literal}' );
 addToValidate('EditView', 'factor_type', 'enum', false,'{/literal}{sugar_translate label='LBL_TYPE' module='Factors'}{literal}' );
 addToValidate('EditView', 'account_name', 'relate', true,'{/literal}{sugar_translate label='LBL_ACCOUNT_NAME' module='Factors'}{literal}' );
+addToValidate('EditView', 'parent_type', 'parent_type', false,'{/literal}{sugar_translate label='LBL_PARENT_TYPE' module='Factors'}{literal}' );
+addToValidate('EditView', 'parent_id', 'id', false,'{/literal}{sugar_translate label='LBL_PARENT_ID' module='Factors'}{literal}' );
 addToValidate('EditView', 'account_id', 'id', false,'{/literal}{sugar_translate label='LBL_ACCOUNT_ID' module='Factors'}{literal}' );
 addToValidate('EditView', 'campaign_id', 'id', false,'{/literal}{sugar_translate label='LBL_CAMPAIGN_ID' module='Factors'}{literal}' );
+addToValidate('EditView', 'parent_name', 'parent', false,'{/literal}{sugar_translate label='LBL_RELATED_TO' module='Factors'}{literal}' );
+addToValidate('EditView', 'acase_id', 'id', false,'{/literal}{sugar_translate label='LBL_CASE_ID' module='Factors'}{literal}' );
 addToValidate('EditView', 'campaign_name', 'relate', false,'{/literal}{sugar_translate label='LBL_CAMPAIGN' module='Factors'}{literal}' );
 addToValidate('EditView', 'lead_source', 'enum', false,'{/literal}{sugar_translate label='LBL_LEAD_SOURCE' module='Factors'}{literal}' );
 addToValidate('EditView', 'amount', 'currency', true,'{/literal}{sugar_translate label='LBL_AMOUNT' module='Factors'}{literal}' );
@@ -316,4 +373,4 @@ addToValidateRange('EditView', 'probability', 'int', false,'{/literal}{sugar_tra
 addToValidateBinaryDependency('EditView', 'assigned_user_name', 'alpha', false,'{/literal}{sugar_translate label='ERR_SQS_NO_MATCH_FIELD' module='Factors'}{literal}{/literal}{sugar_translate label='LBL_ASSIGNED_TO' module='Factors'}{literal}', 'assigned_user_id' );
 addToValidateBinaryDependency('EditView', 'account_name', 'alpha', true,'{/literal}{sugar_translate label='ERR_SQS_NO_MATCH_FIELD' module='Factors'}{literal}{/literal}{sugar_translate label='LBL_ACCOUNT_NAME' module='Factors'}{literal}', 'account_id' );
 addToValidateBinaryDependency('EditView', 'campaign_name', 'alpha', false,'{/literal}{sugar_translate label='ERR_SQS_NO_MATCH_FIELD' module='Factors'}{literal}{/literal}{sugar_translate label='LBL_CAMPAIGN' module='Factors'}{literal}', 'campaign_id' );
-</script><script language="javascript">if(typeof sqs_objects == 'undefined'){var sqs_objects = new Array;}sqs_objects['EditView_account_name']={"form":"EditView","method":"query","modules":["Accounts"],"group":"or","field_list":["name","id"],"populate_list":["EditView_account_name","account_id"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"required_list":["account_id"],"order":"name","limit":"30","no_match_text":"No Match"};sqs_objects['EditView_campaign_name']={"form":"EditView","method":"query","modules":["Campaigns"],"group":"or","field_list":["name","id"],"populate_list":["campaign_name","campaign_id"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"required_list":["campaign_id"],"order":"name","limit":"30","no_match_text":"No Match"};sqs_objects['EditView_assigned_user_name']={"form":"EditView","method":"get_user_array","field_list":["user_name","id"],"populate_list":["assigned_user_name","assigned_user_id"],"required_list":["assigned_user_id"],"conditions":[{"name":"user_name","op":"like_custom","end":"%","value":""}],"limit":"30","no_match_text":"No Match"};</script>{/literal}
+</script><script language="javascript">if(typeof sqs_objects == 'undefined'){var sqs_objects = new Array;}sqs_objects['EditView_account_name']={"form":"EditView","method":"query","modules":["Accounts"],"group":"or","field_list":["name","id"],"populate_list":["EditView_account_name","account_id"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"required_list":["account_id"],"order":"name","limit":"30","no_match_text":"No Match"};sqs_objects['EditView_campaign_name']={"form":"EditView","method":"query","modules":["Campaigns"],"group":"or","field_list":["name","id"],"populate_list":["campaign_name","campaign_id"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"required_list":["campaign_id"],"order":"name","limit":"30","no_match_text":"No Match"};sqs_objects['EditView_parent_name']={"form":"EditView","method":"query","modules":["Accounts"],"group":"or","field_list":["name","id"],"populate_list":["parent_name","parent_id"],"required_list":["parent_id"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"order":"name","limit":"30","no_match_text":"No Match"};sqs_objects['EditView_assigned_user_name']={"form":"EditView","method":"get_user_array","field_list":["user_name","id"],"populate_list":["assigned_user_name","assigned_user_id"],"required_list":["assigned_user_id"],"conditions":[{"name":"user_name","op":"like_custom","end":"%","value":""}],"limit":"30","no_match_text":"No Match"};</script>{/literal}
