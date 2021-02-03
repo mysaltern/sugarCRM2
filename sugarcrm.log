@@ -203,3 +203,67 @@
 01/31/21 12:45:21 [5160][1][FATAL] Missing relationship definition factors_cases. skipping cases subpanel
 02/02/21 09:10:56 [5160][1][FATAL] CONCAT(IFNULL(leads.first_name,'')) like 'asd%' or CONCAT(IFNULL(leads.last_name,'')) like 'asd%'
 02/02/21 09:49:01 [5160][1][FATAL] accounts.name like 'T%'
+02/02/21 10:30:52 [5160][1][FATAL] MySQL error 1146: Table 'sugarcrm.factors_cases' doesn't exist
+02/02/21 10:44:26 [5160][1][FATAL] MySQL error 1146: Table 'sugarcrm.factors_cases' doesn't exist
+02/02/21 10:44:46 [5160][1][FATAL] Missing relationship definition factors_cases. skipping cases subpanel
+02/02/21 12:13:33 [5160][1][FATAL] Missing relationship definition factors_cases. skipping cases subpanel
+02/02/21 12:31:42 [5160][1][FATAL] createRelationshipMeta: Metadata for table calls does not exist
+02/02/21 12:34:09 [5160][1][FATAL] Missing relationship definition factors_cases. skipping cases subpanel
+02/02/21 12:34:18 [5160][1][FATAL] Error fetching relationship from cache case_meetings
+02/02/21 12:34:18 [5160][1][FATAL] Error fetching relationship from cache case_tasks
+02/02/21 12:34:18 [5160][1][FATAL] Error fetching relationship from cache case_calls
+02/02/21 12:34:18 [5160][1][FATAL] Error fetching relationship from cache case_meetings
+02/02/21 12:34:18 [5160][1][FATAL] Error fetching relationship from cache case_tasks
+02/02/21 12:34:18 [5160][1][FATAL] Error fetching relationship from cache case_calls
+02/02/21 12:34:18 [5160][1][FATAL] Error fetching relationship from cache case_notes
+02/02/21 12:35:57 [5160][1][FATAL] Error fetching relationship from cache case_meetings
+02/02/21 12:35:57 [5160][1][FATAL] Error fetching relationship from cache case_tasks
+02/02/21 12:35:57 [5160][1][FATAL] Error fetching relationship from cache case_calls
+02/02/21 12:35:57 [5160][1][FATAL] Error fetching relationship from cache case_meetings
+02/02/21 12:35:57 [5160][1][FATAL] Error fetching relationship from cache case_tasks
+02/02/21 12:35:57 [5160][1][FATAL] Error fetching relationship from cache case_calls
+02/02/21 12:35:57 [5160][1][FATAL] Error fetching relationship from cache case_notes
+02/02/21 12:38:54 [5160][1][FATAL] Error fetching relationship from cache case_meetings
+02/02/21 12:38:54 [5160][1][FATAL] Error fetching relationship from cache case_tasks
+02/02/21 12:38:54 [5160][1][FATAL] Error fetching relationship from cache case_calls
+02/02/21 12:38:54 [5160][1][FATAL] Error fetching relationship from cache case_meetings
+02/02/21 12:38:54 [5160][1][FATAL] Error fetching relationship from cache case_tasks
+02/02/21 12:38:54 [5160][1][FATAL] Error fetching relationship from cache case_calls
+02/02/21 12:38:54 [5160][1][FATAL] MySQL error 1054: Unknown column 'factors.parent_id' in 'where clause'
+02/02/21 12:38:55 [5160][1][FATAL] Error fetching relationship from cache case_meetings
+02/02/21 12:38:55 [5160][1][FATAL] Error fetching relationship from cache case_tasks
+02/02/21 12:38:55 [5160][1][FATAL] Error fetching relationship from cache case_calls
+02/02/21 12:38:55 [5160][1][FATAL] Error fetching relationship from cache case_meetings
+02/02/21 12:38:55 [5160][1][FATAL] Error fetching relationship from cache case_tasks
+02/02/21 12:38:55 [5160][1][FATAL] Error fetching relationship from cache case_calls
+02/02/21 12:38:55 [5160][1][FATAL] MySQL error 1054: Unknown column 'factors.parent_id' in 'where clause'
+02/02/21 12:43:27 [5160][1][FATAL] Error fetching relationship from cache case_meetings
+02/02/21 12:43:27 [5160][1][FATAL] Error fetching relationship from cache case_tasks
+02/02/21 12:43:27 [5160][1][FATAL] Error fetching relationship from cache case_calls
+02/02/21 12:43:27 [5160][1][FATAL] Error fetching relationship from cache case_meetings
+02/02/21 12:43:27 [5160][1][FATAL] Error fetching relationship from cache case_tasks
+02/02/21 12:43:27 [5160][1][FATAL] Error fetching relationship from cache case_calls
+02/02/21 12:46:32 [5160][1][FATAL] Error fetching relationship from cache case_meetings
+02/02/21 12:46:32 [5160][1][FATAL] Error fetching relationship from cache case_tasks
+02/02/21 12:46:32 [5160][1][FATAL] Error fetching relationship from cache case_calls
+02/02/21 12:46:33 [5160][1][FATAL] Error fetching relationship from cache case_meetings
+02/02/21 12:46:33 [5160][1][FATAL] Error fetching relationship from cache case_tasks
+02/02/21 12:46:33 [5160][1][FATAL] Error fetching relationship from cache case_calls
+02/03/21 08:15:55 [5160][1][FATAL] Error fetching relationship from cache case_meetings
+02/03/21 08:15:55 [5160][1][FATAL] Error fetching relationship from cache case_tasks
+02/03/21 08:15:55 [5160][1][FATAL] Error fetching relationship from cache case_calls
+02/03/21 08:15:56 [5160][1][FATAL] Error fetching relationship from cache case_meetings
+02/03/21 08:15:56 [5160][1][FATAL] Error fetching relationship from cache case_tasks
+02/03/21 08:15:56 [5160][1][FATAL] Error fetching relationship from cache case_calls
+02/03/21 08:21:18 [5160][1][FATAL] Error fetching relationship from cache case_meetings
+02/03/21 08:21:18 [5160][1][FATAL] Error fetching relationship from cache case_tasks
+02/03/21 08:21:18 [5160][1][FATAL] Error fetching relationship from cache case_calls
+02/03/21 08:21:18 [5160][1][FATAL] Error fetching relationship from cache case_meetings
+02/03/21 08:21:18 [5160][1][FATAL] Error fetching relationship from cache case_tasks
+02/03/21 08:21:18 [5160][1][FATAL] Error fetching relationship from cache case_calls
+02/03/21 08:34:34 [5160][1][FATAL] Error fetching relationship from cache case_meetings
+02/03/21 08:34:34 [5160][1][FATAL] Error fetching relationship from cache case_tasks
+02/03/21 08:34:34 [5160][1][FATAL] Error fetching relationship from cache case_calls
+02/03/21 08:34:34 [5160][1][FATAL] Error fetching relationship from cache case_meetings
+02/03/21 08:34:34 [5160][1][FATAL] Error fetching relationship from cache case_tasks
+02/03/21 08:34:34 [5160][1][FATAL] Error fetching relationship from cache case_calls

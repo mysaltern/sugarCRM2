@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.11, created on 2021-02-02 09:47:33
+<?php /* Smarty version 2.6.11, created on 2021-02-02 12:13:17
          compiled from cache/modules/Factors/EditView.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_include', 'cache/modules/Factors/EditView.tpl', 30, false),array('function', 'counter', 'cache/modules/Factors/EditView.tpl', 35, false),array('function', 'sugar_translate', 'cache/modules/Factors/EditView.tpl', 40, false),array('function', 'html_options', 'cache/modules/Factors/EditView.tpl', 114, false),array('function', 'sugar_getimagepath', 'cache/modules/Factors/EditView.tpl', 131, false),array('modifier', 'default', 'cache/modules/Factors/EditView.tpl', 36, false),array('modifier', 'strip_semicolon', 'cache/modules/Factors/EditView.tpl', 42, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_include', 'cache/modules/Factors/EditView.tpl', 33, false),array('function', 'counter', 'cache/modules/Factors/EditView.tpl', 38, false),array('function', 'sugar_translate', 'cache/modules/Factors/EditView.tpl', 43, false),array('function', 'html_options', 'cache/modules/Factors/EditView.tpl', 117, false),array('function', 'sugar_getimagepath', 'cache/modules/Factors/EditView.tpl', 134, false),array('modifier', 'default', 'cache/modules/Factors/EditView.tpl', 39, false),array('modifier', 'strip_semicolon', 'cache/modules/Factors/EditView.tpl', 45, false),)), $this); ?>
 
 
 <form action="index.php" method="POST" name="<?php echo $this->_tpl_vars['form_name']; ?>
@@ -10,17 +10,19 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_inclu
 >
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
-<td>
+<td class="buttons">
 <input type="hidden" name="module" value="<?php echo $this->_tpl_vars['module']; ?>
 ">
 <?php if (isset ( $_REQUEST['isDuplicate'] ) && $_REQUEST['isDuplicate'] == 'true'): ?>
 <input type="hidden" name="record" value="">
+<input type="hidden" name="duplicateSave" value="true">
+<input type="hidden" name="duplicateId" value="<?php echo $this->_tpl_vars['fields']['id']['value']; ?>
+">
 <?php else: ?>
 <input type="hidden" name="record" value="<?php echo $this->_tpl_vars['fields']['id']['value']; ?>
 ">
 <?php endif; ?>
-<input type="hidden" name="isDuplicate" value="<?php echo $_REQUEST['isDuplicate']; ?>
-">
+<input type="hidden" name="isDuplicate" value="false">
 <input type="hidden" name="action">
 <input type="hidden" name="return_module" value="<?php echo $_REQUEST['return_module']; ?>
 ">
@@ -28,10 +30,10 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_inclu
 ">
 <input type="hidden" name="return_id" value="<?php echo $_REQUEST['return_id']; ?>
 ">
+<input type="hidden" name="module_tab"> 
 <input type="hidden" name="contact_role">
 <?php if (! empty ( $_REQUEST['return_module'] )): ?>
-<input type="hidden" name="relate_to" value="<?php echo $_REQUEST['return_module']; ?>
-">
+<input type="hidden" name="relate_to" value="<?php if ($_REQUEST['return_relationship']):  echo $_REQUEST['return_relationship'];  else:  echo $_REQUEST['return_module'];  endif; ?>">
 <input type="hidden" name="relate_id" value="<?php echo $_REQUEST['return_id']; ?>
 ">
 <?php endif; ?>

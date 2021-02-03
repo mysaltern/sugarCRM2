@@ -83,14 +83,14 @@ class Factor extends SugarBean {
 	var $table_name = "factors";
 	var $rel_account_table = "accounts_factors";
 	var $rel_contact_table = "factors_contacts";
-	var $rel_case_table = "factors_cases";
+	//var $rel_case_table = "factors_cases";
 	var $module_dir = "Factors";
 	var $importable = true;
 	var $object_name = "Factor";
 	// This is used to retrieve related fields from form posts.
-	var $additional_column_fields = Array('parent_name', 'assigned_user_name', 'case_id', 'assigned_user_id', 'account_name', 'account_id', 'contact_id'
+	var $additional_column_fields = Array('parent_name', 'assigned_user_name', 'assigned_user_id', 'account_name', 'account_id', 'contact_id'
 	);
-	var $relationship_fields = Array('case_id' => 'cases', 'account_id' => 'accounts',
+	var $relationship_fields = Array('account_id' => 'accounts',
 		'project_id' => 'project',
 	);
 

@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.11, created on 2021-02-02 12:10:44
-         compiled from cache/modules/Opportunities/SearchForm_popup_query_form.tpl */ ?>
+<?php /* Smarty version 2.6.11, created on 2021-02-02 12:11:26
+         compiled from cache/modules/Calls/SearchForm_popup_query_form.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'counter', 'cache/modules/Opportunities/SearchForm_popup_query_form.tpl', 4, false),array('function', 'math', 'cache/modules/Opportunities/SearchForm_popup_query_form.tpl', 5, false),array('function', 'sugar_translate', 'cache/modules/Opportunities/SearchForm_popup_query_form.tpl', 14, false),array('function', 'html_options', 'cache/modules/Opportunities/SearchForm_popup_query_form.tpl', 59, false),array('function', 'sugar_getimagepath', 'cache/modules/Opportunities/SearchForm_popup_query_form.tpl', 106, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'counter', 'cache/modules/Calls/SearchForm_popup_query_form.tpl', 4, false),array('function', 'math', 'cache/modules/Calls/SearchForm_popup_query_form.tpl', 5, false),array('function', 'sugar_translate', 'cache/modules/Calls/SearchForm_popup_query_form.tpl', 14, false),array('function', 'html_options', 'cache/modules/Calls/SearchForm_popup_query_form.tpl', 88, false),array('function', 'sugar_getimagepath', 'cache/modules/Calls/SearchForm_popup_query_form.tpl', 117, false),)), $this); ?>
 <table width="100%" cellspacing="0" cellpadding="0" border="0">
 <tr>
 	
@@ -14,7 +14,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'counter', '
 	<?php endif; ?>
 	
 	<td scope="row" nowrap="nowrap" width='10%' >
-			<?php echo smarty_function_sugar_translate(array('label' => 'LBL_OPPORTUNITY_NAME','module' => 'Opportunities'), $this);?>
+			<?php echo smarty_function_sugar_translate(array('label' => 'LBL_SUBJECT','module' => 'Calls'), $this);?>
 
 		</td>
 	<td  nowrap="nowrap" width='30%'>
@@ -35,55 +35,17 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'counter', '
 	<?php endif; ?>
 	
 	<td scope="row" nowrap="nowrap" width='10%' >
-			<?php echo smarty_function_sugar_translate(array('label' => 'LBL_ACCOUNT_NAME','module' => 'Opportunities'), $this);?>
+		
+		<?php echo smarty_function_sugar_translate(array('label' => 'LBL_CONTACT_NAME','module' => 'Calls'), $this);?>
 
-		</td>
+    	</td>
 	<td  nowrap="nowrap" width='30%'>
 			
-<input type="text" name="<?php echo $this->_tpl_vars['fields']['account_name_advanced']['name']; ?>
-"  class= "sqsEnabled sqsNoAutofill"  tabindex="" id="<?php echo $this->_tpl_vars['fields']['account_name_advanced']['name']; ?>
-" size="30" value="<?php echo $this->_tpl_vars['fields']['account_name_advanced']['value']; ?>
-" title='' autocomplete="off"  >
-<input type="hidden"  id="<?php echo $this->_tpl_vars['fields']['account_id_advanced']['name']; ?>
-" value="<?php echo $this->_tpl_vars['fields']['account_id_advanced']['value']; ?>
-">
-
-   	   	</td>
-	
-	<?php echo smarty_function_counter(array('assign' => 'index'), $this);?>
-
-	<?php echo smarty_function_math(array('equation' => "left % right",'left' => $this->_tpl_vars['index'],'right' => $this->_tpl_vars['templateMeta']['maxColumns'],'assign' => 'modVal'), $this);?>
-
-	<?php if (( $this->_tpl_vars['index'] % $this->_tpl_vars['templateMeta']['maxColumns'] == 1 && $this->_tpl_vars['index'] != 1 )): ?>
-		</tr><tr>
-	<?php endif; ?>
-	
-	<td scope="row" nowrap="nowrap" width='10%' >
-			<?php echo smarty_function_sugar_translate(array('label' => 'LBL_TYPE','module' => 'Opportunities'), $this);?>
-
-		</td>
-	<td  nowrap="nowrap" width='30%'>
-			
-<?php echo smarty_function_html_options(array('name' => 'opportunity_type_advanced[]','options' => $this->_tpl_vars['fields']['opportunity_type_advanced']['options'],'size' => '6','style' => "width: 150px",'multiple' => '1','selected' => $this->_tpl_vars['fields']['opportunity_type_advanced']['value']), $this);?>
-
-   	   	</td>
-	
-	<?php echo smarty_function_counter(array('assign' => 'index'), $this);?>
-
-	<?php echo smarty_function_math(array('equation' => "left % right",'left' => $this->_tpl_vars['index'],'right' => $this->_tpl_vars['templateMeta']['maxColumns'],'assign' => 'modVal'), $this);?>
-
-	<?php if (( $this->_tpl_vars['index'] % $this->_tpl_vars['templateMeta']['maxColumns'] == 1 && $this->_tpl_vars['index'] != 1 )): ?>
-		</tr><tr>
-	<?php endif; ?>
-	
-	<td scope="row" nowrap="nowrap" width='10%' >
-			<?php echo smarty_function_sugar_translate(array('label' => 'LBL_SALES_STAGE','module' => 'Opportunities'), $this);?>
-
-		</td>
-	<td  nowrap="nowrap" width='30%'>
-			
-<?php echo smarty_function_html_options(array('name' => 'sales_stage_advanced[]','options' => $this->_tpl_vars['fields']['sales_stage_advanced']['options'],'size' => '6','style' => "width: 150px",'multiple' => '1','selected' => $this->_tpl_vars['fields']['sales_stage_advanced']['value']), $this);?>
-
+<?php if (strlen ( $this->_tpl_vars['fields']['contact_name_advanced']['value'] ) <= 0):  $this->assign('value', $this->_tpl_vars['fields']['contact_name_advanced']['default_value']);  else:  $this->assign('value', $this->_tpl_vars['fields']['contact_name_advanced']['value']);  endif; ?>  
+<input type='text' name='<?php echo $this->_tpl_vars['fields']['contact_name_advanced']['name']; ?>
+' id='<?php echo $this->_tpl_vars['fields']['contact_name_advanced']['name']; ?>
+' size='30' maxlength='' value='<?php echo $this->_tpl_vars['value']; ?>
+' title='' tabindex='' > 
    	   	</td>
 	
 	<?php echo smarty_function_counter(array('assign' => 'index'), $this);?>
@@ -96,12 +58,55 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'counter', '
 	
 	<td scope="row" nowrap="nowrap" width='10%' >
 		
-		<?php echo smarty_function_sugar_translate(array('label' => 'LBL_ASSIGNED_TO','module' => 'Opportunities'), $this);?>
+		<?php echo smarty_function_sugar_translate(array('label' => 'LBL_CURRENT_USER_FILTER','module' => 'Calls'), $this);?>
+
+    	</td>
+	<td  nowrap="nowrap" width='30%'>
+			
+<?php if (strval ( $this->_tpl_vars['fields']['current_user_only_advanced']['value'] ) == '1' || strval ( $this->_tpl_vars['fields']['current_user_only_advanced']['value'] ) == 'yes' || strval ( $this->_tpl_vars['fields']['current_user_only_advanced']['value'] ) == 'on'): ?> 
+<?php $this->assign('checked', 'CHECKED');  else:  $this->assign('checked', "");  endif; ?>
+<input type="hidden" name="<?php echo $this->_tpl_vars['fields']['current_user_only_advanced']['name']; ?>
+" value="0"> 
+<input type="checkbox" id="<?php echo $this->_tpl_vars['fields']['current_user_only_advanced']['name']; ?>
+" name="<?php echo $this->_tpl_vars['fields']['current_user_only_advanced']['name']; ?>
+" value="1" title='' tabindex="" <?php echo $this->_tpl_vars['checked']; ?>
+ >
+   	   	</td>
+	
+	<?php echo smarty_function_counter(array('assign' => 'index'), $this);?>
+
+	<?php echo smarty_function_math(array('equation' => "left % right",'left' => $this->_tpl_vars['index'],'right' => $this->_tpl_vars['templateMeta']['maxColumns'],'assign' => 'modVal'), $this);?>
+
+	<?php if (( $this->_tpl_vars['index'] % $this->_tpl_vars['templateMeta']['maxColumns'] == 1 && $this->_tpl_vars['index'] != 1 )): ?>
+		</tr><tr>
+	<?php endif; ?>
+	
+	<td scope="row" nowrap="nowrap" width='10%' >
+		
+		<?php echo smarty_function_sugar_translate(array('label' => 'LBL_ASSIGNED_TO','module' => 'Calls'), $this);?>
 
     	</td>
 	<td  nowrap="nowrap" width='30%'>
 			
 <?php echo smarty_function_html_options(array('name' => 'assigned_user_id_advanced[]','options' => $this->_tpl_vars['fields']['assigned_user_id_advanced']['options'],'size' => '6','style' => "width: 150px",'multiple' => '1','selected' => $this->_tpl_vars['fields']['assigned_user_id_advanced']['value']), $this);?>
+
+   	   	</td>
+	
+	<?php echo smarty_function_counter(array('assign' => 'index'), $this);?>
+
+	<?php echo smarty_function_math(array('equation' => "left % right",'left' => $this->_tpl_vars['index'],'right' => $this->_tpl_vars['templateMeta']['maxColumns'],'assign' => 'modVal'), $this);?>
+
+	<?php if (( $this->_tpl_vars['index'] % $this->_tpl_vars['templateMeta']['maxColumns'] == 1 && $this->_tpl_vars['index'] != 1 )): ?>
+		</tr><tr>
+	<?php endif; ?>
+	
+	<td scope="row" nowrap="nowrap" width='10%' >
+			<?php echo smarty_function_sugar_translate(array('label' => 'LBL_STATUS','module' => 'Calls'), $this);?>
+
+		</td>
+	<td  nowrap="nowrap" width='30%'>
+			
+<?php echo smarty_function_html_options(array('name' => 'status_advanced[]','options' => $this->_tpl_vars['fields']['status_advanced']['options'],'size' => '6','style' => "width: 150px",'multiple' => '1','selected' => $this->_tpl_vars['fields']['status_advanced']['value']), $this);?>
 
    	   	</td>
 	</tr>
@@ -177,4 +182,4 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'counter', '
 	}
 '; ?>
 	
-</script><?php echo '<script language="javascript">if(typeof sqs_objects == \'undefined\'){var sqs_objects = new Array;}sqs_objects[\'popup_query_form_modified_by_name_advanced\']={"form":"popup_query_form","method":"get_user_array","field_list":["user_name","id"],"populate_list":["modified_by_name_advanced","modified_user_id_advanced"],"required_list":["modified_user_id"],"conditions":[{"name":"user_name","op":"like_custom","end":"%","value":""}],"limit":"30","no_match_text":"No Match"};sqs_objects[\'popup_query_form_created_by_name_advanced\']={"form":"popup_query_form","method":"get_user_array","field_list":["user_name","id"],"populate_list":["created_by_name_advanced","created_by_advanced"],"required_list":["created_by"],"conditions":[{"name":"user_name","op":"like_custom","end":"%","value":""}],"limit":"30","no_match_text":"No Match"};sqs_objects[\'popup_query_form_assigned_user_name_advanced\']={"form":"popup_query_form","method":"get_user_array","field_list":["user_name","id"],"populate_list":["assigned_user_name_advanced","assigned_user_id_advanced"],"required_list":["assigned_user_id"],"conditions":[{"name":"user_name","op":"like_custom","end":"%","value":""}],"limit":"30","no_match_text":"No Match"};sqs_objects[\'popup_query_form_account_name_advanced\']={"form":"popup_query_form","method":"query","modules":["Accounts"],"group":"or","field_list":["name","id"],"populate_list":["popup_query_form_account_name_advanced","account_id_advanced"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"required_list":["account_id"],"order":"name","limit":"30","no_match_text":"No Match"};sqs_objects[\'popup_query_form_campaign_name_advanced\']={"form":"popup_query_form","method":"query","modules":["Campaigns"],"group":"or","field_list":["name","id"],"populate_list":["campaign_name_advanced","campaign_id_advanced"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"required_list":["campaign_id"],"order":"name","limit":"30","no_match_text":"No Match"};sqs_objects[\'popup_query_form_currency_name_advanced\']={"form":"popup_query_form","method":"query","modules":["Currencies"],"group":"or","field_list":["name","id"],"populate_list":["currency_name_advanced","currency_id_advanced"],"required_list":["parent_id"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"order":"name","limit":"30","no_match_text":"No Match"};</script>'; ?>
+</script><?php echo '<script language="javascript">if(typeof sqs_objects == \'undefined\'){var sqs_objects = new Array;}sqs_objects[\'popup_query_form_modified_by_name_advanced\']={"form":"popup_query_form","method":"get_user_array","field_list":["user_name","id"],"populate_list":["modified_by_name_advanced","modified_user_id_advanced"],"required_list":["modified_user_id"],"conditions":[{"name":"user_name","op":"like_custom","end":"%","value":""}],"limit":"30","no_match_text":"No Match"};sqs_objects[\'popup_query_form_created_by_name_advanced\']={"form":"popup_query_form","method":"get_user_array","field_list":["user_name","id"],"populate_list":["created_by_name_advanced","created_by_advanced"],"required_list":["created_by"],"conditions":[{"name":"user_name","op":"like_custom","end":"%","value":""}],"limit":"30","no_match_text":"No Match"};sqs_objects[\'popup_query_form_assigned_user_name_advanced\']={"form":"popup_query_form","method":"get_user_array","field_list":["user_name","id"],"populate_list":["assigned_user_name_advanced","assigned_user_id_advanced"],"required_list":["assigned_user_id"],"conditions":[{"name":"user_name","op":"like_custom","end":"%","value":""}],"limit":"30","no_match_text":"No Match"};sqs_objects[\'popup_query_form_parent_name_advanced\']={"form":"popup_query_form","method":"query","modules":["Accounts"],"group":"or","field_list":["name","id"],"populate_list":["parent_name_advanced","parent_id_advanced"],"required_list":["parent_id"],"conditions":[{"name":"name","op":"like_custom","end":"%","value":""}],"order":"name","limit":"30","no_match_text":"No Match"};sqs_objects[\'popup_query_form_contact_name_advanced\']={"form":"popup_query_form","method":"get_contact_array","modules":["Contacts"],"field_list":["salutation","first_name","last_name","id"],"populate_list":["contact_name_advanced","contact_id_advanced","contact_id_advanced","contact_id_advanced"],"required_list":["contact_id"],"group":"or","conditions":[{"name":"first_name","op":"like_custom","end":"%","value":""},{"name":"last_name","op":"like_custom","end":"%","value":""}],"order":"last_name","limit":"30","no_match_text":"No Match"};</script>'; ?>

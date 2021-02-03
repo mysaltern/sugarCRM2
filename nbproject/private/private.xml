@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Notes/metadata/detailviewdefs.php</file>
-            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Factors/metadata/detailviewdefs.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Notes/vardefs.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Factors/vardefs.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Calls/vardefs.php</file>
+            <file>file:/C:/xampp56/htdocs/Sugar7/modules/Cases/vardefs.php</file>
         </group>
     </open-files>
 </project-private>

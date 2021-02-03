@@ -1,5 +1,5 @@
 <?php
-// created: 2021-02-02 09:47:22
+// created: 2021-02-03 08:34:33
 $GLOBALS["dictionary"]["Relationship"] = array (
   'table' => 'relationships',
   'fields' => 

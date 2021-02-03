@@ -1,5 +1,5 @@
 <?php
-// created: 2021-02-02 09:47:23
+// created: 2021-02-03 08:34:32
 $GLOBALS["dictionary"]["Contact"] = array (
   'table' => 'contacts',
   'audited' => true,

@@ -1,5 +1,5 @@
 <?php
-// created: 2021-02-02 09:47:24
+// created: 2021-02-03 08:34:27
 $GLOBALS["dictionary"]["Case"] = array (
   'table' => 'cases',
   'audited' => true,
@@ -288,13 +288,15 @@ $GLOBALS["dictionary"]["Case"] = array (
       'source' => 'non-db',
       'vname' => 'LBL_TASKS',
     ),
-    'notes' => 
+    'factors' => 
     array (
-      'name' => 'notes',
+      'name' => 'factors',
       'type' => 'link',
-      'relationship' => 'case_notes',
+      'relationship' => 'cases_factors',
+      'module' => 'Factors',
+      'bean_name' => 'Factor',
       'source' => 'non-db',
-      'vname' => 'LBL_NOTES',
+      'vname' => 'LBL_FACTORS',
     ),
     'meetings' => 
     array (
@@ -329,13 +331,26 @@ $GLOBALS["dictionary"]["Case"] = array (
       'source' => 'non-db',
       'vname' => 'LBL_BUGS',
     ),
-    'factors' => 
+    'parent_name' => 
     array (
-      'name' => 'factors',
-      'type' => 'link',
-      'relationship' => 'factors_cases',
+      'name' => 'parent_name',
+      'parent_type' => 'record_type_display',
+      'type_name' => 'parent_type',
+      'id_name' => 'parent_id',
+      'vname' => 'LBL_LIST_RELATED_TO',
+      'type' => 'parent',
+      'group' => 'parent_name',
       'source' => 'non-db',
-      'vname' => 'LBL_FACTORS',
+      'options' => 'parent_type_display',
+    ),
+    'parent_id' => 
+    array (
+      'name' => 'parent_id',
+      'vname' => 'LBL_LIST_RELATED_TO_ID',
+      'type' => 'id',
+      'group' => 'parent_name',
+      'reportable' => false,
+      'comment' => 'The ID of the parent Sugar object identified by parent_type',
     ),
     'contacts' => 
     array (
@@ -413,6 +428,17 @@ $GLOBALS["dictionary"]["Case"] = array (
     ),
     3 => 
     array (
+      'name' => 'idx_cases_par_del',
+      'type' => 'index',
+      'fields' => 
+      array (
+        0 => 'parent_id',
+        1 => 'parent_type',
+        2 => 'deleted',
+      ),
+    ),
+    4 => 
+    array (
       'name' => 'idx_cases_stat_del',
       'type' => 'index',
       'fields' => 
@@ -455,68 +481,17 @@ $GLOBALS["dictionary"]["Case"] = array (
       'rhs_key' => 'assigned_user_id',
       'relationship_type' => 'one-to-many',
     ),
-    'case_calls' => 
+    'cases_factors' => 
     array (
       'lhs_module' => 'Cases',
       'lhs_table' => 'cases',
       'lhs_key' => 'id',
-      'rhs_module' => 'Calls',
-      'rhs_table' => 'calls',
+      'rhs_module' => 'Factors',
+      'rhs_table' => 'factors',
       'rhs_key' => 'parent_id',
       'relationship_type' => 'one-to-many',
-      'relationship_role_column' => 'parent_type',
-      'relationship_role_column_value' => 'Cases',
-    ),
-    'case_tasks' => 
-    array (
-      'lhs_module' => 'Cases',
-      'lhs_table' => 'cases',
-      'lhs_key' => 'id',
-      'rhs_module' => 'Tasks',
-      'rhs_table' => 'tasks',
-      'rhs_key' => 'parent_id',
-      'relationship_type' => 'one-to-many',
-      'relationship_role_column' => 'parent_type',
-      'relationship_role_column_value' => 'Cases',
-    ),
-    'case_notes' => 
-    array (
-      'lhs_module' => 'Cases',
-      'lhs_table' => 'cases',
-      'lhs_key' => 'id',
-      'rhs_module' => 'Notes',
-      'rhs_table' => 'notes',
-      'rhs_key' => 'parent_id',
-      'relationship_type' => 'one-to-many',
-      'relationship_role_column' => 'parent_type',
-      'relationship_role_column_value' => 'Cases',
-    ),
-    'case_meetings' => 
-    array (
-      'lhs_module' => 'Cases',
-      'lhs_table' => 'cases',
-      'lhs_key' => 'id',
-      'rhs_module' => 'Meetings',
-      'rhs_table' => 'meetings',
-      'rhs_key' => 'parent_id',
-      'relationship_type' => 'one-to-many',
-      'relationship_role_column' => 'parent_type',
-      'relationship_role_column_value' => 'Cases',
-    ),
-    'case_emails' => 
-    array (
-      'lhs_module' => 'Cases',
-      'lhs_table' => 'cases',
-      'lhs_key' => 'id',
-      'rhs_module' => 'Emails',
-      'rhs_table' => 'emails',
-      'rhs_key' => 'parent_id',
-      'relationship_type' => 'one-to-many',
-      'relationship_role_column' => 'parent_type',
-      'relationship_role_column_value' => 'Cases',
     ),
   ),
-  'optimistic_locking' => true,
   'templates' => 
   array (
     'issue' => 'issue',

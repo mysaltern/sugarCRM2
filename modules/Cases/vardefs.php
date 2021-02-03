@@ -1,6 +1,8 @@
 <?php
-if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
-/*********************************************************************************
+
+if (!defined('sugarEntry') || !sugarEntry)
+	die('Not A Valid Entry Point');
+/* * *******************************************************************************
  * SugarCRM is a customer relationship management program developed by
  * SugarCRM, Inc. Copyright (C) 2004-2010 SugarCRM Inc.
  * 
@@ -33,223 +35,201 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
  * SugarCRM" logo. If the display of the logo is not reasonably feasible for
  * technical reasons, the Appropriate Legal Notices must display the words
  * "Powered by SugarCRM".
- ********************************************************************************/
+ * ****************************************************************************** */
 
-$dictionary['Case'] = array('table' => 'cases','audited'=>true, 'unified_search' => true,'duplicate_merge'=>true,
-		'comment' => 'Cases are issues or problems that a customer asks a support representative to resolve'
-                               ,'fields' => array (
-
-
-   'account_name' =>
-  array (
-    'name' => 'account_name',
-    'rname' => 'name',
-    'id_name' => 'account_id',
-    'vname' => 'LBL_ACCOUNT_NAME',
-    'type' => 'relate',
-    'link'=>'accounts',
-    'table' => 'accounts',
-    'join_name'=>'accounts',
-    'isnull' => 'true',
-    'module' => 'Accounts',
-    'dbType' => 'varchar',
-    'len' => 100,
-    'source'=>'non-db',
-    'unified_search' => true,
-    'comment' => 'The name of the account represented by the account_id field',
-    'required' => true,
-    'importable' => 'required',
-  ),
-   'account_name1' =>
-  array (
-    'name' => 'account_name1',
-    'source'=>'non-db',
-    'type'=>'text',
-    'len' => 100,
-    'importable' => 'false',
-  ),
-
-    'account_id'=>
-  	array(
-  	'name'=>'account_id',
-  	'type' => 'id',
-  	'reportable'=>false,
-  	'vname'=>'LBL_ACCOUNT_ID',
-  	'audited'=>true,
-  	'comment' => 'The account to which the case is associated'
-  	),
-
-  'status' =>
-  array (
-    'name' => 'status',
-    'vname' => 'LBL_STATUS',
-    'type' => 'enum',
-    'options' => 'case_status_dom',
-    'len'=>25,
-    'audited'=>true,
-    'comment' => 'The status of the case',
-
-  ),
-   'priority' =>
-  array (
-    'name' => 'priority',
-    'vname' => 'LBL_PRIORITY',
-    'type' => 'enum',
-    'options' => 'case_priority_dom',
-    'len'=>25,
-    'audited'=>true,
-    'comment' => 'The priority of the case',
-
-  ),
-  'resolution' =>
-  array (
-    'name' => 'resolution',
-    'vname' => 'LBL_RESOLUTION',
-    'type' => 'text',
-    'comment' => 'The resolution of the case'
-  ),
-
-
-  'tasks' =>
-  array (
-  	'name' => 'tasks',
-    'type' => 'link',
-    'relationship' => 'case_tasks',
-    'source'=>'non-db',
-		'vname'=>'LBL_TASKS',
-  ),
-  'notes' =>
-  array (
-  	'name' => 'notes',
-    'type' => 'link',
-    'relationship' => 'case_notes',
-    'source'=>'non-db',
-		'vname'=>'LBL_NOTES',
-  ),
-  'meetings' =>
-  array (
-  	'name' => 'meetings',
-    'type' => 'link',
-    'relationship' => 'case_meetings',
-    'bean_name'=>'Meeting',
-    'source'=>'non-db',
-		'vname'=>'LBL_MEETINGS',
-  ),
-  'emails' =>
-  array (
-  	'name' => 'emails',
-    'type' => 'link',
-    'relationship' => 'emails_cases_rel',/* reldef in emails */
-    'source'=>'non-db',
-		'vname'=>'LBL_EMAILS',
-  ),
-  'calls' =>
-  array (
-  	'name' => 'calls',
-    'type' => 'link',
-    'relationship' => 'case_calls',
-    'source'=>'non-db',
-		'vname'=>'LBL_CALLS',
-  ),
-  'bugs' =>
-  array (
-  	'name' => 'bugs',
-    'type' => 'link',
-    'relationship' => 'cases_bugs',
-    'source'=>'non-db',
-		'vname'=>'LBL_BUGS',
-  ),
-  'factors' =>
-  array (
-  	'name' => 'factors',
-    'type' => 'link',
-    'relationship' => 'factors_cases',
-    'source'=>'non-db',
-		'vname'=>'LBL_FACTORS',
-  ),
-  'contacts' =>
-  array (
-  	'name' => 'contacts',
-    'type' => 'link',
-    'relationship' => 'contacts_cases',
-    'source'=>'non-db',
-		'vname'=>'LBL_CONTACTS',
-  ),
-  'accounts' =>
-  array (
-  	'name' => 'accounts',
-    'type' => 'link',
-    'relationship' => 'account_cases',
-		'link_type'=>'one',
-		'side'=>'right',
-    'source'=>'non-db',
-		'vname'=>'LBL_ACCOUNT',
-  ),
-	'project' =>
-	array (
-	    'name' => 'project',
-	    'type' => 'link',
-	    'relationship' => 'projects_cases',
-	    'source'=>'non-db',
-	    'vname'=>'LBL_PROJECTS',
+$dictionary['Case'] = array('table' => 'cases', 'audited' => true, 'unified_search' => true, 'duplicate_merge' => true,
+	'comment' => 'Cases are issues or problems that a customer asks a support representative to resolve'
+	, 'fields' => array(
+		'account_name' =>
+		array(
+			'name' => 'account_name',
+			'rname' => 'name',
+			'id_name' => 'account_id',
+			'vname' => 'LBL_ACCOUNT_NAME',
+			'type' => 'relate',
+			'link' => 'accounts',
+			'table' => 'accounts',
+			'join_name' => 'accounts',
+			'isnull' => 'true',
+			'module' => 'Accounts',
+			'dbType' => 'varchar',
+			'len' => 100,
+			'source' => 'non-db',
+			'unified_search' => true,
+			'comment' => 'The name of the account represented by the account_id field',
+			'required' => true,
+			'importable' => 'required',
+		),
+		'account_name1' =>
+		array(
+			'name' => 'account_name1',
+			'source' => 'non-db',
+			'type' => 'text',
+			'len' => 100,
+			'importable' => 'false',
+		),
+		'account_id' =>
+		array(
+			'name' => 'account_id',
+			'type' => 'id',
+			'reportable' => false,
+			'vname' => 'LBL_ACCOUNT_ID',
+			'audited' => true,
+			'comment' => 'The account to which the case is associated'
+		),
+		'status' =>
+		array(
+			'name' => 'status',
+			'vname' => 'LBL_STATUS',
+			'type' => 'enum',
+			'options' => 'case_status_dom',
+			'len' => 25,
+			'audited' => true,
+			'comment' => 'The status of the case',
+		),
+		'priority' =>
+		array(
+			'name' => 'priority',
+			'vname' => 'LBL_PRIORITY',
+			'type' => 'enum',
+			'options' => 'case_priority_dom',
+			'len' => 25,
+			'audited' => true,
+			'comment' => 'The priority of the case',
+		),
+		'resolution' =>
+		array(
+			'name' => 'resolution',
+			'vname' => 'LBL_RESOLUTION',
+			'type' => 'text',
+			'comment' => 'The resolution of the case'
+		),
+		'tasks' =>
+		array(
+			'name' => 'tasks',
+			'type' => 'link',
+			'relationship' => 'case_tasks',
+			'source' => 'non-db',
+			'vname' => 'LBL_TASKS',
+		),
+		'factors' =>
+		array(
+			'name' => 'factors',
+			'type' => 'link',
+			'relationship' => 'cases_factors',
+			'module' => 'Factors',
+			'bean_name' => 'Factor',
+			'source' => 'non-db',
+			'vname' => 'LBL_FACTORS',
+		),
+		'meetings' =>
+		array(
+			'name' => 'meetings',
+			'type' => 'link',
+			'relationship' => 'case_meetings',
+			'bean_name' => 'Meeting',
+			'source' => 'non-db',
+			'vname' => 'LBL_MEETINGS',
+		),
+		'emails' =>
+		array(
+			'name' => 'emails',
+			'type' => 'link',
+			'relationship' => 'emails_cases_rel', /* reldef in emails */
+			'source' => 'non-db',
+			'vname' => 'LBL_EMAILS',
+		),
+		'calls' =>
+		array(
+			'name' => 'calls',
+			'type' => 'link',
+			'relationship' => 'case_calls',
+			'source' => 'non-db',
+			'vname' => 'LBL_CALLS',
+		),
+		'bugs' =>
+		array(
+			'name' => 'bugs',
+			'type' => 'link',
+			'relationship' => 'cases_bugs',
+			'source' => 'non-db',
+			'vname' => 'LBL_BUGS',
+		),
+		'parent_name' =>
+		array(
+			'name' => 'parent_name',
+			'parent_type' => 'record_type_display',
+			'type_name' => 'parent_type',
+			'id_name' => 'parent_id',
+			'vname' => 'LBL_LIST_RELATED_TO',
+			'type' => 'parent',
+			'group' => 'parent_name',
+			'source' => 'non-db',
+			'options' => 'parent_type_display',
+		),
+		'parent_id' =>
+		array(
+			'name' => 'parent_id',
+			'vname' => 'LBL_LIST_RELATED_TO_ID',
+			'type' => 'id',
+			'group' => 'parent_name',
+			'reportable' => false,
+			'comment' => 'The ID of the parent Sugar object identified by parent_type'
+		),
+		'contacts' =>
+		array(
+			'name' => 'contacts',
+			'type' => 'link',
+			'relationship' => 'contacts_cases',
+			'source' => 'non-db',
+			'vname' => 'LBL_CONTACTS',
+		),
+		'accounts' =>
+		array(
+			'name' => 'accounts',
+			'type' => 'link',
+			'relationship' => 'account_cases',
+			'link_type' => 'one',
+			'side' => 'right',
+			'source' => 'non-db',
+			'vname' => 'LBL_ACCOUNT',
+		),
+		'project' =>
+		array(
+			'name' => 'project',
+			'type' => 'link',
+			'relationship' => 'projects_cases',
+			'source' => 'non-db',
+			'vname' => 'LBL_PROJECTS',
+		),
+	), 'indices' => array(
+		array('name' => 'case_number', 'type' => 'index', 'fields' => array('case_number')),
+		array('name' => 'idx_case_name', 'type' => 'index', 'fields' => array('name')),
+		array('name' => 'idx_account_id', 'type' => 'index', 'fields' => array('account_id')),
+		array(
+			'name' => 'idx_cases_par_del',
+			'type' => 'index',
+			'fields' => array('parent_id', 'parent_type', 'deleted')
+		),
+		array('name' => 'idx_cases_stat_del', 'type' => 'index', 'fields' => array('assigned_user_id', 'status', 'deleted')),
 	),
-
-  ), 'indices' => array (
-       array('name' =>'case_number' , 'type'=>'index' , 'fields'=>array('case_number')),
-
-       array('name' =>'idx_case_name', 'type' =>'index', 'fields'=>array('name')),
-       array( 'name' => 'idx_account_id', 'type' => 'index', 'fields'=> array('account_id')),
-       array('name' => 'idx_cases_stat_del', 'type' => 'index', 'fields'=> array('assigned_user_id', 'status', 'deleted')),
-                                                      )
-
-, 'relationships' => array (
-	'case_calls' => array('lhs_module'=> 'Cases', 'lhs_table'=> 'cases', 'lhs_key' => 'id',
-							  'rhs_module'=> 'Calls', 'rhs_table'=> 'calls', 'rhs_key' => 'parent_id',
-							  'relationship_type'=>'one-to-many', 'relationship_role_column'=>'parent_type',
-							  'relationship_role_column_value'=>'Cases')
-
-	,'case_tasks' => array('lhs_module'=> 'Cases', 'lhs_table'=> 'cases', 'lhs_key' => 'id',
-							  'rhs_module'=> 'Tasks', 'rhs_table'=> 'tasks', 'rhs_key' => 'parent_id',
-							  'relationship_type'=>'one-to-many', 'relationship_role_column'=>'parent_type',
-							  'relationship_role_column_value'=>'Cases')
-
-	,'case_notes' => array('lhs_module'=> 'Cases', 'lhs_table'=> 'cases', 'lhs_key' => 'id',
-							  'rhs_module'=> 'Notes', 'rhs_table'=> 'notes', 'rhs_key' => 'parent_id',
-							  'relationship_type'=>'one-to-many', 'relationship_role_column'=>'parent_type',
-							  'relationship_role_column_value'=>'Cases')
-
-	,'case_meetings' => array('lhs_module'=> 'Cases', 'lhs_table'=> 'cases', 'lhs_key' => 'id',
-							  'rhs_module'=> 'Meetings', 'rhs_table'=> 'meetings', 'rhs_key' => 'parent_id',
-							  'relationship_type'=>'one-to-many', 'relationship_role_column'=>'parent_type',
-							  'relationship_role_column_value'=>'Cases')
-
-	,'case_emails' => array('lhs_module'=> 'Cases', 'lhs_table'=> 'cases', 'lhs_key' => 'id',
-							  'rhs_module'=> 'Emails', 'rhs_table'=> 'emails', 'rhs_key' => 'parent_id',
-							  'relationship_type'=>'one-to-many', 'relationship_role_column'=>'parent_type',
-							  'relationship_role_column_value'=>'Cases')
-    ,
-   'cases_assigned_user' =>
-   array('lhs_module'=> 'Users', 'lhs_table'=> 'users', 'lhs_key' => 'id',
-   'rhs_module'=> 'Cases', 'rhs_table'=> 'cases', 'rhs_key' => 'assigned_user_id',
-   'relationship_type'=>'one-to-many')
-
-   ,'cases_modified_user' =>
-   array('lhs_module'=> 'Users', 'lhs_table'=> 'users', 'lhs_key' => 'id',
-   'rhs_module'=> 'Cases', 'rhs_table'=> 'cases', 'rhs_key' => 'modified_user_id',
-   'relationship_type'=>'one-to-many')
-
-   ,'cases_created_by' =>
-   array('lhs_module'=> 'Users', 'lhs_table'=> 'users', 'lhs_key' => 'id',
-   'rhs_module'=> 'Cases', 'rhs_table'=> 'cases', 'rhs_key' => 'created_by',
-   'relationship_type'=>'one-to-many')
-)
-//This enables optimistic locking for Saves From EditView
-	,'optimistic_locking'=>true,
+	'relationships' => array(
+		'cases_factors' => array(
+			'lhs_module' => 'Cases',
+			'lhs_table' => 'cases',
+			'lhs_key' => 'id',
+			'rhs_module' => 'Factors',
+			'rhs_table' => 'factors',
+			'rhs_key' => 'parent_id',
+			'relationship_type' => 'one-to-many',
+		),
+	),
 );
-VardefManager::createVardef('Cases','Case', array('default', 'assignable',
-'issue',
-),
-'case'
+
+
+VardefManager::createVardef('Cases', 'Case', array('default', 'assignable',
+	'issue',
+		), 'case'
 );
 
 //jc - adding for refactor for import to not use the required_fields array

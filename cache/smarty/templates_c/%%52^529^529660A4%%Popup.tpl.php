@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.11, created on 2021-02-02 12:10:45
-         compiled from cache/modules/Opportunities/Popup.tpl */ ?>
+<?php /* Smarty version 2.6.11, created on 2021-02-02 12:10:28
+         compiled from cache/modules/Bugs/Popup.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_getjspath', 'cache/modules/Opportunities/Popup.tpl', 3, false),array('function', 'sugar_getimagepath', 'cache/modules/Opportunities/Popup.tpl', 55, false),array('function', 'counter', 'cache/modules/Opportunities/Popup.tpl', 110, false),array('function', 'sugar_translate', 'cache/modules/Opportunities/Popup.tpl', 115, false),array('function', 'sugar_evalcolumn_old', 'cache/modules/Opportunities/Popup.tpl', 162, false),array('function', 'sugar_currency_format', 'cache/modules/Opportunities/Popup.tpl', 164, false),array('function', 'multienum_to_array', 'cache/modules/Opportunities/Popup.tpl', 179, false),array('modifier', 'default', 'cache/modules/Opportunities/Popup.tpl', 113, false),array('modifier', 'lower', 'cache/modules/Opportunities/Popup.tpl', 115, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_getjspath', 'cache/modules/Bugs/Popup.tpl', 3, false),array('function', 'sugar_getimagepath', 'cache/modules/Bugs/Popup.tpl', 55, false),array('function', 'counter', 'cache/modules/Bugs/Popup.tpl', 110, false),array('function', 'sugar_translate', 'cache/modules/Bugs/Popup.tpl', 115, false),array('function', 'sugar_evalcolumn_old', 'cache/modules/Bugs/Popup.tpl', 162, false),array('function', 'sugar_currency_format', 'cache/modules/Bugs/Popup.tpl', 164, false),array('function', 'multienum_to_array', 'cache/modules/Bugs/Popup.tpl', 179, false),array('modifier', 'default', 'cache/modules/Bugs/Popup.tpl', 113, false),array('modifier', 'lower', 'cache/modules/Bugs/Popup.tpl', 115, false),)), $this); ?>
 
 
 <script type="text/javascript" src="<?php echo smarty_function_sugar_getjspath(array('file' => 'include/javascript/sugar_3.js'), $this);?>

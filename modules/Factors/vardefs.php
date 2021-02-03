@@ -52,8 +52,7 @@ $dictionary['Factor'] = array('table' => 'factors', 'audited' => true, 'unified_
 		array(
 			'name' => 'cases',
 			'type' => 'link',
-			'relationship' => 'factors_cases',
-			'side' => 'right',
+			'relationship' => 'cases_factors',
 			'source' => 'non-db',
 			'vname' => 'LBL_CASES',
 		),

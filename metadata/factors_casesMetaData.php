@@ -34,24 +34,24 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
  * technical reasons, the Appropriate Legal Notices must display the words
  * "Powered by SugarCRM".
  ********************************************************************************/
-$dictionary['factors_cases'] = array ( 'table' => 'factors_cases'
-                                  , 'fields' => array (
-       array('name' =>'id', 'type' =>'varchar', 'len'=>'36')
-      , array('name' =>'case_id', 'type' =>'varchar', 'len'=>'36')
-      , array('name' =>'factor_id', 'type' =>'varchar', 'len'=>'36')
-      , array ('name' => 'date_modified','type' => 'datetime')
-      , array('name' =>'deleted', 'type' =>'bool', 'len'=>'1', 'default'=>'0', 'required'=>true)
-                                                      )                                  , 'indices' => array (
-       array('name' =>'factors_casespk', 'type' =>'primary', 'fields'=>array('id'))
-      , array('name' =>'idx_fac_cases_fac', 'type' =>'index', 'fields'=>array('case_id'))
-      , array('name' =>'idx_cas_fac_fac', 'type' =>'index', 'fields'=>array('factor_id'))
-      , array('name' => 'idx_case_factor', 'type'=>'alternate_key', 'fields'=>array('case_id','factor_id'))            
-      
-                                                      )
- 	  , 'relationships' => array ('factors_cases' => array('lhs_module'=> 'Cases', 'lhs_table'=> 'cases', 'lhs_key' => 'id',
-							  'rhs_module'=> 'Factors', 'rhs_table'=> 'factors', 'rhs_key' => 'id',
-							  'relationship_type'=>'many-to-many',
-							  'join_table'=> 'factors_cases', 'join_key_lhs'=>'case_id', 'join_key_rhs'=>'factor_id'))
-                                                      
-                                  )
+//$dictionary['factors_cases'] = array ( 'table' => 'factors_cases'
+//                                  , 'fields' => array (
+//       array('name' =>'id', 'type' =>'varchar', 'len'=>'36')
+//      , array('name' =>'case_id', 'type' =>'varchar', 'len'=>'36')
+//      , array('name' =>'factor_id', 'type' =>'varchar', 'len'=>'36')
+//      , array ('name' => 'date_modified','type' => 'datetime')
+//      , array('name' =>'deleted', 'type' =>'bool', 'len'=>'1', 'default'=>'0', 'required'=>true)
+//                                                      )                                  , 'indices' => array (
+//       array('name' =>'factors_casespk', 'type' =>'primary', 'fields'=>array('id'))
+//      , array('name' =>'idx_fac_cases_fac', 'type' =>'index', 'fields'=>array('case_id'))
+//      , array('name' =>'idx_cas_fac_fac', 'type' =>'index', 'fields'=>array('factor_id'))
+//      , array('name' => 'idx_case_factor', 'type'=>'alternate_key', 'fields'=>array('case_id','factor_id'))            
+//      
+//                                                      )
+// 	  , 'relationships' => array ('factors_cases' => array('lhs_module'=> 'Cases', 'lhs_table'=> 'cases', 'lhs_key' => 'id',
+//							  'rhs_module'=> 'Factors', 'rhs_table'=> 'factors', 'rhs_key' => 'id',
+//							  'relationship_type'=>'many-to-many',
+//							  'join_table'=> 'factors_cases', 'join_key_lhs'=>'case_id', 'join_key_rhs'=>'factor_id'))
+//                                                      
+//                                  )
 ?>

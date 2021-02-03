@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2021-01-18 13:25:43
+<?php /* Smarty version 2.6.11, created on 2021-02-02 11:51:17
          compiled from cache/modules/Tasks/DetailView.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_include', 'cache/modules/Tasks/DetailView.tpl', 32, false),array('function', 'counter', 'cache/modules/Tasks/DetailView.tpl', 34, false),array('function', 'sugar_translate', 'cache/modules/Tasks/DetailView.tpl', 40, false),array('function', 'sugar_phone', 'cache/modules/Tasks/DetailView.tpl', 131, false),array('modifier', 'strip_semicolon', 'cache/modules/Tasks/DetailView.tpl', 42, false),array('modifier', 'url2html', 'cache/modules/Tasks/DetailView.tpl', 198, false),array('modifier', 'nl2br', 'cache/modules/Tasks/DetailView.tpl', 198, false),)), $this); ?>
