@@ -3104,6 +3104,7 @@ $md5_string = array (
   './include/generic/SugarWidgets/SugarWidgetSubPanelTopButtonQuickCreate.php' => '101ebd2c686541692a9c090700789ef5',
   './include/generic/SugarWidgets/SugarWidgetFieldurl.php' => '3dc2ffae37740c5e6119c9de3aaa229f',
   './include/generic/SugarWidgets/SugarWidgetSubPanelTopCreateNoteButton.php' => '2c59abec5ec5c306c3786c0b41bb2081',
+  './include/generic/SugarWidgets/SugarWidgetSubPanelTopCreateFactorButton.php' => '2c49abec5ec5c306c3786c0b41bb2081',
   './include/generic/SugarWidgets/SugarWidgetSubPanelTopArchiveEmailButton.php' => '99ebfbfcce5b757e2b1b603a702d679b',
   './include/generic/SugarWidgets/SugarWidgetFieldtime.php' => '6519b4d96d5ee53e3552f90480e82dd2',
   './include/generic/SugarWidgets/SugarWidgetFieldbool.php' => '993885ec498f1999be6717bd6a69efe8',

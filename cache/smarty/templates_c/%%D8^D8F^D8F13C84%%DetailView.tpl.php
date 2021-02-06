@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2021-02-03 08:34:29
+<?php /* Smarty version 2.6.11, created on 2021-02-05 22:09:33
          compiled from cache/modules/Cases/DetailView.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_include', 'cache/modules/Cases/DetailView.tpl', 27, false),array('function', 'counter', 'cache/modules/Cases/DetailView.tpl', 29, false),array('function', 'sugar_translate', 'cache/modules/Cases/DetailView.tpl', 35, false),array('modifier', 'strip_semicolon', 'cache/modules/Cases/DetailView.tpl', 37, false),array('modifier', 'url2html', 'cache/modules/Cases/DetailView.tpl', 165, false),array('modifier', 'nl2br', 'cache/modules/Cases/DetailView.tpl', 165, false),)), $this); ?>
@@ -240,6 +240,38 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_inclu
 </div>
 <?php if ($this->_tpl_vars['panelFieldCount'] == 0): ?>
 <script>document.getElementById("DEFAULT").style.display='none';</script>
+<?php endif; ?>
+<div id='0' class='detail view'>
+<?php echo smarty_function_counter(array('name' => 'panelFieldCount','start' => 0,'print' => false,'assign' => 'panelFieldCount'), $this);?>
+
+<table id='detailpanel_2' cellspacing='<?php echo $this->_tpl_vars['gridline']; ?>
+'>
+<tr>
+<td width='12.5%' scope="row">
+<?php ob_start();  echo smarty_function_sugar_translate(array('label' => 'LBL_LIST_RELATED_TO','module' => 'Cases'), $this);?>
+
+<?php $this->_smarty_vars['capture']['label'] = ob_get_contents();  $this->assign('label', ob_get_contents());ob_end_clean();  echo ((is_array($_tmp=$this->_tpl_vars['label'])) ? $this->_run_mod_handler('strip_semicolon', true, $_tmp) : smarty_modifier_strip_semicolon($_tmp)); ?>
+:
+</td>
+<td width='37.5%' >
+<?php echo smarty_function_counter(array('name' => 'panelFieldCount'), $this);?>
+
+
+<a href="index.php?module=<?php echo $this->_tpl_vars['fields']['parent_type']['value']; ?>
+&action=DetailView&record=<?php echo $this->_tpl_vars['fields']['parent_id']['value']; ?>
+" class="tabDetailViewDFLink"><?php echo $this->_tpl_vars['fields']['parent_name']['value']; ?>
+</a>
+</td>
+<td width='12.5%' scope="row">
+&nbsp;
+</td>
+<td width='37.5%' >
+</td>
+</tr>
+</table>
+</div>
+<?php if ($this->_tpl_vars['panelFieldCount'] == 0): ?>
+<script>document.getElementById("0").style.display='none';</script>
 <?php endif; ?>
 
 </form>

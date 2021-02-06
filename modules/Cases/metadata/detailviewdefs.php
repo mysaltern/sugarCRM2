@@ -1,5 +1,6 @@
 <?php
-/*********************************************************************************
+
+/* * *******************************************************************************
  * SugarCRM is a customer relationship management program developed by
  * SugarCRM, Inc. Copyright (C) 2004-2010 SugarCRM Inc.
  * 
@@ -32,75 +33,75 @@
  * SugarCRM" logo. If the display of the logo is not reasonably feasible for
  * technical reasons, the Appropriate Legal Notices must display the words
  * "Powered by SugarCRM".
- ********************************************************************************/
+ * ****************************************************************************** */
 $viewdefs['Cases']['DetailView'] = array(
-'templateMeta' => array('form' => array('buttons' =>
-										array('EDIT', 'DUPLICATE', 'DELETE', 'FIND_DUPLICATES',
-                                      ),
-                        ),
-                        'maxColumns' => '2',
-                        'widths' => array(
-                                        array('label' => '10', 'field' => '30'),
-                                        array('label' => '10', 'field' => '30')
-                                        ),
-                        ),
-'panels' =>array (
-  'default'=>array(
-	  array (
-	    array('name' => 'case_number', 'label' => 'LBL_CASE_NUMBER'),
-	    'assigned_user_name',
-	  ),
-	
-	  array (
-	    'priority',
-	  ),
-	
-	  array (
-	    'status',
-	    'account_name',
-	  ),
-	  array (
-	      'type',
-	  ),
-	  array (
-	    '',
-	    array (
-	      'name' => 'modified_by_name',
-	      'group'=>'modified_by_name',
-	      'customCode' => '{$fields.date_modified.value} {$APP.LBL_BY} {$fields.modified_by_name.value}&nbsp;',
-	      'label' => 'LBL_DATE_MODIFIED',
+	'templateMeta' => array('form' => array('buttons' =>
+			array('EDIT', 'DUPLICATE', 'DELETE', 'FIND_DUPLICATES',
+			),
 		),
-	  ),
-	  array(
-	    '',
-	    array (
-	      'name' => 'created_by_name',
-	      'group'=>'created_by_name',
-	      'customCode' => '{$fields.date_entered.value} {$APP.LBL_BY} {$fields.created_by_name.value}&nbsp;',
-	      'label' => 'LBL_DATE_ENTERED',
-	    ),
-	  ),
-	
-	  array (
-	
-	    array (
-	      'name' => 'name',
-	      'label' => 'LBL_SUBJECT',
-	    ),
-	  ),
-	
-	  array (
-	    'description',
-	  ),
-	
-	  array (
-	    'resolution',
-	  ),
-	
+		'maxColumns' => '2',
+		'widths' => array(
+			array('label' => '10', 'field' => '30'),
+			array('label' => '10', 'field' => '30')
+		),
 	),
-)
-
-
-
+	'panels' => array(
+		'default' => array(
+			array(
+				array('name' => 'case_number', 'label' => 'LBL_CASE_NUMBER'),
+				'assigned_user_name',
+			),
+			array(
+				'priority',
+			),
+			array(
+				'status',
+				'account_name',
+			),
+			array(
+				'type',
+			),
+			array(
+				'',
+				array(
+					'name' => 'modified_by_name',
+					'group' => 'modified_by_name',
+					'customCode' => '{$fields.date_modified.value} {$APP.LBL_BY} {$fields.modified_by_name.value}&nbsp;',
+					'label' => 'LBL_DATE_MODIFIED',
+				),
+			),
+			array(
+				'',
+				array(
+					'name' => 'created_by_name',
+					'group' => 'created_by_name',
+					'customCode' => '{$fields.date_entered.value} {$APP.LBL_BY} {$fields.created_by_name.value}&nbsp;',
+					'label' => 'LBL_DATE_ENTERED',
+				),
+			),
+			array(
+				array(
+					'name' => 'name',
+					'label' => 'LBL_SUBJECT',
+				),
+			),
+			array(
+				'description',
+			),
+			array(
+				'resolution',
+			),
+		),
+		array(
+//			array(
+//				'name' => 'date_start',
+//				'customCode' => '{$fields.date_start.value} {$fields.time_start.value}&nbsp;',
+//				'label' => 'LBL_DATE_TIME',
+//			),
+			array('name' => 'parent_name',
+				'customLabel' => '{sugar_translate label=\'LBL_MODULE_NAME\' module=$fields.parent_type.value}',
+			),
+		),
+	)
 );
 ?>

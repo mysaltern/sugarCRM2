@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2021-02-01 07:42:07
+<?php /* Smarty version 2.6.11, created on 2021-02-05 21:42:50
          compiled from cache/modules/Opportunities/DetailView.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_include', 'cache/modules/Opportunities/DetailView.tpl', 29, false),array('function', 'counter', 'cache/modules/Opportunities/DetailView.tpl', 31, false),array('function', 'sugar_translate', 'cache/modules/Opportunities/DetailView.tpl', 37, false),array('modifier', 'strip_semicolon', 'cache/modules/Opportunities/DetailView.tpl', 39, false),array('modifier', 'url2html', 'cache/modules/Opportunities/DetailView.tpl', 210, false),array('modifier', 'nl2br', 'cache/modules/Opportunities/DetailView.tpl', 210, false),)), $this); ?>

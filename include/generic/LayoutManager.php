@@ -126,6 +126,14 @@ class LayoutManager
 				'form_value'=>'LNK_NEW_NOTE',
 				'ACL'=>'edit',
 			),	
+			'SugarWidgetSubPanelTopCreateFactorButton' => array(
+				'widget_class'=>'SugarWidgetSubPanelTopCreateFactorButton',
+				'module'=>'Factors',
+				'title'=>'LBL_NEW_BUTTON_TITLE',
+				'access_key'=>'LBL_NEW_BUTTON_KEY',
+				'form_value'=>'LNK_NEW_Factor',
+				'ACL'=>'edit',
+			),	
 			'SugarWidgetSubPanelTopCreateContactAccountButton' => array(
 				'widget_class'=>'SugarWidgetSubPanelTopButton',
 				'module'=>'Contacts',

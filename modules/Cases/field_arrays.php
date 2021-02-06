@@ -53,10 +53,12 @@ $fields_array['Case'] = array ('column_fields' => Array("id"
         , "created_by"
         , "status"
         , "priority"
+		, "parent_type"
+		, "parent_id"
         , "description"
         , "resolution"
         ),
-        'list_fields' => Array('id', 'priority', 'status', 'name', 'account_name', 'case_number', 'account_id', 'assigned_user_name', 'assigned_user_id'
+        'list_fields' => Array('id', 'priority', 'status', 'name', 'account_name', 'case_number', 'account_id', 'assigned_user_name', 'parent_type', 'parent_name', 'parent_id', 'assigned_user_id'
         ),
         'required_fields' => array('name'=>1, 'account_name'=>2),
 );
