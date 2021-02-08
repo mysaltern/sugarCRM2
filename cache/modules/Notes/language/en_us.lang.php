@@ -1,5 +1,5 @@
 <?php
-// created: 2021-02-06 08:24:08
+// created: 2021-02-08 09:14:48
 $mod_strings = array (
   'ERR_DELETE_RECORD' => 'You must specify a record number to delete the account.',
   'LBL_ACCOUNT_ID' => 'Account ID:',

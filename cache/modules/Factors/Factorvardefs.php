@@ -1,31 +1,31 @@
 <?php
-// created: 2021-02-06 08:24:21
-$GLOBALS["dictionary"]["Opportunity"] = array (
-  'table' => 'opportunities',
+// created: 2021-02-08 09:18:05
+$GLOBALS["dictionary"]["Factor"] = array (
+  'table' => 'factors',
   'audited' => true,
   'unified_search' => true,
   'duplicate_merge' => true,
-  'comment' => 'An opportunity is the target of selling activities',
+  'comment' => 'An factor is the target of selling activities',
   'fields' => 
   array (
     'id' => 
     array (
       'name' => 'id',
       'vname' => 'LBL_ID',
-      'type' => 'id',
       'required' => true,
+      'type' => 'id',
       'reportable' => true,
       'comment' => 'Unique identifier',
     ),
     'name' => 
     array (
       'name' => 'name',
-      'vname' => 'LBL_OPPORTUNITY_NAME',
+      'vname' => 'LBL_FACTOR_NAME',
       'type' => 'name',
       'dbType' => 'varchar',
       'len' => '50',
       'unified_search' => true,
-      'comment' => 'Name of the opportunity',
+      'comment' => 'Name of the factor',
       'merge_filter' => 'selected',
       'importable' => 'required',
     ),
@@ -121,7 +121,7 @@ $GLOBALS["dictionary"]["Opportunity"] = array (
     array (
       'name' => 'created_by_link',
       'type' => 'link',
-      'relationship' => 'opportunities_created_by',
+      'relationship' => 'factors_created_by',
       'vname' => 'LBL_CREATED_USER',
       'link_type' => 'one',
       'module' => 'Users',
@@ -132,7 +132,7 @@ $GLOBALS["dictionary"]["Opportunity"] = array (
     array (
       'name' => 'modified_user_link',
       'type' => 'link',
-      'relationship' => 'opportunities_modified_user',
+      'relationship' => 'factors_modified_user',
       'vname' => 'LBL_MODIFIED_USER',
       'link_type' => 'one',
       'module' => 'Users',
@@ -174,7 +174,7 @@ $GLOBALS["dictionary"]["Opportunity"] = array (
     array (
       'name' => 'assigned_user_link',
       'type' => 'link',
-      'relationship' => 'opportunities_assigned_user',
+      'relationship' => 'factors_assigned_user',
       'vname' => 'LBL_ASSIGNED_TO_USER',
       'link_type' => 'one',
       'module' => 'Users',
@@ -185,15 +185,23 @@ $GLOBALS["dictionary"]["Opportunity"] = array (
       'id_name' => 'assigned_user_id',
       'table' => 'users',
     ),
-    'opportunity_type' => 
+    'cases' => 
     array (
-      'name' => 'opportunity_type',
+      'name' => 'cases',
+      'type' => 'link',
+      'relationship' => 'cases_factors',
+      'source' => 'non-db',
+      'vname' => 'LBL_CASES',
+    ),
+    'factor_type' => 
+    array (
+      'name' => 'factor_type',
       'vname' => 'LBL_TYPE',
       'type' => 'enum',
-      'options' => 'opportunity_type_dom',
+      'options' => 'factor_type_dom',
       'len' => '255',
       'audited' => true,
-      'comment' => 'Type of opportunity (ex: Existing, New)',
+      'comment' => 'Type of factor (ex: Existing, New)',
       'merge_filter' => 'enabled',
     ),
     'account_name' => 
@@ -214,6 +222,25 @@ $GLOBALS["dictionary"]["Opportunity"] = array (
       'unified_search' => true,
       'required' => true,
       'importable' => 'required',
+    ),
+    'parent_type' => 
+    array (
+      'name' => 'parent_type',
+      'vname' => 'LBL_PARENT_TYPE',
+      'type' => 'parent_type',
+      'dbType' => 'varchar',
+      'group' => 'parent_name',
+      'len' => '25',
+      'comment' => 'Sugar module the Note is associated with',
+    ),
+    'parent_id' => 
+    array (
+      'name' => 'parent_id',
+      'vname' => 'LBL_PARENT_ID',
+      'type' => 'id',
+      'required' => false,
+      'reportable' => true,
+      'comment' => 'The ID of the Sugar item specified in parent_type',
     ),
     'account_id' => 
     array (
@@ -238,6 +265,25 @@ $GLOBALS["dictionary"]["Opportunity"] = array (
       'massupdate' => false,
       'duplicate_merge' => 'disabled',
     ),
+    'parent_name' => 
+    array (
+      'name' => 'parent_name',
+      'parent_type' => 'record_type_display',
+      'type_name' => 'parent_type',
+      'id_name' => 'parent_id',
+      'vname' => 'LBL_RELATED_TO',
+      'type' => 'parent',
+      'source' => 'non-db',
+      'options' => 'record_type_display_notes',
+    ),
+    'acase_id' => 
+    array (
+      'name' => 'acase_id',
+      'vname' => 'LBL_CASE_ID',
+      'type' => 'id',
+      'reportable' => false,
+      'source' => 'non-db',
+    ),
     'campaign_name' => 
     array (
       'name' => 'campaign_name',
@@ -245,18 +291,18 @@ $GLOBALS["dictionary"]["Opportunity"] = array (
       'id_name' => 'campaign_id',
       'vname' => 'LBL_CAMPAIGN',
       'type' => 'relate',
-      'link' => 'campaign_opportunities',
+      'link' => 'campaign_factors',
       'isnull' => 'true',
       'table' => 'campaigns',
       'module' => 'Campaigns',
       'source' => 'non-db',
     ),
-    'campaign_opportunities' => 
+    'campaign_factors' => 
     array (
-      'name' => 'campaign_opportunities',
+      'name' => 'campaign_factors',
       'type' => 'link',
-      'vname' => 'LBL_CAMPAIGN_OPPORTUNITY',
-      'relationship' => 'campaign_opportunities',
+      'vname' => 'LBL_CAMPAIGN_FACTOR',
+      'relationship' => 'campaign_factors',
       'source' => 'non-db',
     ),
     'lead_source' => 
@@ -266,7 +312,7 @@ $GLOBALS["dictionary"]["Opportunity"] = array (
       'type' => 'enum',
       'options' => 'lead_source_dom',
       'len' => '50',
-      'comment' => 'Source of the opportunity',
+      'comment' => 'Source of the factor',
       'merge_filter' => 'enabled',
     ),
     'amount' => 
@@ -275,7 +321,7 @@ $GLOBALS["dictionary"]["Opportunity"] = array (
       'vname' => 'LBL_AMOUNT',
       'type' => 'currency',
       'dbType' => 'double',
-      'comment' => 'Unconverted amount of the opportunity',
+      'comment' => 'Unconverted amount of the factor',
       'duplicate_merge' => 'disabled',
       'importable' => 'required',
     ),
@@ -288,7 +334,7 @@ $GLOBALS["dictionary"]["Opportunity"] = array (
       'dbType' => 'double',
       'disable_num_format' => true,
       'audited' => true,
-      'comment' => 'Formatted amount of the opportunity',
+      'comment' => 'Formatted amount of the factor',
     ),
     'currency_id' => 
     array (
@@ -389,7 +435,7 @@ $GLOBALS["dictionary"]["Opportunity"] = array (
     array (
       'name' => 'accounts',
       'type' => 'link',
-      'relationship' => 'accounts_opportunities',
+      'relationship' => 'accounts_factors',
       'source' => 'non-db',
       'link_type' => 'one',
       'module' => 'Accounts',
@@ -400,7 +446,7 @@ $GLOBALS["dictionary"]["Opportunity"] = array (
     array (
       'name' => 'contacts',
       'type' => 'link',
-      'relationship' => 'opportunities_contacts',
+      'relationship' => 'factors_contacts',
       'source' => 'non-db',
       'module' => 'Contacts',
       'bean_name' => 'Contact',
@@ -409,72 +455,24 @@ $GLOBALS["dictionary"]["Opportunity"] = array (
         'contact_role' => 
         array (
           'type' => 'enum',
-          'options' => 'opportunity_relationship_type_dom',
+          'options' => 'factor_relationship_type_dom',
         ),
       ),
       'vname' => 'LBL_CONTACTS',
-    ),
-    'tasks' => 
-    array (
-      'name' => 'tasks',
-      'type' => 'link',
-      'relationship' => 'opportunity_tasks',
-      'source' => 'non-db',
-      'vname' => 'LBL_TASKS',
-    ),
-    'notes' => 
-    array (
-      'name' => 'notes',
-      'type' => 'link',
-      'relationship' => 'opportunity_notes',
-      'source' => 'non-db',
-      'vname' => 'LBL_NOTES',
-    ),
-    'meetings' => 
-    array (
-      'name' => 'meetings',
-      'type' => 'link',
-      'relationship' => 'opportunity_meetings',
-      'source' => 'non-db',
-      'vname' => 'LBL_MEETINGS',
-    ),
-    'calls' => 
-    array (
-      'name' => 'calls',
-      'type' => 'link',
-      'relationship' => 'opportunity_calls',
-      'source' => 'non-db',
-      'vname' => 'LBL_CALLS',
-    ),
-    'emails' => 
-    array (
-      'name' => 'emails',
-      'type' => 'link',
-      'relationship' => 'emails_opportunities_rel',
-      'source' => 'non-db',
-      'vname' => 'LBL_EMAILS',
     ),
     'project' => 
     array (
       'name' => 'project',
       'type' => 'link',
-      'relationship' => 'projects_opportunities',
+      'relationship' => 'projects_factors',
       'source' => 'non-db',
       'vname' => 'LBL_PROJECTS',
-    ),
-    'leads' => 
-    array (
-      'name' => 'leads',
-      'type' => 'link',
-      'relationship' => 'opportunity_leads',
-      'source' => 'non-db',
-      'vname' => 'LBL_LEADS',
     ),
     'campaigns' => 
     array (
       'name' => 'campaigns',
       'type' => 'link',
-      'relationship' => 'opportunities_campaign',
+      'relationship' => 'factors_campaign',
       'module' => 'CampaignLog',
       'bean_name' => 'CampaignLog',
       'source' => 'non-db',
@@ -484,7 +482,7 @@ $GLOBALS["dictionary"]["Opportunity"] = array (
     array (
       'name' => 'campaign_link',
       'type' => 'link',
-      'relationship' => 'opportunities_campaign',
+      'relationship' => 'factors_campaign',
       'vname' => 'LBL_CAMPAIGNS',
       'link_type' => 'one',
       'module' => 'Campaigns',
@@ -495,7 +493,7 @@ $GLOBALS["dictionary"]["Opportunity"] = array (
     array (
       'name' => 'currencies',
       'type' => 'link',
-      'relationship' => 'opportunity_currencies',
+      'relationship' => 'factor_currencies',
       'source' => 'non-db',
       'vname' => 'LBL_CURRENCIES',
     ),
@@ -504,7 +502,7 @@ $GLOBALS["dictionary"]["Opportunity"] = array (
   array (
     'id' => 
     array (
-      'name' => 'opportunitiespk',
+      'name' => 'factorspk',
       'type' => 'primary',
       'fields' => 
       array (
@@ -513,6 +511,16 @@ $GLOBALS["dictionary"]["Opportunity"] = array (
     ),
     0 => 
     array (
+      'name' => 'idx_factors_parent',
+      'type' => 'index',
+      'fields' => 
+      array (
+        0 => 'parent_id',
+        1 => 'parent_type',
+      ),
+    ),
+    1 => 
+    array (
       'name' => 'idx_opp_name',
       'type' => 'index',
       'fields' => 
@@ -520,7 +528,7 @@ $GLOBALS["dictionary"]["Opportunity"] = array (
         0 => 'name',
       ),
     ),
-    1 => 
+    2 => 
     array (
       'name' => 'idx_opp_assigned',
       'type' => 'index',
@@ -532,123 +540,43 @@ $GLOBALS["dictionary"]["Opportunity"] = array (
   ),
   'relationships' => 
   array (
-    'opportunities_modified_user' => 
+    'factors_modified_user' => 
     array (
       'lhs_module' => 'Users',
       'lhs_table' => 'users',
       'lhs_key' => 'id',
-      'rhs_module' => 'Opportunities',
-      'rhs_table' => 'opportunities',
+      'rhs_module' => 'Factors',
+      'rhs_table' => 'factors',
       'rhs_key' => 'modified_user_id',
       'relationship_type' => 'one-to-many',
     ),
-    'opportunities_created_by' => 
+    'factors_created_by' => 
     array (
       'lhs_module' => 'Users',
       'lhs_table' => 'users',
       'lhs_key' => 'id',
-      'rhs_module' => 'Opportunities',
-      'rhs_table' => 'opportunities',
+      'rhs_module' => 'Factors',
+      'rhs_table' => 'factors',
       'rhs_key' => 'created_by',
       'relationship_type' => 'one-to-many',
     ),
-    'opportunities_assigned_user' => 
+    'factors_assigned_user' => 
     array (
       'lhs_module' => 'Users',
       'lhs_table' => 'users',
       'lhs_key' => 'id',
-      'rhs_module' => 'Opportunities',
-      'rhs_table' => 'opportunities',
+      'rhs_module' => 'Factors',
+      'rhs_table' => 'factors',
       'rhs_key' => 'assigned_user_id',
       'relationship_type' => 'one-to-many',
     ),
-    'opportunity_calls' => 
-    array (
-      'lhs_module' => 'Opportunities',
-      'lhs_table' => 'opportunities',
-      'lhs_key' => 'id',
-      'rhs_module' => 'Calls',
-      'rhs_table' => 'calls',
-      'rhs_key' => 'parent_id',
-      'relationship_type' => 'one-to-many',
-      'relationship_role_column' => 'parent_type',
-      'relationship_role_column_value' => 'Opportunities',
-    ),
-    'opportunity_meetings' => 
-    array (
-      'lhs_module' => 'Opportunities',
-      'lhs_table' => 'opportunities',
-      'lhs_key' => 'id',
-      'rhs_module' => 'Meetings',
-      'rhs_table' => 'meetings',
-      'rhs_key' => 'parent_id',
-      'relationship_type' => 'one-to-many',
-      'relationship_role_column' => 'parent_type',
-      'relationship_role_column_value' => 'Opportunities',
-    ),
-    'opportunity_tasks' => 
-    array (
-      'lhs_module' => 'Opportunities',
-      'lhs_table' => 'opportunities',
-      'lhs_key' => 'id',
-      'rhs_module' => 'Tasks',
-      'rhs_table' => 'tasks',
-      'rhs_key' => 'parent_id',
-      'relationship_type' => 'one-to-many',
-      'relationship_role_column' => 'parent_type',
-      'relationship_role_column_value' => 'Opportunities',
-    ),
-    'opportunity_notes' => 
-    array (
-      'lhs_module' => 'Opportunities',
-      'lhs_table' => 'opportunities',
-      'lhs_key' => 'id',
-      'rhs_module' => 'Notes',
-      'rhs_table' => 'notes',
-      'rhs_key' => 'parent_id',
-      'relationship_type' => 'one-to-many',
-      'relationship_role_column' => 'parent_type',
-      'relationship_role_column_value' => 'Opportunities',
-    ),
-    'opportunity_emails' => 
-    array (
-      'lhs_module' => 'Opportunities',
-      'lhs_table' => 'opportunities',
-      'lhs_key' => 'id',
-      'rhs_module' => 'Emails',
-      'rhs_table' => 'emails',
-      'rhs_key' => 'parent_id',
-      'relationship_type' => 'one-to-many',
-      'relationship_role_column' => 'parent_type',
-      'relationship_role_column_value' => 'Opportunities',
-    ),
-    'opportunity_leads' => 
-    array (
-      'lhs_module' => 'Opportunities',
-      'lhs_table' => 'opportunities',
-      'lhs_key' => 'id',
-      'rhs_module' => 'Leads',
-      'rhs_table' => 'leads',
-      'rhs_key' => 'opportunity_id',
-      'relationship_type' => 'one-to-many',
-    ),
-    'opportunity_currencies' => 
-    array (
-      'lhs_module' => 'Opportunities',
-      'lhs_table' => 'opportunities',
-      'lhs_key' => 'currency_id',
-      'rhs_module' => 'Currencies',
-      'rhs_table' => 'currencies',
-      'rhs_key' => 'id',
-      'relationship_type' => 'one-to-many',
-    ),
-    'opportunities_campaign' => 
+    'factors_campaign' => 
     array (
       'lhs_module' => 'campaigns',
       'lhs_table' => 'campaigns',
       'lhs_key' => 'id',
-      'rhs_module' => 'Opportunities',
-      'rhs_table' => 'opportunities',
+      'rhs_module' => 'Factors',
+      'rhs_table' => 'factors',
       'rhs_key' => 'campaign_id',
       'relationship_type' => 'one-to-many',
     ),

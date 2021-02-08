@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2021-02-05 21:44:17
+<?php /* Smarty version 2.6.11, created on 2021-02-07 09:30:56
          compiled from cache/modules/Tasks/form_SideQuickCreate_Tasks.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_include', 'cache/modules/Tasks/form_SideQuickCreate_Tasks.tpl', 30, false),array('function', 'counter', 'cache/modules/Tasks/form_SideQuickCreate_Tasks.tpl', 35, false),array('function', 'sugar_translate', 'cache/modules/Tasks/form_SideQuickCreate_Tasks.tpl', 39, false),array('function', 'sugar_getimagepath', 'cache/modules/Tasks/form_SideQuickCreate_Tasks.tpl', 59, false),array('function', 'html_options', 'cache/modules/Tasks/form_SideQuickCreate_Tasks.tpl', 82, false),array('modifier', 'default', 'cache/modules/Tasks/form_SideQuickCreate_Tasks.tpl', 36, false),)), $this); ?>

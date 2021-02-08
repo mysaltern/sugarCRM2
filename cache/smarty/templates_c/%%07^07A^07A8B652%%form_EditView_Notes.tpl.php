@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2021-02-05 21:42:10
+<?php /* Smarty version 2.6.11, created on 2021-02-07 09:30:35
          compiled from cache/modules/Notes/form_EditView_Notes.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_include', 'cache/modules/Notes/form_EditView_Notes.tpl', 34, false),array('function', 'counter', 'cache/modules/Notes/form_EditView_Notes.tpl', 39, false),array('function', 'sugar_translate', 'cache/modules/Notes/form_EditView_Notes.tpl', 44, false),array('function', 'html_options', 'cache/modules/Notes/form_EditView_Notes.tpl', 70, false),array('modifier', 'default', 'cache/modules/Notes/form_EditView_Notes.tpl', 40, false),array('modifier', 'strip_semicolon', 'cache/modules/Notes/form_EditView_Notes.tpl', 46, false),)), $this); ?>

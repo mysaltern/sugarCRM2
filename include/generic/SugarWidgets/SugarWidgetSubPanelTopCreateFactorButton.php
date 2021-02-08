@@ -112,7 +112,7 @@ class SugarWidgetSubPanelTopCreateFactorButton extends SugarWidgetSubPanelTopBut
         $return_url = "index.php?module=$return_module&action=$return_action&subpanel=$subpanel_name&record=$return_id&sugar_body_only=1";
 
         $popup_request_data = array(
-            'call_back_function' => 'set_campaignlog_and_save_background',
+            'call_back_function' => 'set_factorlog_and_save_background',
             'form_name' => 'DetailView',
             'field_to_name_array' => $fton_array,
             'passthru_data' => array(

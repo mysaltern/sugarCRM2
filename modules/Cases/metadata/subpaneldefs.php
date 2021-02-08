@@ -96,22 +96,23 @@ $layout_defs['Cases'] = array(
 		'history' => array(
 			'order' => 40,
 			'title_key' => 'LBL_HISTORY_SUBPANEL_TITLE',
-			'type' => 'collection',
-			'subpanel_name' => 'history', //this values is not associated with a physical file.
+//			'type' => 'collection',
+				'get_subpanel_data' => 'factors',
+			'subpanel_name' => 'default', //this values is not associated with a physical file.
 			'sort_order' => 'desc',
 			'sort_by' => 'date_modified',
-			'header_definition_from_subpanel' => 'cases',
-			'module' => 'History',
+//			'header_definition_from_subpanel' => 'cases',
+			'module' => 'Factors',
 			'top_buttons' => array(
-				array('widget_class' => 'SubPanelTopCreateFactorButton'),
+				array('widget_class' => 'SubPanelTopSelectButton'),
 			),
-			'collection_list' => array(
-				'factor' => array(
-					'module' => 'Factors',
-					'subpanel_name' => 'ForHistory',
-					'get_subpanel_data' => 'factors',
-				),
-			),
+//			'collection_list' => array(
+//				'factor' => array(
+//					'module' => 'Factors',
+//					'subpanel_name' => 'ForHistory',
+//					'get_subpanel_data' => 'factors',
+//				),
+//			),
 		), /* end history subpanel def */
 //		'history' => array(
 //			'order' => 30,

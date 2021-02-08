@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2021-02-02 12:10:27
+<?php /* Smarty version 2.6.11, created on 2021-02-06 13:03:36
          compiled from cache/modules/Bugs/SearchForm_popup_query_form.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'counter', 'cache/modules/Bugs/SearchForm_popup_query_form.tpl', 4, false),array('function', 'math', 'cache/modules/Bugs/SearchForm_popup_query_form.tpl', 5, false),array('function', 'sugar_translate', 'cache/modules/Bugs/SearchForm_popup_query_form.tpl', 14, false),array('function', 'html_options', 'cache/modules/Bugs/SearchForm_popup_query_form.tpl', 62, false),array('function', 'sugar_getimagepath', 'cache/modules/Bugs/SearchForm_popup_query_form.tpl', 143, false),)), $this); ?>

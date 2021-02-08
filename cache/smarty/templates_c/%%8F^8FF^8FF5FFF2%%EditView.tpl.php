@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2021-02-03 09:17:17
+<?php /* Smarty version 2.6.11, created on 2021-02-06 12:50:39
          compiled from cache/modules/Cases/EditView.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_include', 'cache/modules/Cases/EditView.tpl', 33, false),array('function', 'counter', 'cache/modules/Cases/EditView.tpl', 38, false),array('function', 'sugar_translate', 'cache/modules/Cases/EditView.tpl', 43, false),array('function', 'html_options', 'cache/modules/Cases/EditView.tpl', 65, false),array('modifier', 'default', 'cache/modules/Cases/EditView.tpl', 39, false),array('modifier', 'strip_semicolon', 'cache/modules/Cases/EditView.tpl', 45, false),)), $this); ?>
